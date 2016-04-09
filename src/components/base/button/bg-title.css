@@ -1,0 +1,18 @@
+.bg-title-left {
+  background: #E74C3C;
+  color: #fff;
+  padding-left: 8px;
+  padding-right: 20px;
+}
+.bg-title-right {
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #fef4e1;
+  margin-left: -11px;
+  vertical-align: bottom;
+}
+.bg-title-wrap.right-bg-white .bg-title-right {
+  border-right: 12px solid #fff;
+}

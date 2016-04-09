@@ -1,0 +1,48 @@
+{
+  "name": "weifenxiao",
+  "version": "1.0.0",
+  "description": "weifenxiao",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "build_dev": "webpack",
+    "stats": "webpack --profile --json > stats.json",
+    "deploy": "./lib/deploy.sh production",
+    "deploy_dev": "./lib/deploy.sh dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzaitao/weifenxiao.git"
+  },
+  "author": "wangzaitao",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.8.34",
+    "babel-loader": "^5.4.0",
+    "babel-plugin-react-transform": "^1.1.1",
+    "clean-webpack-plugin": "^0.1.5",
+    "css-loader": "^0.23.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.9.0",
+    "json-loader": "^0.5.4",
+    "react-transform-hmr": "^1.0.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.8.3"
+  },
+  "dependencies": {
+    "history": "^2.0.0",
+    "promise": "^7.1.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0",
+    "react-slick": "^0.11.1",
+    "react-tap-event-plugin": "^0.2.2",
+    "cmd-zepto": "^0.0.1"
+  },
+  "readme": "see README.md"
+}

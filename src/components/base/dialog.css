@@ -1,0 +1,82 @@
+.lite-dialog {
+    position: fixed;
+    overflow: auto;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: #383838;
+    background-color: rgba(0,0,0,.5);
+    z-index: 210;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-backface-visibility: hidden;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-transform: translateZ(0)
+}
+.lite-dialog .wrapper {
+    padding-top: 55%;
+    overflow: auto;
+    text-align: center
+}
+.lite-dialog .wrapper .box {
+    max-width: 37.5em;
+    min-width: 21.875em;
+    display: inline-block;
+    width: auto;
+    background-color: #fff;
+    border-radius: 0.2em;
+    text-align: left
+}
+.lite-dialog .wrapper .box .content {
+    padding: 1.25em;
+    line-height: 1.75em
+}
+.lite-dialog .wrapper .box .content .inner {
+    margin-bottom: 1.25em
+}
+.lite-dialog .wrapper .box .actions {
+    text-align: right
+}
+.dialog-button {
+    outline: 0;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    border-radius: 0.2em;
+    border: none;
+    text-transform: none;
+    -webkit-user-select: none;
+    height: 2.25em;
+    line-height: 2.25em;
+    min-width: 5em;
+    margin-right: 1.125em;
+}
+.dialog-button.danger {
+    color: #fff;
+    background-color: #E74C3C;
+}
+.dialog-button.link {
+    color: #919191;
+}
+.dialog-center .content, .dialog-center.lite-dialog .wrapper .box .actions {text-align: center}

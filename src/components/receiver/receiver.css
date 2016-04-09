@@ -1,0 +1,42 @@
+/* submit infos */
+.submit-user-info .item {
+    padding: 0.8125em 1em;
+}
+.submit-user-info .submit-btn {
+    border: 1px solid #e74c3c;
+    padding: 0.6875em 0.375em;
+    color: #fff;
+    background-color: #e74c3c;
+    border-radius: 0.2em;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1.25em;
+    margin-bottom: 3.75em;
+    font-size: 0.9375em;
+}
+.submit-user-info .submit-btn.disabled {
+    border: 1px solid #bcbcbc;
+    color: #919191;
+    background-color: #e5e5e5;
+}
+.submit-user-info .support-email {
+    text-align: center;
+}
+
+/* to be received */
+.to-be-received .status, .has-received .status {
+    text-align: center;
+    padding: 2.25em 0;
+}
+.to-be-received .status p {
+    padding-top: 0.9375em;
+    font-size: 0.9375em;
+}
+.to-be-received .tips, .to-be-received .receiver-info, .has-received .receiver-info {
+    padding: 0.625em 1em;
+}
+.to-be-received .header, .has-received .header {
+    padding-bottom: 0.5em;
+    margin-bottom: 0.625em;
+}

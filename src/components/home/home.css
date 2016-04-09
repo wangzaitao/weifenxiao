@@ -1,0 +1,476 @@
+/* index tabs */
+.tab-item {
+    color: #919191 !important;
+    font-size: 1.125em !important;
+    font-family: inherit !important
+}
+.tab-item.active {
+    color: #E74C3C !important;
+}
+.tips-container {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    left: 0;
+    text-align: center;
+    -webkit-transform: translate3d(0,0,1px);
+    -moz-transform: translate3d(0,0,1px);
+    -ms-transform: translate3d(0,0,1px);
+    -o-transform: translate3d(0,0,1px);
+    transform: translate3d(0,0,1px);
+}
+.guide-tip {
+    width: 94%;
+    height: 96%;
+    margin: 0 auto;
+    background: #fefe41 url(../../img/guide/guide_tips.png) no-repeat center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+}
+.guide-tip .close-guide {
+    position: absolute;
+    top: 3%;
+    left: 89%;
+    width: 23px;
+    height: 23px;
+    border: none;
+    outline: none;
+    background: url(../../img/guide/guide_close.png) no-repeat;
+    -webkit-background-size: 23px 23px;
+    -moz-background-size: 23px 23px;
+    background-size: 23px 23px;
+}
+.reg-reward-tip {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background: url(../../img/reg_success_tips.png) no-repeat center;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.tips-container .close-btn {
+    position: absolute;
+    top: 25%;
+    right: 6%;
+    width: 32px;
+    height: 32px;
+    background: url(../../img/close_reg_success.png) no-repeat center;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.tips-container .newbie-task {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-left: -87px;
+    width: 180px;
+    height: 45px;
+    background: url(../../img/btn_reg_success.png) no-repeat center;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    .tips-container .newbie-task {
+        width: 160px;
+        margin-left: -77px;
+    }
+}
+@media only screen
+and (min-device-width : 360px)
+and (max-device-width : 400px) {
+    .tips-container .newbie-task {
+        width: 160px;
+        margin-left: -77px;
+    }
+}
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .tips-container .newbie-task {
+        width: 180px;
+        margin-left: -87px;
+    }
+}
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (-webkit-min-device-pixel-ratio: 3.5) {
+    .tips-container .newbie-task {
+        width: 180px;
+        margin-left: -87px;
+    }
+}
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px) {
+    .tips-container .newbie-task {
+        width: 180px;
+        height: 50px;
+        margin-left: -87px;
+        top: 60%;
+    }
+}
+.tips-container button:active {background-color: #9640cd}
+.app-download {
+    position: fixed;
+    bottom: 0;
+    z-index: 30;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    color: #fff;
+}
+.app-download .wrapper {
+    position: relative;
+    padding: 0.5em 0;
+    max-width: 85%;
+    margin: 0 auto;
+    color: #fff;
+}
+.app-download button.close {
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 22px;
+    height: 22px;
+    background: url('../../img/close_download_default.png') no-repeat left top;
+    background-size: contain;
+}
+.app-download button.close:active {
+    width: 22px;
+    height: 22px;
+    background: url('../../img/close_download_pressed.png') no-repeat left top;
+    background-size: contain;
+}
+.app-download .logo {
+    height: 3.6em;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.app-download .logo img {
+    width: 3.6em;
+    display: inline-block;
+}
+.app-download .download {
+    color: #fff;
+    float: right;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+    padding: 0.4em 1.1em;
+    background-color: #e74c3c;
+}
+
+/* index activity list & announced activity list */
+div.sort-types {
+    height: 2.5em;
+    line-height: 2.5em;
+    padding-left: 0.6em;
+    color: #919191;
+    font-size: 0.9375em;
+    border-bottom: 1px solid #e5e5e5;
+}
+div.sort-types span {
+    padding-right: 0.5em;
+}
+div.sort-types a {
+    color: #919191;
+    padding: 1em 0.75em 1em 0.75em
+}
+div.sort-types a.active {
+    color: #E74C3C;
+}
+ul.m-activityList {
+    padding: 0 0.125em;
+    overflow: hidden;
+}
+li.m-activityList-item {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.m-activity {
+    padding: 0.5em 0.375em;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+.m-activity-cover {
+    margin: 0 auto 0.5em;
+    width: 8.75em;
+}
+.m-activity-cover img {
+    width: 8.75em;
+    height: 8.75em;
+}
+.m-activity-progress {
+    margin-right: 50%;
+    font-size: 0.875em;
+}
+.m-activity-progress .txt {
+    margin-bottom: 0.2em;
+    color: #919191;
+    overflow: hidden;
+}
+.m-activity-progress .wrap {
+    margin-bottom: 0.19em;
+    position: relative;
+    height: 0.32em;
+    border-radius: 0.32em;
+    background-color: #efeeee;
+    overflow: hidden;
+}
+.m-activity-progress .process-bar, .m-activity-progress .color {
+    display: block;
+    height: 100%;
+    border-radius: 0.25em;
+}
+.m-activity-progress .process-bar {
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.m-activity-progress .color {
+    background: #fb951f;
+}
+.m-activity-shortcut {
+    position: absolute;
+    right: 0.3125em;
+    bottom: 0.65em;
+}
+.m-activity-shortcut a {
+    color: #E74C3C;
+    border: 1px solid #E74C3C;
+    padding: 0.2em 0.5em;
+    border-radius: 0.2em;
+}
+@media (max-width:320px){
+    .m-activity-shortcut {
+        right: 0.0125em;
+    }
+    .m-activity-shortcut a {
+        padding: 0.2em;
+    }
+    .m-activity-progress{
+        margin-right: 40%;
+    }
+}
+.m-activity-title {
+    margin-bottom: 0.25em;
+    width: 100%;
+    line-height: 1.2em;
+    height: 2.25em;
+    max-height: 2.25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.m-activity-title.one-line {
+    height: 1.2em;
+    max-height: 1.125em;
+    -webkit-line-clamp: 1;
+}
+.m-activity-announced-info p {
+    font-size: 0.8125em;
+    line-height: 1.25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.m-activity-countdown .countdown {
+    font-size: 1.45em;
+}
+.m-footer {
+    text-align: center;
+    background-color: #fff;
+    padding: 1em 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+/**discovery**/
+.banner-item{
+    height: 3.6em;
+    padding: 0.8em;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+.banner-item:last-child,
+.banner-item:nth-child(2){
+    border-bottom: none;
+}
+.banner-item:nth-child(3){
+    margin-top: 0.6em;
+}
+.banner-i-icon{
+    float: left;
+    width: 50px;
+}
+.banner-i-main{
+    margin-left: 60px;
+    margin-top: 5px;
+}
+.banner-notify{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 10px;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+.banner-i-title{
+    font-size: 1em;
+}
+.banner-i-tag-wrap{
+    display: inline-block;
+}
+.banner-i-title-text{
+    display: inline-block;
+    max-width: 80%;
+}
+.banner-i-tag{
+    padding: 2px 4px;
+    background: #de352e;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 0.6em;
+    margin-left: 0.4em;
+    vertical-align: top;
+}
+.banner-i-desc {
+    padding-right: 20px;
+    color: #BCBCBC;
+    font-size: 0.85em;
+}
+
+/*****youxin home******/
+.y-h-img{
+    width: 100%;
+}
+.go-home-wrap,
+.y-h-winner-tip{
+    text-align: center;
+}
+.go-home-btn-from-yx-home{
+    display: inline-block;
+    width: 203px;
+    height: 55px;
+    background: url('../../img/youxin_home/yx_home.png') no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.y-h-winner-tip{
+    margin-top: 1em;
+    margin-bottom: 3.5em;
+    color: #fff;
+}
+.y-h-winner-count{
+    margin: 0 0.25em;
+    padding: 0.25em;
+    border-radius: 0.25em;
+    background: #fff;
+    color: #6d13a0;
+    font-size: 1.2em;
+}
+.y-h-winner-info{
+    position: relative;
+    height: 2em;
+    margin: 0 1.6em;
+    margin-bottom: 2em;
+    color: #fff;
+}
+.y-h-carousel-icon{
+    position: absolute;
+    top: 2px;
+    width: 21px;
+    height: 17px;
+    background: url(../../img/youxin_home/ic_prompt.png) no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.y-h-winner-carousel{
+    height: 100%;
+    margin-left: 30px;
+    padding-top: 0;
+    background-color: transparent;
+    border: none;
+}
+.scroll-item-text font{
+    padding: 0 2px;
+}
+.y-h-hot-wrap{
+    margin: 0 1.2em;
+}
+.y-h-hot-img{
+    width: 100%;
+}
+.y-h-hot-item-wrap{
+    float: left;
+    width: 50%;
+    margin: 0 0 0.625em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 0.325em;
+}
+.y-h-hot-main .y-h-hot-item-wrap:nth-child(2n){
+    padding-right: 0;
+}
+.y-h-hot-main .y-h-hot-item-wrap:nth-child(2n+1){
+    padding-left: 0;
+}
+.y-h-hot-main{
+    margin-top: 1em;
+}
+.y-h-hot-item{
+    display: block;
+    background: #fff;
+    color: #000;
+    padding: 0 0.6em 0.6em 0.6em;
+}
+.y-h-hot-item img{
+    width: 100%;
+    height: auto;
+}
+.y-h-hot-item-name{
+    line-height: 1.2em;
+    height: 2.25em;
+    max-height: 2.25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.y-h-footer{
+    text-align: center;
+    color: #bb8de2;
+    margin: 1em 1.2em 1.6em 1.2em;
+    font-size: 0.8em;
+}
+.y-h-f-item{
+    display: inline-block;
+}
+.y-h-f-item.left{
+    margin-right: 2em;
+}

@@ -1,0 +1,22 @@
+.past-record-item:first-child {
+    margin-top: 0;
+}
+.past-record-item {
+    background-color: #fff;
+    font-size: 0.9375em;
+}
+.past-record-item .header, .past-record-item .user-info, .past-record-item .bottom {
+    padding: 0.5em 0.875em;
+}
+.past-record-item .user-info, .past-record-item .user-info div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.past-record-item .user-info div p {
+    width: 24em;
+}
+.past-record-item .bottom .lucky-number {
+    padding-right: 0.5em;
+    margin-right: 1em;
+    border-right: 1px solid #e5e5e5;
+}

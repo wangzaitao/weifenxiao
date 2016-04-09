@@ -1,0 +1,50 @@
+.carousel-wrap{
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.carousel-item{
+  display: inline-block;
+  width: 9em;
+  padding: 0 0.4em;
+  text-align: center;
+}
+.c-i-img{
+  width: 8em;
+  height: 8em;
+  margin: 0 auto;
+}
+.c-i-name{
+  height: 3em;
+  overflow: hidden;
+  font-size: 0.875em;
+  white-space: normal;
+  text-align: left;
+  padding-left: 0.5em;
+}
+.c-i-wrap{
+  position: relative;
+  width: 6.5em;
+  height: 0.32em;
+  margin: 0 auto;
+  margin-top: 0.4em;
+  margin-bottom: 0.19em;
+  border-radius: 0.32em;
+  background-color: #efeeee;
+  overflow: hidden;
+}
+.c-i-process-bar{
+  display: block;
+  height: 100%;
+  border-radius: 0.25em;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.c-i-color{
+  display: block;
+  height: 100%;
+  border-radius: 0.25em;
+  background: #fb951f;
+}
+
+

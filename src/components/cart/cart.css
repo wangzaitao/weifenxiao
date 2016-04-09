@@ -1,0 +1,90 @@
+.cart-list-wrap{
+    background: #fff;
+}
+.cart-empty-wrap{
+    padding: 20% 0 15% 0;
+    text-align: center;
+    background: #f6f6f6;
+}
+.cart-empty-text{
+    color: #949494;
+    height: 3.6em;
+    line-height: 3.6em;
+}
+.cart-list-title{
+    line-height: 2.5em;
+    text-align: center;
+    color: #919191;
+    background: #f8f8f8;
+}
+.cart-i-cover{
+    float: left;
+    width: 6.25em;
+}
+.cart-item{
+    padding: 0.875em 1em;
+    border-bottom: 1px solid #e5e5e5;
+}
+.cart-i-main{
+    margin-left: 6.75em;
+}
+.cart-i-title{
+    color: #333;
+}
+.cart-i-amount{
+    color: #919191;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}
+.amount-text {
+    width: 3.125em;
+    height: 31px;
+    border: none;
+    /*border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;*/
+    text-align: center;
+    font-size: 0.9375em;
+}
+.delete-cart-btn{
+    margin: 1em 0.75em;
+}
+.total-price{
+    color: #e74c3c;
+}
+.cart-list-foot{
+    padding: 1em;
+    color: #919191;
+    line-height: 2.3em;
+}
+.cart-account-btn-wrap{
+    float: right;
+}
+.cart-account-btn{
+    display: inline-block;
+    width: 5.6em;
+    text-align: center;
+}
+.cart-i-diff-amount{
+    color: #fb951f;
+}
+.delete-cart-confirm .dialog-button{
+    line-height: 2.25em;
+}
+.delete-cart-confirm .dialog-button.danger{
+    background-color: #aeaeae;
+    color: #fff;
+}
+.delete-cart-confirm .link{
+    float: right;
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.c-r-title{
+    line-height: 3em;
+    padding-left: 1em;
+}
+
+
+
+

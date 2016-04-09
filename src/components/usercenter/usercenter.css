@@ -1,0 +1,78 @@
+.user-infos {
+    background-color: #e74c3c;
+    padding: 0.625em;
+    color: #fff;
+}
+.m-activityRecord-container,
+.m-winnerRecord-container, .m-showRecord-container {
+    height: 100%;
+    background-color: #fff;
+}
+.activity-record-item, .show-record-item .show-infos {
+    padding: 1em 0.8em;
+}
+.activity-record-item .cover, .winner-record-item .cover,
+.show-record-item .cover {
+    float: left;
+}
+.show-record-item {margin-bottom: 2em}
+.show-record-item .content {
+    margin-left: 6.5em;
+    min-height: 6em
+}
+.show-record-item .status {padding: 0.4em 1em}
+.activity-record-item .infos, .winner-record-item .infos {
+    margin-left: 6.2em;
+    min-height: 6em;
+}
+.activity-record-item .title a:first-child {
+    display: table-cell;
+    width: 16em;
+}
+.activity-record-item .append {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 0.5em;
+}
+.activity-record-item .append div {
+    display: inline;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 0.25em 0.3125em;
+    border-radius: 0.2em;
+}
+.activity-record-item .revealed {
+    background-color: #ececec;
+    padding: 0.1875em 0.5em;
+}
+.winner-record-item .submit-info, .winner-record-item .received {
+    padding: 0.625em;
+    display: block;
+    margin-left: 66%
+}
+.winner-record-item .submit-info div, .winner-record-item .received div {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 0.25em 0.875em;
+    border-radius: 0.2em;
+    text-align: center;
+}
+.winner-record-item div.waiting, .winner-record-item div.showed {
+    color: #E74C3C;
+    display: block;
+    padding: 0.625em;
+    margin-left: 75%
+}
+.winner-record-item div.deal-received {
+    background-color: #fb951f;
+    color: #fff;
+    padding: 0.25em 0.875em;
+    display: block;
+    text-align: center;
+    margin-left: 70%;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+    margin-right: 0.625em;
+    border-radius: 0.2em;
+}

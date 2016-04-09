@@ -1,0 +1,9 @@
+.detail-gallery-item{
+  width: 100%;
+}
+.activity-images-text {
+  float: right;
+  color: #ccc;
+  padding-right: 1em;
+  font-size: 0.875em
+}
