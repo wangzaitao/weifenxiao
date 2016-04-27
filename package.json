@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wangzaitao/weifenxiao.git"
+    "url": "git+https://github.com/wangzaitao/weifenxiao.git"
   },
   "author": "wangzaitao",
   "license": "ISC",
@@ -27,7 +27,9 @@
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "json-loader": "^0.5.4",
+    "node-sass": "3.4.2",
     "react-transform-hmr": "^1.0.2",
+    "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
@@ -36,13 +38,22 @@
   },
   "dependencies": {
     "history": "^2.0.0",
+    "jquery": "^1.12.3",
     "promise": "^7.1.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
     "react-slick": "^0.11.1",
     "react-tap-event-plugin": "^0.2.2",
-    "cmd-zepto": "^0.0.1"
+    "cmd-zepto": "^0.0.1",
+    "bootstrap": "^3.3.6",
+    "bootstrap-treeview":"^1.2.0"
   },
-  "readme": "see README.md"
+  "bugs": {
+    "url": "https://github.com/wangzaitao/weifenxiao/issues"
+  },
+  "homepage": "https://github.com/wangzaitao/weifenxiao#readme",
+  "keywords": [
+    "weifenxiao"
+  ]
 }

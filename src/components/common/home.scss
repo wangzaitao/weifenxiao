@@ -1,0 +1,87 @@
+.banner {
+  img {
+    border: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    min-height: 90px;
+    min-width: 320px;
+    max-width: 640px;
+  }
+}
+
+.travel_type {
+  li {
+    position: relative;
+    float: left;
+    width: 33.3%;
+    padding: 0 5px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  a {
+    position: relative;
+    padding-top: 46.43%;
+    display: block;
+    overflow: hidden;
+  }
+  img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.product_type {
+  background-color: #fff;
+  margin: 10px auto;
+  li {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    margin: 10px 0 5px;
+    float: left;
+  }
+  a {
+    display: block;
+  }
+  span.btn_icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  img {
+    border: 0;
+    width: 40px;
+    height: 40px;
+  }
+  span.word {
+    display: block;
+    font-size: 14px;
+    color: #222;
+    text-align: center;
+    margin-top: 8px;
+  }
+}
+
+
+
+
+
+
+
+

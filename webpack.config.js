@@ -12,7 +12,7 @@ const PATHS = {
   app: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
 };
-const ENTRIES = ['index', 'user', 'share', 'about', 'discovery', 'temporary'];
+const ENTRIES = ['index'];
 
 process.env.BABEL_ENV = TARGET;
 
@@ -31,16 +31,28 @@ var common = {
   module: {
     loaders: [
       {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', 'css!sass?outputStyle=expanded'),
+        include: PATHS.app
+      },
+      {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]'),
         include: PATHS.app
       },
+	    { test: /\.css$/, loader: 'style-loader!css-loader' },
+	    {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff"},
+	    {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff2"},
+	    {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream"},
+	    {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"},
+	    {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml"},
       {
         test: /\.jsx?$/,
         loader: "babel-loader",
         include: PATHS.app,
         exclude: /node_modules/
       },
+	    {test: /\.(png|jpg|gif)$/,loader: 'file?name=[name].[ext]?[hash]'},
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         loader: 'url?limit=5120&name=img/[hash:8].[name].[ext]',  // return Data URL if smaller than 5k, otherwise use file-loader
@@ -64,8 +76,8 @@ var common = {
 var commonPlugins = [
   //shim
   new webpack.ProvidePlugin({
-    $: 'cmd-zepto',
-    Zepto: 'cmd-zepto',
+    $: 'jquery',
+    jQuery: 'jquery',
     BC: 'src/utils/broadcast'
   }),
 
@@ -80,7 +92,7 @@ var commonPlugins = [
 // dev
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
-    entry: path.join(PATHS.app, 'all.jsx'),
+    entry: path.join(PATHS.app, 'admin.jsx'),
     output: {
       path: PATHS.build,
       publicPath: '/',
@@ -107,7 +119,7 @@ if (TARGET === 'start' || !TARGET) {
         inject: 'body',
         filename: 'index.html',
         favicon: path.join(__dirname, '/src/img/favicon.ico'),
-        template: path.join(__dirname, '/src/base.html')
+        template: path.join(__dirname, '/src/base2.html')
       }),
       new ExtractTextPlugin('css/[hash:8].[name].css', {
         allChunks: true
@@ -146,12 +158,7 @@ if(TARGET === 'build' || TARGET === 'build_dev' || TARGET === 'stats' || TARGET 
 
   module.exports = merge(common, {
     entry: {
-      index: path.join(PATHS.app, 'index.jsx'),
-      user: path.join(PATHS.app, 'user.jsx'),
-      share: path.join(PATHS.app, 'share.jsx'),
-      about: path.join(PATHS.app, 'about.jsx'),
-      discovery: path.join(PATHS.app, 'discovery.jsx'),
-      temporary: path.join(PATHS.app, 'temporary.jsx')
+      index: path.join(PATHS.app, 'all.jsx')
     },
     output: {
       path: PATHS.build,

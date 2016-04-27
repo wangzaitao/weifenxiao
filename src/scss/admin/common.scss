@@ -1,0 +1,89 @@
+@import "./../variables";
+
+body {
+  font-family: 微软雅黑 !important;
+}
+
+.m-15 {
+  margin: 0px -15px;
+}
+
+.fr {
+  float: right;
+}
+
+.lft-green {
+  font-size: 14px;
+  color: #999;
+}
+
+//product
+.tab-pane {
+  padding-top: 20px;
+}
+
+.form-group {
+  float: left;
+  width: 50%;
+}
+
+.form-group .under {
+  text-decoration: underline;
+  padding: 10px;
+  line-height: 34px;
+}
+
+.form-group {
+  min-height: 34px;
+  select {
+    float: left;
+    width: 50%;
+  }
+  .checkbox {
+    float: left;
+    margin-right: 10px;
+    height: 34px;
+  }
+  textarea {
+    min-height: 100px;
+  }
+}
+
+//over bootstrap
+.navbar a {
+  color: #fff;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+  background-color: $lightBlue;
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+  background-color: $lightBlue;
+}
+
+.navbar .active {
+  background-color: $lightBlue;
+}
+
+.navbar-header button {
+  background-color: #fff;
+}
+
+.navbar-header button span {
+  background-color: $lightBlue;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+  padding: 8px 2px !important;
+}
+
+
+
+
+
+
+
+
+
+
