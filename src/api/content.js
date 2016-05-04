@@ -38,6 +38,19 @@ export function getProductCategory() {
 		});
 }
 
+export function getProductCategory(pid) {
+	var url= (GlobalConfig.API.HOST + GlobalConfig.API.PProduct_GET).replace('{%pid%}', pid);
+	return promiseAjax({
+		url: url
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
 export function saveProductBasic(data) {
 	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Basic_Save;
 	return promiseAjax({

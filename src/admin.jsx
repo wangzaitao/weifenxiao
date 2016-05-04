@@ -23,7 +23,8 @@ ReactDOM.render(
 	  </Route>
 	  <Route path="product" component={AdminLayout}>
 		  <IndexRoute component={Product}/>
-		  <Route path="add_product" component={AddProduct}/>
+		  <Route path="add" component={AddProduct}/>
+		  <Route path="edit/:pid" component={AddProduct}/>
 		  <Route path="type" component={Type}/>
 		  <Route path="category" component={Category}/>
 		  <Route path="brand" component={Brand}/>

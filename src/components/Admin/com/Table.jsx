@@ -32,7 +32,7 @@ class Table extends React.Component {
 				<tr>
 					<td style={{fontWeight: "bold", fontSize: "14px",color:"#777" }}>
 						<span>{props.name}</span>
-						<CustomLink className="btn-sm btn btn-primary fr" to="/product/add_product">新增</CustomLink>
+						<CustomLink className="btn-sm btn btn-primary fr" to={props.editUrl}>新增</CustomLink>
 					</td>
 				</tr>
 				<tr>

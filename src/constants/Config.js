@@ -5,7 +5,9 @@ export const API = {
   HOST: process.env.NODE_ENV == 'production' ? 'http://139.196.39.83:8848/' : 'http://139.196.39.83:8848/',
   Product_Type_LIST: 'api/ptype/getall',
   Product_Category_LIST: 'api/pcategory/getall',
-  Product_Basic_Save: 'api/pproduct/edit'
+  Product_Basic_Save: 'api/pproduct/edit',
+  PProduct_GET: 'api/pproduct/getbyid?id={%pid%}'
+
 };
 
 export const ERROR_CODES = {

@@ -95,7 +95,7 @@ class Product extends Component {
 							<div id="tree"></div>
 						</div>
 						<div className="col-md-10" style={{paddingRight:"0px"}}>
-							<Table id="product" name="产品列表" title={this.state.thead} tbody={tbdoyDom}/>
+							<Table id="product" name="产品列表" title={this.state.thead} tbody={tbdoyDom} editUrl="/product/add"/>
 						</div>
 					</div>
 				</div>
