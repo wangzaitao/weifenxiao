@@ -30,7 +30,7 @@ class AdminLayout extends React.Component {
 							</div>
 							<nav id="bs-navbar" className="collapse navbar-collapse">
 								<ul className="nav navbar-nav">
-									<li class="dropdown">
+									<li className="dropdown">
 										<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 										   aria-expanded="false">
 											产品管理
@@ -40,9 +40,9 @@ class AdminLayout extends React.Component {
 											<li><CustomLink to="/product/type">产品类型</CustomLink></li>
 											<li><CustomLink to="/product/category">产品分类</CustomLink></li>
 											<li><CustomLink to="/product/brand">产品品牌</CustomLink></li>
-											<li role="separator" class="divider"></li>
+											<li role="separator" className="divider"></li>
 											<li><CustomLink to="/product/param_group">产品参数</CustomLink></li>
-											<li role="separator" class="divider"></li>
+											<li role="separator" className="divider"></li>
 											<li><CustomLink to="/product">产品信息</CustomLink></li>
 										</ul>
 									</li>
@@ -58,7 +58,7 @@ class AdminLayout extends React.Component {
 									<li>
 										<a>供应商管理</a>
 									</li>
-									<li class="dropdown">
+									<li className="dropdown">
 										<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 										   aria-expanded="false">
 											系统设置
@@ -68,7 +68,7 @@ class AdminLayout extends React.Component {
 											<li><a href="#">城市分站</a></li>
 											<li><a href="#">网站公告</a></li>
 											<li><a href="#">友情链接</a></li>
-											<li role="separator" class="divider"></li>
+											<li role="separator" className="divider"></li>
 											<li><a href="#">参数配置</a></li>
 										</ul>
 									</li>

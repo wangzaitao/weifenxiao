@@ -2,271 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f32648ef-ab46-4e11-9b70-8a9fc763763c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/ad1.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/litterPerson.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/base2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Admin/Home.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Admin/Login.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Admin/com/CustomLink.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Admin/com/Table.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Admin/home.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Admin/product/Type.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/AdminLayout.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/AdminLayout2.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/admin/product/Brand.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/admin/product/ParamGroup.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/admin/product/Product.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/Banner.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/CustomLink.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/Footer.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/Header.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/Home.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/common.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/common/home.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/travel/TravelListPosition.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/travel/travelListPosition.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/index2.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scss/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scss/admin/common.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/AboutUs.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/CommonQuestions.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/CouponQA.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/CreditQA.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/RebateQA.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/Settings.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/UserGuide.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/about/UserProtocol.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/Activity.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/AddCartConfirm.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/BuyConfirm.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/BuyRecordList.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/Countdown.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/DetailGallery.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/DetailLinks.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/FloatFooter.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/Progress.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/UserNumbers.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/WinnerInfo.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/activity.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/activity/detailGallery.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/calculate/CalculateResult.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/calculate/calculate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/cart/Cart.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/cart/CartLink.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/cart/cart-link.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/cart/cart.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/cart/cartUtils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/discovery/ChargeFifty.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/discovery/GroupCoupon.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/discovery/RechargeCoupon.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/discovery/ShareCoupon.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/discovery/WealthyGod.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/discovery/discovery.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/mynumbers/MyNumbers.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/mynumbers/NumberItem.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/notification/Notification.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/notification/NotificationItem.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/receiver/HasReceived.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/receiver/ReceiverInfo.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/receiver/SubmitUserInfo.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/receiver/ToBeReceived.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/receiver/receiver.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/records/PastRecordItem.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/records/PastWinnerRecords.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/records/records.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/DownloadApp.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/DownloadApp2.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/LuckyTurntable.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/ShareApp.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/ShareDetail.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/ShareWinnerRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/luckyturntable.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/share/share.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/show/ShowDetail.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/show/ShowItem.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/show/ShowList.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/show/show.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/temporary/TempCharge.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/temporary/TempChargeResult.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/temporary/TempPay.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/temporary/TempPayResult.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/temporary/temporary.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/Charge.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/ChargeResult.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/ForgetPassword.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/Login.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyActivityRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyChargeRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyCoupon.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyCredit.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyCreditList.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyShowRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/MyWinnerRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/NewPassword.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/NewbieTask.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/Pay.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/PayResult.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/Profile.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/Register.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/User.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/UserIndex.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/rebate/FillInvitedCode.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/rebate/MoreInvites.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/rebate/MyCode.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/rebate/MyRebate.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/rebate/MyRebateALL.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/rebate/MyRebateList.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/user/user.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/usercenter/UserActivityRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/usercenter/UserCenter.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/usercenter/UserShowRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/usercenter/UserWinnerRecord.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/usercenter/usercenter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/404.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/404_back_default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/404_back_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/ajax-loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/btn_reg_success.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/close_download_default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/close_download_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/close_reg_success.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/credit_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/default_avatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/default_avatar_gray.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/default_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/activate_envelope_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/btn_envelope.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/btn_envelope_opened.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/btn_recharge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/date_duration.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/envelope.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/header_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/packet1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/packet2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/packet3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargecoupon/top_banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/banner-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/banner-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/btn_active-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/btn_active-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/btn_disabled-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/btn_disabled-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/chargefifty/title_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/btn_ok.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/btn_ok_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/coupon_empty.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/coupon_expired.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/go_home_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/go_home_btn_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/go_home_btn_red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/go_home_btn_red_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/group_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/packet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/rules_click.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/rules_click_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/rules_close_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/rules_close_btn_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/share_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/share_coupon_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/success_coupon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/sharecoupon/three_times.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/btn_close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/btn_default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/btn_done.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/btn_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/img_get_red_packet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/img_marquee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/img_meet_god_wealth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/img_reward.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/img_winning.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/lucky_bag_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/open_coupon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/opend_coupon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/placeholder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/popup_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/top_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/discovery/wealthy_god/winner_record.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/goods_default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/gray_packet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide_close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide_footer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide_header.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/guide/guide_tips.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/icons@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_banner-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_banner-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_btn_default-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_btn_default-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_btn_disabled-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_btn_disabled-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/newbie/newbie_footer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/instructions_button-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/instructions_button-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/invite_code_banner-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/invite_code_banner-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/invite_code_footer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/invite_title-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/invite_title-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/rebate_banner_between-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/rebate_banner_between-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/rebate_banner_instructions-cn.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/rebate/rebate_banner_instructions-vn.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/red_packet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/reg_success_tips.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/register-banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/banner-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/banner-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/download_banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/download_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/download_red_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/download_white_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/images/ipad01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/images/ipad02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/images/iphone01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/images/iphone02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/btn_click.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/btn_close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/img_turntable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/show_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/show_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/show_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/show_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/show_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/show_title.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/turntable_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/turntable_goods.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/luckyturntable/winners_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_detail-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_detail-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_detail_zero-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_detail_zero-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_icons@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_winner_record-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/share_winner_record-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/winner_record_bg-cn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/share/winner_record_bg-vn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/youxin_home/ic_prompt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/youxin_home/yx_banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/youxin_home/yx_home.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/youxin_home/yx_hot_title.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/all.jsx" afterPath="$PROJECT_DIR$/src/all.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/base.html" afterPath="$PROJECT_DIR$/src/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App.jsx" afterPath="$PROJECT_DIR$/src/components/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.jsx" afterPath="$PROJECT_DIR$/src/index.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/content.js" afterPath="$PROJECT_DIR$/src/api/content.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Admin/com/Table.jsx" afterPath="$PROJECT_DIR$/src/components/Admin/com/Table.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Admin/product/Type.jsx" afterPath="$PROJECT_DIR$/src/components/Admin/product/Type.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AdminLayout.jsx" afterPath="$PROJECT_DIR$/src/components/AdminLayout.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx" afterPath="$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/product/Category.jsx" afterPath="$PROJECT_DIR$/src/components/admin/product/Category.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/Config.js" afterPath="$PROJECT_DIR$/src/constants/Config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/promise/ajax.js" afterPath="$PROJECT_DIR$/src/utils/promise/ajax.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="weifenxiao.iws" />
@@ -288,54 +32,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="common.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/admin/common.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Category.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/admin/product/Category.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Table.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/admin/com/Table.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Brand.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/admin/product/Brand.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="54" column="23" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -343,10 +47,102 @@
       <file leaf-file-name="AdminLayout.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AdminLayout.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+            <state relative-caret-position="75">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Type.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/admin/product/Type.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/Config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/content.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+              <folding>
+                <element signature="e#73#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajax.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/promise/ajax.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddProduct.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="437" column="24" selection-start-line="437" selection-start-column="24" selection-end-line="437" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#458#859#0" expanded="false" />
+                <element signature="e#944#1037#0" expanded="false" />
+                <element signature="e#5804#14486#0" expanded="false" />
+                <element signature="e#14493#14698#0" expanded="false" />
+                <element signature="e#15944#16295#0" expanded="false" />
+                <element signature="e#16303#16549#0" expanded="false" />
+                <element signature="e#16693#17059#0" expanded="false" />
+                <element signature="e#17068#17347#0" expanded="false" />
+                <element signature="e#17356#17614#0" expanded="false" />
+                <element signature="e#17623#17877#0" expanded="false" />
+                <element signature="e#17886#18265#0" expanded="false" />
+                <element signature="e#18274#18543#0" expanded="false" />
+                <element signature="e#18552#18909#0" expanded="false" />
+                <element signature="e#18918#19191#0" expanded="false" />
+                <element signature="e#19200#19633#0" expanded="false" />
+                <element signature="e#19642#20075#0" expanded="false" />
+                <element signature="e#20146#21101#0" expanded="false" />
+                <element signature="e#21534#22107#0" expanded="false" />
+                <element signature="e#22116#22884#0" expanded="false" />
+                <element signature="e#22893#23144#0" expanded="false" />
+                <element signature="e#23302#23581#0" expanded="false" />
+                <element signature="e#23590#23752#0" expanded="false" />
+                <element signature="e#23761#24012#0" expanded="false" />
+                <element signature="e#24166#24445#0" expanded="false" />
+                <element signature="e#24454#24733#0" expanded="false" />
+                <element signature="e#24742#24996#0" expanded="false" />
+                <element signature="e#25005#25259#0" expanded="false" />
+                <element signature="e#25268#25519#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -355,51 +151,9 @@
       <file leaf-file-name="Product.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/admin/product/Product.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddProduct.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="422" column="22" selection-start-line="422" selection-start-column="22" selection-end-line="422" selection-end-column="22" />
-              <folding>
-                <element signature="e#2053#2307#0" expanded="false" />
-                <element signature="e#7837#9445#0" expanded="false" />
-                <element signature="e#9739#9944#0" expanded="false" />
-                <element signature="e#10001#10919#0" expanded="false" />
-                <element signature="e#10927#11157#0" expanded="false" />
-                <element signature="e#11225#11576#0" expanded="false" />
-                <element signature="e#11584#11830#0" expanded="false" />
-                <element signature="e#11974#12340#0" expanded="false" />
-                <element signature="e#12349#12628#0" expanded="false" />
-                <element signature="e#12637#12895#0" expanded="false" />
-                <element signature="e#12904#13158#0" expanded="false" />
-                <element signature="e#13167#13546#0" expanded="false" />
-                <element signature="e#13555#13824#0" expanded="false" />
-                <element signature="e#13833#14190#0" expanded="false" />
-                <element signature="e#14199#14472#0" expanded="false" />
-                <element signature="e#14481#14914#0" expanded="false" />
-                <element signature="e#14923#15356#0" expanded="false" />
-                <element signature="e#15427#16382#0" expanded="false" />
-                <element signature="e#16815#17388#0" expanded="false" />
-                <element signature="e#17397#18165#0" expanded="false" />
-                <element signature="e#18174#18425#0" expanded="false" />
-                <element signature="e#18583#18862#0" expanded="false" />
-                <element signature="e#18871#19033#0" expanded="false" />
-                <element signature="e#19042#19293#0" expanded="false" />
-                <element signature="e#19447#19726#0" expanded="false" />
-                <element signature="e#19735#20014#0" expanded="false" />
-                <element signature="e#20023#20277#0" expanded="false" />
-                <element signature="e#20286#20540#0" expanded="false" />
-                <element signature="e#20549#20800#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="1035">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -432,19 +186,23 @@
         <option value="$PROJECT_DIR$/src/components/Admin/Home.jsx" />
         <option value="$PROJECT_DIR$/src/components/Admin/product/Type.jsx" />
         <option value="$PROJECT_DIR$/src/components/Admin/com/Table.jsx" />
-        <option value="$PROJECT_DIR$/src/components/admin/product/Category.jsx" />
         <option value="$PROJECT_DIR$/src/components/admin/product/Brand.jsx" />
         <option value="$PROJECT_DIR$/src/components/admin/product/ParamGroup.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/base2.html" />
         <option value="$PROJECT_DIR$/npm-debug.log" />
         <option value="$PROJECT_DIR$/src/scss/_variables.scss" />
         <option value="$PROJECT_DIR$/src/components/admin/product/Product.jsx" />
-        <option value="$PROJECT_DIR$/src/components/admin/com/Table.jsx" />
         <option value="$PROJECT_DIR$/src/admin.jsx" />
-        <option value="$PROJECT_DIR$/src/components/AdminLayout.jsx" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/scss/admin/common.scss" />
+        <option value="$PROJECT_DIR$/src/components/admin/com/Table.jsx" />
+        <option value="$PROJECT_DIR$/src/base2.html" />
+        <option value="$PROJECT_DIR$/src/components/admin/product/Type.jsx" />
+        <option value="$PROJECT_DIR$/src/components/admin/product/Category.jsx" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/components/AdminLayout.jsx" />
+        <option value="$PROJECT_DIR$/src/constants/Config.js" />
+        <option value="$PROJECT_DIR$/src/api/content.js" />
+        <option value="$PROJECT_DIR$/src/utils/promise/ajax.js" />
         <option value="$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx" />
       </list>
     </option>
@@ -525,10 +283,104 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weifenxiao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -542,6 +394,22 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-tslint-nodeInterpreter" value="D:\Program Files\nodejs\node" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="108" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="138" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="137" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="931" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="125" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="132" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="132" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="925" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -650,34 +518,37 @@
       <workItem from="1461465590987" duration="3130000" />
       <workItem from="1461505611335" duration="587000" />
       <workItem from="1461590111002" duration="779000" />
-      <workItem from="1461768189921" duration="9341000" />
+      <workItem from="1461768189921" duration="12912000" />
+      <workItem from="1461943263002" duration="588000" />
+      <workItem from="1462152914240" duration="21470000" />
+      <workItem from="1462323005329" duration="59000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126262000" />
+    <option name="totallyTimeSpent" value="151950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19196428" sideWeight="0.5644444" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18824404" sideWeight="0.5555556" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26393443" sideWeight="0.53059703" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19196428" sideWeight="0.43555555" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19196428" sideWeight="0.44444445" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29411766" sideWeight="0.469403" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19196428" sideWeight="0.36888888" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25653595" sideWeight="0.469403" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -698,135 +569,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/webpack-dev-server/client/live.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/promise/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/broadcast.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/js/transition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/jQuery/lib/node-jquery.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/jquery/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/Header.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="185" column="16" selection-start-line="185" selection-start-column="16" selection-end-line="185" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/icons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/Login.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AdminLayout_backup.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/scss/admin/common_backup.scss" />
-    <entry file="file://$PROJECT_DIR$/src/share.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/about.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/all.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/product/Type.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/admin/product/ParamGroup.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -860,21 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,31 +647,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/admin/product/Brand.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="54" column="23" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AdminLayout.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,23 +658,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/admin/common2.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/admin/common2.scss" />
     <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-fileinput/css/fileinput.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,59 +673,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="54" column="73" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/admin/common.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
+        <state relative-caret-position="705">
           <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/product/Product.jsx">
+    <entry file="file://$PROJECT_DIR$/src/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/product/Category.jsx">
+    <entry file="file://$PROJECT_DIR$/src/all.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/admin/com/Table.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="465">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-fileinput/js/fileinput_locale_zh.js">
+    <entry file="file://$PROJECT_DIR$/src/api/cacheUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/FallbackImage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/Dialog.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/Carousel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/Header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/SwipeViews.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/Toast.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/TextInput.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/NoAPIDataTip.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/base/FillContent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,54 +829,133 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-treeview/tests/lib/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="8825" column="2" selection-start-line="8825" selection-start-column="2" selection-end-line="8825" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-fileinput/examples/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-fileinput/js/fileinput_locale_zh.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AdminLayout.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/product/Category.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/Config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/product/Type.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/product/Product.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        <state relative-caret-position="540">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+          <folding>
+            <element signature="e#73#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/promise/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/admin/product/AddProduct.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="422" column="22" selection-start-line="422" selection-start-column="22" selection-end-line="422" selection-end-column="22" />
+        <state relative-caret-position="404">
+          <caret line="437" column="24" selection-start-line="437" selection-start-column="24" selection-end-line="437" selection-end-column="24" />
           <folding>
-            <element signature="e#2053#2307#0" expanded="false" />
-            <element signature="e#7837#9445#0" expanded="false" />
-            <element signature="e#9739#9944#0" expanded="false" />
-            <element signature="e#10001#10919#0" expanded="false" />
-            <element signature="e#10927#11157#0" expanded="false" />
-            <element signature="e#11225#11576#0" expanded="false" />
-            <element signature="e#11584#11830#0" expanded="false" />
-            <element signature="e#11974#12340#0" expanded="false" />
-            <element signature="e#12349#12628#0" expanded="false" />
-            <element signature="e#12637#12895#0" expanded="false" />
-            <element signature="e#12904#13158#0" expanded="false" />
-            <element signature="e#13167#13546#0" expanded="false" />
-            <element signature="e#13555#13824#0" expanded="false" />
-            <element signature="e#13833#14190#0" expanded="false" />
-            <element signature="e#14199#14472#0" expanded="false" />
-            <element signature="e#14481#14914#0" expanded="false" />
-            <element signature="e#14923#15356#0" expanded="false" />
-            <element signature="e#15427#16382#0" expanded="false" />
-            <element signature="e#16815#17388#0" expanded="false" />
-            <element signature="e#17397#18165#0" expanded="false" />
-            <element signature="e#18174#18425#0" expanded="false" />
-            <element signature="e#18583#18862#0" expanded="false" />
-            <element signature="e#18871#19033#0" expanded="false" />
-            <element signature="e#19042#19293#0" expanded="false" />
-            <element signature="e#19447#19726#0" expanded="false" />
-            <element signature="e#19735#20014#0" expanded="false" />
-            <element signature="e#20023#20277#0" expanded="false" />
-            <element signature="e#20286#20540#0" expanded="false" />
-            <element signature="e#20549#20800#0" expanded="false" />
+            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#458#859#0" expanded="false" />
+            <element signature="e#944#1037#0" expanded="false" />
+            <element signature="e#5804#14486#0" expanded="false" />
+            <element signature="e#14493#14698#0" expanded="false" />
+            <element signature="e#15944#16295#0" expanded="false" />
+            <element signature="e#16303#16549#0" expanded="false" />
+            <element signature="e#16693#17059#0" expanded="false" />
+            <element signature="e#17068#17347#0" expanded="false" />
+            <element signature="e#17356#17614#0" expanded="false" />
+            <element signature="e#17623#17877#0" expanded="false" />
+            <element signature="e#17886#18265#0" expanded="false" />
+            <element signature="e#18274#18543#0" expanded="false" />
+            <element signature="e#18552#18909#0" expanded="false" />
+            <element signature="e#18918#19191#0" expanded="false" />
+            <element signature="e#19200#19633#0" expanded="false" />
+            <element signature="e#19642#20075#0" expanded="false" />
+            <element signature="e#20146#21101#0" expanded="false" />
+            <element signature="e#21534#22107#0" expanded="false" />
+            <element signature="e#22116#22884#0" expanded="false" />
+            <element signature="e#22893#23144#0" expanded="false" />
+            <element signature="e#23302#23581#0" expanded="false" />
+            <element signature="e#23590#23752#0" expanded="false" />
+            <element signature="e#23761#24012#0" expanded="false" />
+            <element signature="e#24166#24445#0" expanded="false" />
+            <element signature="e#24454#24733#0" expanded="false" />
+            <element signature="e#24742#24996#0" expanded="false" />
+            <element signature="e#25005#25259#0" expanded="false" />
+            <element signature="e#25268#25519#0" expanded="false" />
           </folding>
         </state>
       </provider>

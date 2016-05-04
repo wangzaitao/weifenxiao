@@ -1,34 +1,158 @@
 import React, {Component, PropTypes} from 'react';
+import * as ContentAPI from './../../../api/content';
 
-require("jquery");
 require('./../../../../node_modules/bootstrap-fileinput/css/fileinput.min.css');
 require('./../../../../node_modules/bootstrap-fileinput/js/fileinput.min.js');
 
 class Type extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			pdtImgUrl: ""
+		};
 	}
 	
 	componentWillMount() {
 	}
 
 	componentDidMount() {
-
 		$('.fileMuti').fileinput({
 			language: 'zh', //设置语言
-			uploadUrl: "/FileUpload/Upload", //上传的地址
+			uploadUrl: "http://139.196.39.83:8848/api/fileupload", //上传的地址
 			allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀,
 			maxFileCount: 6,
-			enctype: 'multipart/form-data',
 			showUpload: true, //是否显示上传按钮
 			showCaption: false,//是否显示标题
 			browseClass: "btn btn-primary", //按钮样式
 			previewFileIcon: "<i className='glyphicon glyphicon-king'></i>",
 			msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
 		});
+		$("#input-default").on("fileuploaded", function (event, data, previewid, index) {
+			alert(data.response.msg);
+			this.setState({
+				pdtImgUrl: data.response.msg
+			});
+		})
 	}
-	
+
+	_saveBasic() {
+		var data = {
+			PdtBasic: {
+				ID: 0,
+				TypeID: 1,
+				BrandID: 0,
+				Name: $("#Name").val(),
+				ShopID: 0,
+				PdtNo: "",
+				PriceExplain: "",
+				PriceType: 0,
+				EnfantPrice: $("#EnfantPrice").val(),
+				ListingPrice: $("#ListingPrice").val(),
+				RetailPrice: $("#RetailPrice").val(),
+				MemberPrice: $("#MemberPrice").val(),
+				YouHuiPrice: $("#MemberPrice").val(),
+				DiscountDetail: "",
+				IntegralCoefficient: $("#IntegralCoefficient").val(),
+				DiscountCoefficient: $("#DiscountCoefficient").val(),
+				Stock: $("#Stock").val(),
+				BuyMax: $("#BuyMax").val(),
+				BuyMin: $("#BuyMin").val(),
+				IsCanOrder: $("#IsCanOrder").prop("checked") ? 1 : 0,
+				LinkTel: $("#Phone").val(),
+				PdtBrief: $("#PdtBrief").val(),
+				PdtDetail: $("#PdtDetail").val(),
+				IsTrip: 1,
+				ProvinceID: 0,
+				CityID: 0,
+				DistrictID: 0,
+				PdtImgUrl: this.state.pdtImgUrl,
+				//"VisitNum": 1,
+				//"CommentNum": 1,
+				//"SelledNum": 1,
+				Title: "",
+				Meta_Keywords: "",
+				Meta_Description: "",
+				//"IsPolicy": 64,
+				//"IsTop": 64,
+				//"IsCommend": 64,
+				IsShow: $("#IsShow").prop("checked") ? 1 : 0,
+				//"Flag": 64,
+				IsEnable: 1,
+				IsDelete: 0,
+				//"CreatTime": "2016-05-02T17:10:19.7270867+08:00",
+				//"CreatUser": 1,
+				//"ModifyTime": "2016-05-02T17:10:19.7270867+08:00",
+				//"ModifyUser": 1
+			},
+			PdtInfo: {
+				PdtID: 0,
+				PdtType: 1,
+				Address: $("#Address").val(),
+				Phone: $("#Phone").val(),
+				TrafficeInfo: $("#TrafficeInfo").val(),
+				BookNotice: $("#BookNotice").val(),
+				FriendlyPrompt: $("#FriendlyPrompt").val(),
+				RouteFeature: $("#RouteFeature").val()
+				//"Trip_Type": 1,
+				//"Trip_JoinType": 1,
+				//"Trip_SignUpAheadDays": 1,
+				//"Trip_Days": 1,
+				//"Trip_RouteType": 64,
+				//"Trip_StartCity": "sample string 8",
+				//"Trip_StartDate": "2016-05-02T17:10:19.7290399+08:00",
+				//"Trip_StartType": 64,
+				//"Trip_GoTrafficType": 1,
+				//"Trip_ReturnTrafficType": 1,
+				//"Trip_TrafficType": 1,
+				//"Trip_TrafficContent": "sample string 9",
+				//"Hotel_Level": 1,
+				//"Hotel_Services": "sample string 10",
+				//"Sight_Type": 1,
+				//"Cars_HiresType": 1,
+				//"Cars_Type": 1,
+				//"Cars_PersonNum": 1,
+				//"Cars_Config": "sample string 11",
+				//"CreatTime": "2016-05-02T17:10:19.7309931+08:00",
+				//"CreatUser": 1,
+				//"ModifyTime": "2016-05-02T17:10:19.7309931+08:00",
+				//"ModifyUser": 1
+			}
+		};
+
+		ContentAPI.saveProductBasic(data).then((res) => {
+			debugger;
+		});
+	}
+
+	_savePrice() {
+		var arr = [];
+		for (var i = 0; i < $("#tbl_Price tbody").find("tr").length; i++) {
+			var obj = {
+				//"ID": 1,
+				"PdtID": 1,
+				"PriceType": $("#tbl_Price tbody").find("tr:eq(" + i + ")").children("td:eq(0)").find("input").val(),
+				"MenShiPrice": $("#tbl_Price tbody").find("tr:eq(" + i + ")").children("td:eq(1)").find("input").val(),
+				//"YouHuiPrice": 1.0,
+				"ErTongPrice": $("#tbl_Price tbody").find("tr:eq(" + i + ")").children("td:eq(4)").find("input").val(),
+				"HuiYuanPrice": $("#tbl_Price tbody").find("tr:eq(" + i + ")").children("td:eq(2)").find("input").val(),
+				"TongHangPrice": $("#tbl_Price tbody").find("tr:eq(" + i + ")").children("td:eq(3)").find("input").val(),
+				"PriceIntroduces": $("#tbl_Price tbody").find("tr:eq(" + i + ")").children("td:eq(5)").find("input").val(),
+				//"PriceDate": "2016-05-02T18:14:02.8235357+08:00",
+				//"OrderBy": 64,
+				//"Flag": 64,
+				"IsShow": 1,
+				"IsDelete": 0
+				//"CreatTime": "2016-05-02T18:14:02.8245123+08:00",
+				//"CreatUser": 1,
+				//"ModifyTime": "2016-05-02T18:14:02.8245123+08:00",
+				//"ModifyUser": 1
+			};
+			arr.push(obj);
+		}
+
+
+	}
+
 	render() {
 		return (
 			<div>
@@ -66,8 +190,8 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">产品名称</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
-										       placeholder="请输入产品名称"/>
+										<input id="Name" type="text" className="form-control"
+										       placeholder="请输入产品名称" maxLength="50"/>
 									</div>
 								</div>
 								<div className="form-group">
@@ -75,7 +199,7 @@ class Type extends Component {
 									<div className="col-sm-9">
 										<div className="checkbox">
 											<label>
-												<input type="checkbox" name="order" defaultChecked="true"/>是
+												<input type="checkbox" disabled name="order" defaultChecked="true"/>是
 											</label>
 										</div>
 									</div>
@@ -83,63 +207,69 @@ class Type extends Component {
 								<div className="form-group">
 									<label for="" className="col-sm-3 control-label">产品类型</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择---</option>
+										<select className="form-control" id="TypeID">
+											<option value="1">旅游</option>
 										</select>
 									</div>
 								</div>
 								<div className="form-group">
 									<label for="" className="col-sm-3 control-label">产品分类</label>
 									<div className="col-sm-9">
-										<select className="form-control">
+										<select className="form-control" id="CategoryID">
 											<option value="-1">---请选择---</option>
+											<option value="1">周边游</option>
+											<option value="2">国内游</option>
+											<option value="3">出境游</option>
+											<option value="4">酒店</option>
+											<option value="5">门票</option>
+											<option value="6">租车</option>
 										</select>
 									</div>
 								</div>
 								<div className="form-group" style={{ width:"100%"}}>
 									<label className="col-sm-3 control-label" style={{width:"161px"}}>产品图片</label>
 									<div className="col-sm-4">
-										<input id="input-1" type="file" className="file" multiple
+										<input id="input-default" type="file" className="file fileMuti" multiple
 										       data-allowed-file-extensions='["png", "jpg", "jpeg"]'/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">产品概述</label>
 									<div className="col-sm-9">
-										<textarea className="form-control" placeholder="请输入产品概述"></textarea>
+										<textarea id="PdtBrief" className="form-control" placeholder="请输入产品概述" maxLength="1000"></textarea>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">产品详情</label>
 									<div className="col-sm-9">
-										<textarea className="form-control" placeholder="请输入产品详情"></textarea>
+										<textarea id="PdtDetail" className="form-control" placeholder="请输入产品详情" maxLength="1000"></textarea>
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">门市价</label>
+									<label className="col-sm-3 control-label">门市价（元）</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="RetailPrice" type="text" className="form-control"
 										       placeholder="请输入门市价"/>
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">会员价</label>
+									<label className="col-sm-3 control-label">会员价（元）</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="MemberPrice" type="text" className="form-control"
 										       placeholder="请输入会员价"/>
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">同行价</label>
+									<label className="col-sm-3 control-label">同行价（元）</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="ListingPrice" type="text" className="form-control"
 										       placeholder="请输入同行价"/>
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">儿童价</label>
+									<label className="col-sm-3 control-label">儿童价（元）</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="EnfantPrice" type="text" className="form-control"
 										       placeholder="请输入儿童价"/>
 									</div>
 								</div>
@@ -162,7 +292,7 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">库存</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="Stock" type="text" className="form-control"
 										       placeholder="请输入库存"/>
 									</div>
 								</div>
@@ -174,28 +304,28 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">最大可买数量</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="BuyMax" type="text" className="form-control"
 										       placeholder="请输入最大可买数量"/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">最小可买数量</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="BuyMin" type="text" className="form-control"
 										       placeholder="请输入最小可买数量"/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">积分系数</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="IntegralCoefficient" type="text" className="form-control"
 										       placeholder="请输入积分系数"/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">折扣系数</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input id="DiscountCoefficient" type="text" className="form-control"
 										       placeholder="请输入折扣系数"/>
 									</div>
 								</div>
@@ -204,7 +334,7 @@ class Type extends Component {
 									<div className="col-sm-9">
 										<div className="checkbox">
 											<label>
-												<input type="checkbox" name="order" defaultChecked="true"/>是
+												<input id="IsCanOrder" type="checkbox" name="order" defaultChecked="true"/>是
 											</label>
 										</div>
 									</div>
@@ -214,7 +344,7 @@ class Type extends Component {
 									<div className="col-sm-9">
 										<div className="checkbox">
 											<label>
-												<input type="checkbox" name="order" defaultChecked="true"/>是
+												<input id="IsShow" type="checkbox" name="order" defaultChecked="true"/>是
 											</label>
 										</div>
 									</div>
@@ -223,45 +353,50 @@ class Type extends Component {
 									<div className="form-group">
 										<label className="col-sm-3 control-label">联系地址</label>
 										<div className="col-sm-9">
-											<input type="text" className="form-control"
-											       placeholder="请输入联系地址"/>
+											<input id="Address" type="text" className="form-control"
+											       placeholder="请输入联系地址" maxLength="100"/>
 										</div>
 									</div>
 									<div className="form-group">
 										<label className="col-sm-3 control-label">联系电话</label>
 										<div className="col-sm-9">
-											<input type="text" className="form-control"
+											<input id="Phone" type="text" className="form-control"
 											       placeholder="请输入联系电话"/>
 										</div>
 									</div>
 									<div className="form-group">
 										<label className="col-sm-3 control-label">交通指南</label>
 										<div className="col-sm-9">
-											<textarea className="form-control" placeholder="请输入交通指南"></textarea>
+											<textarea id="TrafficeInfo" className="form-control" placeholder="请输入交通指南"
+											          maxLength="1000"></textarea>
 										</div>
 									</div>
 									<div className="form-group">
 										<label className="col-sm-3 control-label">预订须知</label>
 										<div className="col-sm-9">
-											<textarea className="form-control" placeholder="请输入预订须知"></textarea>
+											<textarea id="BookNotice" className="form-control" placeholder="请输入预订须知"
+											          maxLength="1000"></textarea>
 										</div>
 									</div>
 									<div className="form-group">
 										<label className="col-sm-3 control-label">温馨提示</label>
 										<div className="col-sm-9">
-											<textarea className="form-control" placeholder="请输入温馨提示"></textarea>
+											<textarea id="FriendlyPrompt" className="form-control" placeholder="请输入温馨提示"
+											          maxLength="1000"></textarea>
 										</div>
 									</div>
 									<div className="form-group">
 										<label className="col-sm-3 control-label">特色</label>
 										<div className="col-sm-9">
-											<textarea className="form-control" placeholder="请输入特色"></textarea>
+											<textarea id="RouteFeature" className="form-control" placeholder="请输入特色"
+											          maxLength="1000"></textarea>
 										</div>
 									</div>
 								</div>
 								<div className="form-group">
 									<div className="col-sm-offset-2 col-sm-9">
-										<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}>保存</a>
+										<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}
+										   onClick={this._saveBasic.bind(this)}>保存</a>
 										<a className="btn btn-default">取消</a>
 									</div>
 								</div>
@@ -272,7 +407,7 @@ class Type extends Component {
 								TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
 						</div>
 						<div className="tab-pane fade" id="price">
-							<table className="table table-striped table-bordered">
+							<table className="table table-striped table-bordered" id="tbl_Price">
 								<thead>
 								<tr>
 									<th>价格类型</th>
@@ -281,7 +416,6 @@ class Type extends Component {
 									<th>同行价</th>
 									<th>儿童价</th>
 									<th>费用说明</th>
-									<th>排序</th>
 								</tr>
 								</thead>
 								<tbody>
@@ -292,10 +426,8 @@ class Type extends Component {
 									<td><input type="text"/></td>
 									<td><input type="text"/></td>
 									<td><input type="text"/></td>
-									<td><input type="text"/></td>
 								</tr>
 								<tr>
-									<td><input type="text"/></td>
 									<td><input type="text"/></td>
 									<td><input type="text"/></td>
 									<td><input type="text"/></td>
@@ -307,7 +439,8 @@ class Type extends Component {
 							</table>
 							<div className="form-group">
 								<div className="col-sm-9">
-									<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}>保存</a>
+									<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}
+									   onClick={this._savePrice.bind(this)}>保存</a>
 									<a className="btn btn-default">取消</a>
 								</div>
 							</div>

@@ -12,7 +12,7 @@ const PATHS = {
   app: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
 };
-const ENTRIES = ['index'];
+const ENTRIES = ['admin'];
 
 process.env.BABEL_ENV = TARGET;
 
@@ -152,13 +152,13 @@ if(TARGET === 'build' || TARGET === 'build_dev' || TARGET === 'stats' || TARGET 
       filename: entry + '.html',
       chunks: [entry, 'common'],
       favicon: path.join(__dirname, '/src/img/favicon.ico'),
-      template: path.join(__dirname, '/src/base.html')
+      template: path.join(__dirname, '/src/base2.html')
     }));
   }
 
   module.exports = merge(common, {
     entry: {
-      index: path.join(PATHS.app, 'all.jsx')
+      admin: path.join(PATHS.app, 'admin.jsx')
     },
     output: {
       path: PATHS.build,

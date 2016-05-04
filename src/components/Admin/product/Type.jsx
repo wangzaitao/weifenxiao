@@ -1,27 +1,25 @@
 import React, {Component, PropTypes} from 'react';
 import Table from '../com/Table.jsx';
+import * as ContentAPI from './../../../api/content';
 
 class Type extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			thead: ["ID", "产品类型名称", "备注", "是否显示", "排序"],
-			tbody: []
+			tbody: [],
+			flag: ""
 		};
 	}
 	
 	componentWillMount() {
-		//获取数据
-		var result = [
-			{ID: 1, Name: "旅游", Remark: '备注...', IsShow: '是', OrderBy: 1},
-			{ID: 2, Name: "土特产", Remark: '备注...', IsShow: '是', OrderBy: 2},
-			{ID: 3, Name: "化妆品", Remark: '备注...', IsShow: '是', OrderBy: 3}
-		];
-		this.setState({
-			tbody: result
+		ContentAPI.getProductType().then((res) => {
+			this.setState({
+				tbody: res
+			});
 		});
 	}
-	
+
 	render() {
 		var tbdoyDom;
 		tbdoyDom = this.state.tbody.map((item, index) => {
@@ -46,7 +44,7 @@ class Type extends Component {
 					<Table id="type" name="产品类型列表" title={this.state.thead} tbody={tbdoyDom}/>
 				</div>
 			</div>
-		
+
 		);
 	}
 }
