@@ -6,8 +6,9 @@ export const API = {
   Product_Type_LIST: 'api/ptype/getall',
   Product_Category_LIST: 'api/pcategory/getall',
   Product_Basic_Save: 'api/pproduct/edit',
-  PProduct_GET: 'api/pproduct/getbyid?id={%pid%}'
-
+  PProduct_GET: 'api/pproduct/getbyid?id={%pid%}',
+  PProductInfo_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
+	Product_Price_Save: 'api/pprice/edit'
 };
 
 export const ERROR_CODES = {

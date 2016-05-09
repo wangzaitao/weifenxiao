@@ -38,8 +38,21 @@ export function getProductCategory() {
 		});
 }
 
-export function getProductCategory(pid) {
+export function getProduct(pid) {
 	var url= (GlobalConfig.API.HOST + GlobalConfig.API.PProduct_GET).replace('{%pid%}', pid);
+	return promiseAjax({
+		url: url
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getProductInfo(pid) {
+	var url= (GlobalConfig.API.HOST + GlobalConfig.API.PProductInfo_GET).replace('{%pid%}', pid);
 	return promiseAjax({
 		url: url
 	})
@@ -56,6 +69,22 @@ export function saveProductBasic(data) {
 	return promiseAjax({
 		url: url,
 		type: 'POST',
+		data: data
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return "";
+		});
+}
+
+export function saveProductPrice(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Price_Save;
+	return promiseAjax({
+		url: url,
+		type: 'POST',
+		contentType:"application/json",
 		data: data
 	})
 		.then((res) => {

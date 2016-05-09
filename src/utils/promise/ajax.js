@@ -14,8 +14,8 @@ export default function(options){
       type: settings.type,
       url: settings.url,
       data: settings.data,
+	    contentType:settings.contentType,
       headers: settings.headers,
-	    dataType:"json",
       success: function(responseText){
         resolve(responseText);
       },
