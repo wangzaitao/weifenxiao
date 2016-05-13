@@ -38,6 +38,21 @@ export function getProductCategory() {
 		});
 }
 
+export function getCategoryByTypeID(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Category_ByTypeID;
+	return promiseAjax({
+		url: url,
+		data: data,
+		async:false
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
 export function getProduct(pid) {
 	var url= (GlobalConfig.API.HOST + GlobalConfig.API.PProduct_GET).replace('{%pid%}', pid);
 	return promiseAjax({
@@ -95,6 +110,20 @@ export function saveProductPrice(data) {
 		});
 }
 
+export function getPriceByProductID(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Price_Get;
+	return promiseAjax({
+		url: url,
+		data: data,
+		async:false
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
 
 export function submitUserInfo(orderId, userData, callback) {
 	var submitUserInfoURL = (GlobalConfig.API.HOST + GlobalConfig.API.SUBMIT_USER_INFO).replace('{%order_id%}', orderId);

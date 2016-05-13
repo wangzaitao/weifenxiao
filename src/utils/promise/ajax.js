@@ -6,7 +6,8 @@ export default function(options){
   }
   var settings = {
     type: 'GET',
-    data: null
+    data: null,
+	  async: true
   };
   $.extend(settings, options);
   return new Promise((resolve, reject) => {
@@ -15,6 +16,7 @@ export default function(options){
       url: settings.url,
       data: settings.data,
 	    contentType:settings.contentType,
+	    async: settings.async,
       headers: settings.headers,
       success: function(responseText){
         resolve(responseText);

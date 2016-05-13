@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import * as ContentAPI from './../../../api/content';
+import * as GlobalConfig from './../../../constants/Config';
 
 require('./../../../../node_modules/bootstrap-fileinput/css/fileinput.min.css');
 require('./../../../../node_modules/bootstrap-fileinput/js/fileinput.min.js');
@@ -9,11 +10,29 @@ class Type extends Component {
 		super(props);
 		this.state = {
 			pdtImgUrl: "",
-			pid: this.props.params.pid || 0
+			pid: this.props.params.pid || 0,
+			pType: [],
+			pCategory: [],
+			pPrice: []
 		};
 	}
 
 	componentWillMount() {
+		ContentAPI.getProductType().then((res)=> {
+			this.setState({
+				pType: res
+			});
+			ContentAPI.getCategoryByTypeID({typeid: res[0].ID}).then((res)=> {
+				this.setState({
+					pCategory: res
+				});
+			});
+		});
+		ContentAPI.getPriceByProductID({pdtID: this.state.pid}).then((res)=> {
+			this.setState({
+				pPrice: res
+			});
+		});
 	}
 
 	componentDidMount() {
@@ -46,6 +65,12 @@ class Type extends Component {
 			}
 			this.state.pdtImgUrl = res.PdtImgUrl;
 			$("#Name").val(res.Name);
+			$("#TypeID").val(res.TypeID);
+			ContentAPI.getCategoryByTypeID({typeid: res.TypeID}).then((res)=> {
+				this.setState({
+					pCategory: res
+				});
+			});
 			$("#CategoryID").val(res.CategoryID);
 			$("#PdtBrief").val(res.PdtBrief);
 			$("#PdtDetail").val(res.PdtDetail);
@@ -80,8 +105,12 @@ class Type extends Component {
 		var data = {
 			PdtBasic: {
 				ID: this.state.pid,
-				TypeID: 1,
+				TypeID: $("#TypeID").val(),
+				TypeName: $("#TypeID").find("option:selected").text(),
+				CategoryID: $("#CategoryID").val(),
+				CategoryName: $("#CategoryID").find("option:selected").text(),
 				BrandID: 0,
+				BrandName: "",
 				Name: $("#Name").val(),
 				ShopID: 0,
 				PdtNo: "",
@@ -216,7 +245,65 @@ class Type extends Component {
 		$(e.target).closest("tr").remove();
 	}
 
+	_typeChanged(e) {
+		var typeID = $(e.target).val();
+		ContentAPI.getCategoryByTypeID({typeid: typeID}).then((res)=> {
+			this.setState({
+				pCategory: res
+			});
+		});
+	}
+
 	render() {
+		let pTypeDom = null;
+		if (this.state.pType.length > 0) {
+			pTypeDom = this.state.pType.map((item, index) => {
+				return <option value={item.ID}>{item.Name}</option>;
+			});
+		}
+
+		let pCategoryDom = null;
+		if (this.state.pCategory.length > 0) {
+			pCategoryDom = this.state.pCategory.map((item, index) => {
+				return <option value={item.ID}>{item.Name}</option>;
+			});
+		}
+
+		let pPriceDom = null;
+		if (this.state.pPrice.length > 0) {
+			pPriceDom = this.state.pPrice.map((item, index) => {
+				return (
+					<tr>
+						<td><input type="text" name="PriceType" value={item.PriceType} /></td>
+						<td><input type="text" name="MenShiPrice" value={item.MenShiPrice}/></td>
+						<td><input type="text" name="HuiYuanPrice" value={item.HuiYuanPrice}/></td>
+						<td><input type="text" name="TongHangPrice" value={item.TongHangPrice}/></td>
+						<td><input type="text" name="ErTongPrice" value={item.ErTongPrice}/></td>
+						<td><input type="text" name="PriceIntroduces" value={item.PriceIntroduces}/></td>
+					</tr>
+				);
+			});
+		}
+		else {
+			pPriceDom = (
+				<tr>
+					<td><input type="text" name="PriceType"/></td>
+					<td><input type="text" name="MenShiPrice"/></td>
+					<td><input type="text" name="HuiYuanPrice"/></td>
+					<td><input type="text" name="TongHangPrice"/></td>
+					<td><input type="text" name="ErTongPrice"/></td>
+					<td><input type="text" name="PriceIntroduces"/></td>
+				</tr>
+			);
+		}
+
+		let joinTypeDom = null;
+		if (GlobalConfig.JOINTYPE.length > 0) {
+			joinTypeDom = GlobalConfig.JOINTYPE.map((item, index) => {
+				return <option value={item.key}>{item.value}</option>;
+			})
+		}
+
 		return (
 			<div>
 				<div className="row">
@@ -270,8 +357,8 @@ class Type extends Component {
 								<div className="form-group">
 									<label for="" className="col-sm-3 control-label">产品类型</label>
 									<div className="col-sm-9">
-										<select className="form-control" id="TypeID">
-											<option value="1">旅游</option>
+										<select className="form-control" id="TypeID" onChange={this._typeChanged.bind(this)}>
+											{pTypeDom}
 										</select>
 									</div>
 								</div>
@@ -279,13 +366,7 @@ class Type extends Component {
 									<label for="" className="col-sm-3 control-label">产品分类</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="CategoryID">
-											<option value="-1">---请选择---</option>
-											<option value="1">周边游</option>
-											<option value="2">国内游</option>
-											<option value="3">出境游</option>
-											<option value="4">酒店</option>
-											<option value="5">门票</option>
-											<option value="6">租车</option>
+											{pCategoryDom}
 										</select>
 									</div>
 								</div>
@@ -484,14 +565,7 @@ class Type extends Component {
 								</tr>
 								</thead>
 								<tbody>
-								<tr>
-									<td><input type="text" name="PriceType"/></td>
-									<td><input type="text" name="MenShiPrice"/></td>
-									<td><input type="text" name="HuiYuanPrice"/></td>
-									<td><input type="text" name="TongHangPrice"/></td>
-									<td><input type="text" name="ErTongPrice"/></td>
-									<td><input type="text" name="PriceIntroduces"/></td>
-								</tr>
+								{pPriceDom}
 								</tbody>
 							</table>
 							<div className="form-group">
@@ -523,17 +597,15 @@ class Type extends Component {
 									<label for="" className="col-sm-3 control-label">线路类型</label>
 									<div className="col-sm-9">
 										<select className="form-control">
-											<option value="-1">---请选择---</option>
 											<option value="1">按天编辑</option>
-											<option value="2">可视化编辑</option>
 										</select>
 									</div>
 								</div>
 								<div className="form-group">
 									<label for="" className="col-sm-3 control-label">参团性质</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择---</option>
+										<select className="form-control" id="Trip_JoinType">
+											{joinTypeDom}
 										</select>
 									</div>
 								</div>
