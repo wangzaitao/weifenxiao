@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import * as ContentAPI from './../../../api/content';
 import * as GlobalConfig from './../../../constants/Config';
+import {Calendar} from 'react-date-range';
+import moment from "./../../../../node_modules/react-date-range/node_modules/moment";
 
 require('./../../../../node_modules/bootstrap-fileinput/css/fileinput.min.css');
 require('./../../../../node_modules/bootstrap-fileinput/js/fileinput.min.js');
@@ -13,8 +15,10 @@ class Type extends Component {
 			pid: this.props.params.pid || 0,
 			pType: [],
 			pCategory: [],
-			pPrice: []
+			pPrice: [],
+			signUpAheadDaysArr: []
 		};
+		moment.locale('zh-cn');
 	}
 
 	componentWillMount() {
@@ -254,6 +258,32 @@ class Type extends Component {
 		});
 	}
 
+	_handleSelect(date) {
+		let dateString = date.format('YYYY-MM-DD');
+		$("#Trip_StartDate").val(dateString);
+		$("#div_Trip_StartDate").hide();
+	}
+
+	_showCalendar() {
+		$("#div_Trip_StartDate").show();
+	}
+
+	_hideCalendar() {
+		$("#div_Trip_StartDate").hide();
+	}
+
+	_signUpAheadDaysBlur(e) {
+		var len = $(e.target).val();
+		var signUpAheadDaysArr = [];
+		for (var i = 0; i < len; i++) {
+			signUpAheadDaysArr.push(i + 1);
+		}
+
+		this.setState({
+			signUpAheadDaysArr: signUpAheadDaysArr
+		});
+	}
+
 	render() {
 		let pTypeDom = null;
 		if (this.state.pType.length > 0) {
@@ -274,7 +304,7 @@ class Type extends Component {
 			pPriceDom = this.state.pPrice.map((item, index) => {
 				return (
 					<tr>
-						<td><input type="text" name="PriceType" value={item.PriceType} /></td>
+						<td><input type="text" name="PriceType" value={item.PriceType}/></td>
 						<td><input type="text" name="MenShiPrice" value={item.MenShiPrice}/></td>
 						<td><input type="text" name="HuiYuanPrice" value={item.HuiYuanPrice}/></td>
 						<td><input type="text" name="TongHangPrice" value={item.TongHangPrice}/></td>
@@ -303,6 +333,26 @@ class Type extends Component {
 				return <option value={item.key}>{item.value}</option>;
 			})
 		}
+
+		let travelTypeDom = null;
+		if (GlobalConfig.TRAVELTYPE.length > 0) {
+			travelTypeDom = GlobalConfig.TRAVELTYPE.map((item, index) => {
+				return <option value={item.key}>{item.value}</option>;
+			})
+		}
+
+		let signUpAheadDaysDom = null;
+		signUpAheadDaysDom = this.state.signUpAheadDaysArr.map((item, index) => {
+			return (
+				<tr>
+					<td>{item}</td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+				</tr>
+			);
+		});
 
 		return (
 			<div>
@@ -612,41 +662,48 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">提前几天报名</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
-										       placeholder="请输入提前几天报名"/>
+										<input style={{width:"50%"}} type="text" className="form-control"
+										       placeholder="请输入提前几天报名" id="Trip_SignUpAheadDays"
+										       onBlur={this._signUpAheadDaysBlur.bind(this)}/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">行程天数</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
+										<input style={{width:"50%"}} type="text" className="form-control"
 										       placeholder="请输入行程天数"/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">出发城市</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" style={{width:"25%"}}>
+											<option value="-1">湖北</option>
 										</select>
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" style={{width:"25%"}}>
+											<option value="-1">武汉</option>
 										</select>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">交通方式</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" id="Trip_TrafficType">
+											<option value="1">驾车</option>
+											<option value="2">步行</option>
 										</select>
+									</div>
+								</div>
+								<div className="form-group" style={{float:"none"}}>
+									<label className="col-sm-3 control-label">交通方式内容</label>
+									<div className="col-sm-9">
+										<textarea id="Trip_TrafficContent" style={{width:"100%"}}></textarea>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">发团方式</label>
 									<div className="col-sm-9">
 										<select className="form-control">
-											<option value="-1">---请选择</option>
 											<option value="0">天天发团</option>
 											<option value="1">指定发团日期</option>
 										</select>
@@ -655,19 +712,20 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">发团日期</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
-										       placeholder="" data-provide="datepicker"/>
+										<input className="form-control" style={{width:"50%"}} id="Trip_StartDate" type="text"
+										       readOnly="readonly" onClick={this._showCalendar.bind(this)}
+										       onBlur={this._hideCalendar.bind(this)}/>
+										<div id="div_Trip_StartDate"
+										     style={{zIndex:"1", display:"none", position:"absolute",top:"34px",left:"15px",border:"1px solid #e4e4e4"}}>
+											<Calendar onChange={this._handleSelect}/>
+										</div>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">去时交通</label>
 									<div className="col-sm-9">
 										<select className="form-control">
-											<option value="-1">---请选择</option>
-											<option value="0">大巴</option>
-											<option value="1">火车</option>
-											<option value="2">飞机</option>
-											<option value="3">轮船</option>
+											{travelTypeDom}
 										</select>
 									</div>
 								</div>
@@ -675,11 +733,7 @@ class Type extends Component {
 									<label className="col-sm-3 control-label">回来交通</label>
 									<div className="col-sm-9">
 										<select className="form-control">
-											<option value="-1">---请选择</option>
-											<option value="0">大巴</option>
-											<option value="1">火车</option>
-											<option value="2">飞机</option>
-											<option value="3">轮船</option>
+											{travelTypeDom}
 										</select>
 									</div>
 								</div>
@@ -695,27 +749,7 @@ class Type extends Component {
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>1</td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-										</tr>
+										{signUpAheadDaysDom}
 										</tbody>
 									</table>
 								</div>
