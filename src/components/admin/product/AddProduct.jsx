@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import * as ContentAPI from './../../../api/content';
 import * as GlobalConfig from './../../../constants/Config';
+import {Calendar} from 'react-date-range';
+import moment from "./../../../../node_modules/react-date-range/node_modules/moment";
 
 require('./../../../../node_modules/bootstrap-fileinput/css/fileinput.min.css');
 require('./../../../../node_modules/bootstrap-fileinput/js/fileinput.min.js');
@@ -13,8 +15,11 @@ class Type extends Component {
 			pid: this.props.params.pid || 0,
 			pType: [],
 			pCategory: [],
-			pPrice: []
+			pPrice: [],
+			pRoute: [],
+			signUpAheadDaysArr: []
 		};
+		moment.locale('zh-cn');
 	}
 
 	componentWillMount() {
@@ -31,6 +36,12 @@ class Type extends Component {
 		ContentAPI.getPriceByProductID({pdtID: this.state.pid}).then((res)=> {
 			this.setState({
 				pPrice: res
+			});
+		});
+		ContentAPI.getRoute(this.state.pid).then((res)=> {
+			debugger;
+			this.setState({
+				pRoute: res
 			});
 		});
 	}
@@ -94,6 +105,20 @@ class Type extends Component {
 				$("#RouteFeature").val(res.RouteFeature);
 			});
 		});
+
+		ContentAPI.getPdtInfo(pid).then((res) => {
+			$("#Trip_Type").val(res.Trip_Type);
+			$("#Trip_JoinType").val(res.Trip_JoinType);
+			$("#Trip_SignUpAheadDays").val(res.Trip_SignUpAheadDays);
+			$("#Trip_Days").val(res.Trip_Days);
+			$("#Trip_TrafficType").val(res.Trip_TrafficType);
+			$("#Trip_TrafficContent").val(res.Trip_TrafficContent);
+			$("#Trip_StartType").val(res.Trip_StartType);
+			$("#Trip_StartDate").val(res.Trip_StartDate);
+			$("#Trip_GoTrafficType").val(res.Trip_GoTrafficType);
+			$("#Trip_ReturnTrafficType").val(res.Trip_ReturnTrafficType);
+		});
+
 		$(document).on("click", "#price tbody tr", function () {
 			$("#price tbody tr").removeClass("current");
 			$(this).addClass("current");
@@ -245,12 +270,105 @@ class Type extends Component {
 		$(e.target).closest("tr").remove();
 	}
 
+	_saveTrip(){
+		var arr = [];
+		for (var i = 0; i < $("#tbl_Trip tbody").find("tr").length; i++) {
+			var obj = {
+				//"ID": 1,
+				"PdtID": this.state.pid,
+				"RouteType": $("#Trip_Type").val(),
+				"DayTitle": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(1)").find("input").val(),
+				"DayContent": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(2)").find("input").val(),
+				"DayEat": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(3)").find("input").val(),
+				"DayHotel": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(4)").find("input").val(),
+				"DayOrderBy": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(0)").text(),
+				//"ShowDetailContent": "sample string 7",
+				"IsShow": 1
+				//"OrderBy": 64,
+				//"Flag": 64,
+				//"Remark": "sample string 8",
+				//"IsDelete": 64,
+				//"CreatTime": "2016-05-17T23:31:09.8968562+08:00",
+				//"CreatUser": 1,
+				//"ModifyTime": "2016-05-17T23:31:09.8968562+08:00",
+				//"ModifyUser": 1
+			};
+			arr.push(obj);
+		}
+
+		var data = {
+			"routeList": arr,
+			//"ID": 1,
+			"PdtID": this.state.pid,
+			"PdtType": 1,
+			//"Address": "sample string 3",
+			//"Phone": "sample string 4",
+			//"TrafficeInfo": "sample string 5",
+			//"BookNotice": "sample string 6",
+			//"FriendlyPrompt": "sample string 7",
+			//"RouteFeature": "sample string 8",
+			"Trip_Type": $("#Trip_Type").val(),
+			"Trip_JoinType": $("#Trip_JoinType").val(),
+			"Trip_SignUpAheadDays": $("#Trip_SignUpAheadDays").val(),
+			"Trip_Days": $("#Trip_Days").val(),
+			"Trip_RouteType": $("#Trip_Type").val(),
+			"Trip_StartCity": "武汉",
+			"Trip_StartDate": $("#Trip_StartDate").val(),
+			"Trip_StartType": $("#Trip_StartType").val(),
+			"Trip_GoTrafficType": $("#Trip_GoTrafficType").val(),
+			"Trip_ReturnTrafficType": $("#Trip_ReturnTrafficType").val(),
+			"Trip_TrafficType": $("#Trip_TrafficType").val(),
+			"Trip_TrafficContent": $("#Trip_TrafficContent").val()
+			//"Hotel_Level": 1,
+			//"Hotel_Services": "sample string 11",
+			//"Sight_Type": 1,
+			//"Cars_HiresType": 1,
+			//"Cars_Type": 1,
+			//"Cars_PersonNum": 1,
+			//"Cars_Config": "sample string 12",
+			//"CreatTime": "2016-05-17T23:31:09.8968562+08:00",
+			//"CreatUser": 1,
+			//"ModifyTime": "2016-05-17T23:31:09.8968562+08:00",
+			//"ModifyUser": 1
+		};
+
+		ContentAPI.saveProductTrip(data).then((res) => {
+			debugger;
+		});
+	}
+
 	_typeChanged(e) {
 		var typeID = $(e.target).val();
 		ContentAPI.getCategoryByTypeID({typeid: typeID}).then((res)=> {
 			this.setState({
 				pCategory: res
 			});
+		});
+	}
+
+	_handleSelect(date) {
+		let dateString = date.format('YYYY-MM-DD');
+		$("#Trip_StartDate").val(dateString);
+		$("#div_Trip_StartDate").hide();
+	}
+
+	_showCalendar() {
+		$("#div_Trip_StartDate").show();
+	}
+
+	_hideCalendar() {
+		$("#div_Trip_StartDate").hide();
+	}
+
+	_signUpAheadDaysBlur(e) {
+		var len = $(e.target).val();
+		var signUpAheadDaysArr = [];
+		for (var i = 0; i < len; i++) {
+			signUpAheadDaysArr.push(i + 1);
+		}
+
+		this.setState({
+			signUpAheadDaysArr: signUpAheadDaysArr
 		});
 	}
 
@@ -274,7 +392,7 @@ class Type extends Component {
 			pPriceDom = this.state.pPrice.map((item, index) => {
 				return (
 					<tr>
-						<td><input type="text" name="PriceType" value={item.PriceType} /></td>
+						<td><input type="text" name="PriceType" value={item.PriceType}/></td>
 						<td><input type="text" name="MenShiPrice" value={item.MenShiPrice}/></td>
 						<td><input type="text" name="HuiYuanPrice" value={item.HuiYuanPrice}/></td>
 						<td><input type="text" name="TongHangPrice" value={item.TongHangPrice}/></td>
@@ -302,6 +420,41 @@ class Type extends Component {
 			joinTypeDom = GlobalConfig.JOINTYPE.map((item, index) => {
 				return <option value={item.key}>{item.value}</option>;
 			})
+		}
+
+		let travelTypeDom = null;
+		if (GlobalConfig.TRAVELTYPE.length > 0) {
+			travelTypeDom = GlobalConfig.TRAVELTYPE.map((item, index) => {
+				return <option value={item.key}>{item.value}</option>;
+			})
+		}
+
+		let signUpAheadDaysDom = null;
+		signUpAheadDaysDom = this.state.signUpAheadDaysArr.map((item, index) => {
+			return (
+				<tr>
+					<td>{item}</td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+				</tr>
+			);
+		});
+
+		let pRouteDom = null;
+		if (this.state.pRoute.length > 0) {
+			signUpAheadDaysDom = this.state.pRoute.map((item, index) => {
+				return (
+					<tr>
+						<td>{index+1}</td>
+						<td><input type="text" value={item.DayTitle}/></td>
+						<td><input type="text" value={item.DayContent}/></td>
+						<td><input type="text" value={item.DayEat}/></td>
+						<td><input type="text" value={item.DayHotel}/></td>
+					</tr>
+				);
+			});
 		}
 
 		return (
@@ -596,7 +749,7 @@ class Type extends Component {
 								<div className="form-group">
 									<label for="" className="col-sm-3 control-label">线路类型</label>
 									<div className="col-sm-9">
-										<select className="form-control">
+										<select className="form-control" id="Trip_Type">
 											<option value="1">按天编辑</option>
 										</select>
 									</div>
@@ -612,41 +765,47 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">提前几天报名</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
-										       placeholder="请输入提前几天报名"/>
+										<input style={{width:"50%"}} type="text" className="form-control"
+										       placeholder="请输入提前几天报名" id="Trip_SignUpAheadDays"/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">行程天数</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
-										       placeholder="请输入行程天数"/>
+										<input style={{width:"50%"}} type="text" className="form-control" id="Trip_Days"
+										       placeholder="请输入行程天数" onBlur={this._signUpAheadDaysBlur.bind(this)}/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">出发城市</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" style={{width:"25%"}}>
+											<option value="-1">湖北</option>
 										</select>
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" style={{width:"25%"}}>
+											<option value="-1">武汉</option>
 										</select>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">交通方式</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" id="Trip_TrafficType">
+											<option value="1">驾车</option>
+											<option value="2">步行</option>
 										</select>
+									</div>
+								</div>
+								<div className="form-group" style={{float:"none"}}>
+									<label className="col-sm-3 control-label">交通方式内容</label>
+									<div className="col-sm-9">
+										<textarea id="Trip_TrafficContent" style={{width:"100%"}}></textarea>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">发团方式</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
+										<select className="form-control" id="Trip_StartType">
 											<option value="0">天天发团</option>
 											<option value="1">指定发团日期</option>
 										</select>
@@ -655,36 +814,33 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">发团日期</label>
 									<div className="col-sm-9">
-										<input type="text" className="form-control"
-										       placeholder="" data-provide="datepicker"/>
+										<input className="form-control" style={{width:"50%"}} id="Trip_StartDate" type="text"
+										       readOnly="readonly" onClick={this._showCalendar.bind(this)}
+										       onBlur={this._hideCalendar.bind(this)}/>
+										<div id="div_Trip_StartDate"
+										     style={{zIndex:"1", display:"none", position:"absolute",top:"34px",left:"15px",border:"1px solid #e4e4e4"}}>
+											<Calendar onChange={this._handleSelect}/>
+										</div>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">去时交通</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
-											<option value="0">大巴</option>
-											<option value="1">火车</option>
-											<option value="2">飞机</option>
-											<option value="3">轮船</option>
+										<select className="form-control" id="Trip_GoTrafficType">
+											{travelTypeDom}
 										</select>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">回来交通</label>
 									<div className="col-sm-9">
-										<select className="form-control">
-											<option value="-1">---请选择</option>
-											<option value="0">大巴</option>
-											<option value="1">火车</option>
-											<option value="2">飞机</option>
-											<option value="3">轮船</option>
+										<select className="form-control" id="Trip_ReturnTrafficType">
+											{travelTypeDom}
 										</select>
 									</div>
 								</div>
 								<div className="form-group" style={{ width:"100%"}}>
-									<table className="table table-striped table-bordered">
+									<table className="table table-striped table-bordered" id="tbl_Trip">
 										<thead>
 										<tr>
 											<th>第几天</th>
@@ -695,33 +851,13 @@ class Type extends Component {
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>1</td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-											<td><input type="text"/></td>
-										</tr>
+										{signUpAheadDaysDom}
 										</tbody>
 									</table>
 								</div>
 								<div className="form-group">
 									<div className="col-sm-offset-2 col-sm-9">
-										<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}>保存</a>
+										<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}} onClick={this._saveTrip.bind(this)}>保存</a>
 										<a className="btn btn-default">取消</a>
 									</div>
 								</div>

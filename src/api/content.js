@@ -110,12 +110,53 @@ export function saveProductPrice(data) {
 		});
 }
 
+export function saveProductTrip(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Trip_Save;
+	return promiseAjax({
+		url: url,
+		type: 'POST',
+		data: data
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return "";
+		});
+}
+
 export function getPriceByProductID(data) {
-	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Price_Get;
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Price_GET;
 	return promiseAjax({
 		url: url,
 		data: data,
 		async:false
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getPdtInfo(pid) {
+	var url= (GlobalConfig.API.HOST + GlobalConfig.API.Product_PPDTINFO_GET).replace('{%pid%}', pid);
+	return promiseAjax({
+		url: url
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getRoute(pid) {
+	var url= (GlobalConfig.API.HOST + GlobalConfig.API.Product_PROUTE_GET).replace('{%pid%}', pid);
+	return promiseAjax({
+		url: url
 	})
 		.then((res) => {
 			return res;
