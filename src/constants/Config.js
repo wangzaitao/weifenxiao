@@ -7,10 +7,13 @@ export const API = {
 	Product_Category_LIST: 'api/pcategory/getall',
 	Product_Category_ByTypeID: 'api/pcategory/getbytypeid',
 	Product_Basic_Save: 'api/pproduct/edit',
+	Product_Price_Save: 'api/pprice/edit',
+	Product_Trip_Save: 'api/ppdtinfo/trip/update',
 	PProduct_GET: 'api/pproduct/getbyid?id={%pid%}',
 	PProductInfo_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
-	Product_Price_Save: 'api/pprice/edit',
-	Product_Price_Get: 'api/pprice/getbypdtid'
+	Product_Price_GET: 'api/pprice/getbypdtid',
+	Product_PPDTINFO_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
+	Product_PROUTE_GET: 'api/proute/getbypdtid?pdtID={%pid%}'
 };
 
 export const JOINTYPE = [

@@ -16,6 +16,7 @@ class Type extends Component {
 			pType: [],
 			pCategory: [],
 			pPrice: [],
+			pRoute: [],
 			signUpAheadDaysArr: []
 		};
 		moment.locale('zh-cn');
@@ -35,6 +36,12 @@ class Type extends Component {
 		ContentAPI.getPriceByProductID({pdtID: this.state.pid}).then((res)=> {
 			this.setState({
 				pPrice: res
+			});
+		});
+		ContentAPI.getRoute(this.state.pid).then((res)=> {
+			debugger;
+			this.setState({
+				pRoute: res
 			});
 		});
 	}
@@ -98,6 +105,20 @@ class Type extends Component {
 				$("#RouteFeature").val(res.RouteFeature);
 			});
 		});
+
+		ContentAPI.getPdtInfo(pid).then((res) => {
+			$("#Trip_Type").val(res.Trip_Type);
+			$("#Trip_JoinType").val(res.Trip_JoinType);
+			$("#Trip_SignUpAheadDays").val(res.Trip_SignUpAheadDays);
+			$("#Trip_Days").val(res.Trip_Days);
+			$("#Trip_TrafficType").val(res.Trip_TrafficType);
+			$("#Trip_TrafficContent").val(res.Trip_TrafficContent);
+			$("#Trip_StartType").val(res.Trip_StartType);
+			$("#Trip_StartDate").val(res.Trip_StartDate);
+			$("#Trip_GoTrafficType").val(res.Trip_GoTrafficType);
+			$("#Trip_ReturnTrafficType").val(res.Trip_ReturnTrafficType);
+		});
+
 		$(document).on("click", "#price tbody tr", function () {
 			$("#price tbody tr").removeClass("current");
 			$(this).addClass("current");
@@ -249,6 +270,73 @@ class Type extends Component {
 		$(e.target).closest("tr").remove();
 	}
 
+	_saveTrip(){
+		var arr = [];
+		for (var i = 0; i < $("#tbl_Trip tbody").find("tr").length; i++) {
+			var obj = {
+				//"ID": 1,
+				"PdtID": this.state.pid,
+				"RouteType": $("#Trip_Type").val(),
+				"DayTitle": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(1)").find("input").val(),
+				"DayContent": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(2)").find("input").val(),
+				"DayEat": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(3)").find("input").val(),
+				"DayHotel": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(4)").find("input").val(),
+				"DayOrderBy": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(0)").text(),
+				//"ShowDetailContent": "sample string 7",
+				"IsShow": 1
+				//"OrderBy": 64,
+				//"Flag": 64,
+				//"Remark": "sample string 8",
+				//"IsDelete": 64,
+				//"CreatTime": "2016-05-17T23:31:09.8968562+08:00",
+				//"CreatUser": 1,
+				//"ModifyTime": "2016-05-17T23:31:09.8968562+08:00",
+				//"ModifyUser": 1
+			};
+			arr.push(obj);
+		}
+
+		var data = {
+			"routeList": arr,
+			//"ID": 1,
+			"PdtID": this.state.pid,
+			"PdtType": 1,
+			//"Address": "sample string 3",
+			//"Phone": "sample string 4",
+			//"TrafficeInfo": "sample string 5",
+			//"BookNotice": "sample string 6",
+			//"FriendlyPrompt": "sample string 7",
+			//"RouteFeature": "sample string 8",
+			"Trip_Type": $("#Trip_Type").val(),
+			"Trip_JoinType": $("#Trip_JoinType").val(),
+			"Trip_SignUpAheadDays": $("#Trip_SignUpAheadDays").val(),
+			"Trip_Days": $("#Trip_Days").val(),
+			"Trip_RouteType": $("#Trip_Type").val(),
+			"Trip_StartCity": "武汉",
+			"Trip_StartDate": $("#Trip_StartDate").val(),
+			"Trip_StartType": $("#Trip_StartType").val(),
+			"Trip_GoTrafficType": $("#Trip_GoTrafficType").val(),
+			"Trip_ReturnTrafficType": $("#Trip_ReturnTrafficType").val(),
+			"Trip_TrafficType": $("#Trip_TrafficType").val(),
+			"Trip_TrafficContent": $("#Trip_TrafficContent").val()
+			//"Hotel_Level": 1,
+			//"Hotel_Services": "sample string 11",
+			//"Sight_Type": 1,
+			//"Cars_HiresType": 1,
+			//"Cars_Type": 1,
+			//"Cars_PersonNum": 1,
+			//"Cars_Config": "sample string 12",
+			//"CreatTime": "2016-05-17T23:31:09.8968562+08:00",
+			//"CreatUser": 1,
+			//"ModifyTime": "2016-05-17T23:31:09.8968562+08:00",
+			//"ModifyUser": 1
+		};
+
+		ContentAPI.saveProductTrip(data).then((res) => {
+			debugger;
+		});
+	}
+
 	_typeChanged(e) {
 		var typeID = $(e.target).val();
 		ContentAPI.getCategoryByTypeID({typeid: typeID}).then((res)=> {
@@ -353,6 +441,21 @@ class Type extends Component {
 				</tr>
 			);
 		});
+
+		let pRouteDom = null;
+		if (this.state.pRoute.length > 0) {
+			signUpAheadDaysDom = this.state.pRoute.map((item, index) => {
+				return (
+					<tr>
+						<td>{index+1}</td>
+						<td><input type="text" value={item.DayTitle}/></td>
+						<td><input type="text" value={item.DayContent}/></td>
+						<td><input type="text" value={item.DayEat}/></td>
+						<td><input type="text" value={item.DayHotel}/></td>
+					</tr>
+				);
+			});
+		}
 
 		return (
 			<div>
@@ -646,7 +749,7 @@ class Type extends Component {
 								<div className="form-group">
 									<label for="" className="col-sm-3 control-label">线路类型</label>
 									<div className="col-sm-9">
-										<select className="form-control">
+										<select className="form-control" id="Trip_Type">
 											<option value="1">按天编辑</option>
 										</select>
 									</div>
@@ -663,15 +766,14 @@ class Type extends Component {
 									<label className="col-sm-3 control-label">提前几天报名</label>
 									<div className="col-sm-9">
 										<input style={{width:"50%"}} type="text" className="form-control"
-										       placeholder="请输入提前几天报名" id="Trip_SignUpAheadDays"
-										       onBlur={this._signUpAheadDaysBlur.bind(this)}/>
+										       placeholder="请输入提前几天报名" id="Trip_SignUpAheadDays"/>
 									</div>
 								</div>
 								<div className="form-group">
 									<label className="col-sm-3 control-label">行程天数</label>
 									<div className="col-sm-9">
-										<input style={{width:"50%"}} type="text" className="form-control"
-										       placeholder="请输入行程天数"/>
+										<input style={{width:"50%"}} type="text" className="form-control" id="Trip_Days"
+										       placeholder="请输入行程天数" onBlur={this._signUpAheadDaysBlur.bind(this)}/>
 									</div>
 								</div>
 								<div className="form-group">
@@ -703,7 +805,7 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">发团方式</label>
 									<div className="col-sm-9">
-										<select className="form-control">
+										<select className="form-control" id="Trip_StartType">
 											<option value="0">天天发团</option>
 											<option value="1">指定发团日期</option>
 										</select>
@@ -724,7 +826,7 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">去时交通</label>
 									<div className="col-sm-9">
-										<select className="form-control">
+										<select className="form-control" id="Trip_GoTrafficType">
 											{travelTypeDom}
 										</select>
 									</div>
@@ -732,13 +834,13 @@ class Type extends Component {
 								<div className="form-group">
 									<label className="col-sm-3 control-label">回来交通</label>
 									<div className="col-sm-9">
-										<select className="form-control">
+										<select className="form-control" id="Trip_ReturnTrafficType">
 											{travelTypeDom}
 										</select>
 									</div>
 								</div>
 								<div className="form-group" style={{ width:"100%"}}>
-									<table className="table table-striped table-bordered">
+									<table className="table table-striped table-bordered" id="tbl_Trip">
 										<thead>
 										<tr>
 											<th>第几天</th>
@@ -755,7 +857,7 @@ class Type extends Component {
 								</div>
 								<div className="form-group">
 									<div className="col-sm-offset-2 col-sm-9">
-										<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}>保存</a>
+										<a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}} onClick={this._saveTrip.bind(this)}>保存</a>
 										<a className="btn btn-default">取消</a>
 									</div>
 								</div>
