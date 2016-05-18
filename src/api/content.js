@@ -125,6 +125,36 @@ export function saveProductTrip(data) {
 		});
 }
 
+export function saveProductHotel(data) {
+  var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Hotel_Save;
+  return promiseAjax({
+    url: url,
+    type: 'POST',
+    data: data
+  })
+    .then((res) => {
+      return res;
+    })
+    .catch(() => {
+      return "";
+    });
+}
+
+export function saveProductSight(data) {
+  var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Sight_Save;
+  return promiseAjax({
+    url: url,
+    type: 'POST',
+    data: data
+  })
+    .then((res) => {
+      return res;
+    })
+    .catch(() => {
+      return "";
+    });
+}
+
 export function getPriceByProductID(data) {
 	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Price_GET;
 	return promiseAjax({

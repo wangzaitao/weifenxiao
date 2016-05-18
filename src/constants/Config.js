@@ -9,6 +9,8 @@ export const API = {
 	Product_Basic_Save: 'api/pproduct/edit',
 	Product_Price_Save: 'api/pprice/edit',
 	Product_Trip_Save: 'api/ppdtinfo/trip/update',
+	Product_Hotel_Save: 'api/ppdtinfo/hotel/update',
+	Product_Sight_Save: 'api/ppdtinfo/sight/update',
 	PProduct_GET: 'api/pproduct/getbyid?id={%pid%}',
 	PProductInfo_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
 	Product_Price_GET: 'api/pprice/getbypdtid',
