@@ -17,7 +17,8 @@ class Type extends Component {
       pCategory: [],
       pPrice: [],
       pRoute: [],
-      signUpAheadDaysArr: []
+      signUpAheadDaysArr: [],
+	    pdtID: ""
     };
     moment.locale('zh-cn');
   }
@@ -118,10 +119,15 @@ class Type extends Component {
       $("#Trip_GoTrafficType").val(res.Trip_GoTrafficType);
       $("#Trip_ReturnTrafficType").val(res.Trip_ReturnTrafficType);
       $("#Hotel_Level").val(res.Hotel_Level);
+	    this.state.pdtID = res.ID;
       $("#Hotel_Services").find("input:eq(0)").prop("checked",JSON.parse(res.Hotel_Services)["wify"]);
       $("#Hotel_Services").find("input:eq(1)").prop("checked",JSON.parse(res.Hotel_Services)["免费停车"]);
       $("#Hotel_Services").find("input:eq(2)").prop("checked",JSON.parse(res.Hotel_Services)["早餐供应"]);
       $("#Hotel_Services").find("input:eq(3)").prop("checked",JSON.parse(res.Hotel_Services)["棋牌室"]);
+	    $("#Cars_HiresType").val(res.Cars_HiresType);
+		  $("#Cars_Type").val(res.Cars_Type);
+		  $("#Cars_PersonNum").val(res.Cars_PersonNum);
+		  $("#Cars_Config").val(res.Cars_Config);
 
     });
 
@@ -334,7 +340,7 @@ class Type extends Component {
     };
 
     var data = {
-      //"ID": 1,
+      "ID": this.state.pdtID,
       "PdtID": this.state.pid,
       "PdtType": 2,
       "Hotel_Level": $("#Hotel_Level").val(),
@@ -345,10 +351,24 @@ class Type extends Component {
     });
   }
 
-  _saveSight() {
+	_saveCar(){
+		debugger;
+		var data = {
+			"ID": this.state.pdtID,
+			"PdtID": this.state.pid,
+			"PdtType": 4,
+			"Cars_HiresType": $("#Cars_HiresType").val(),
+			"Cars_Type": $("#Cars_Type").val(),
+			"Cars_PersonNum": $("#Cars_PersonNum").val(),
+			"Cars_Config": $("#Cars_Config").val()
+		}
+		ContentAPI.saveProductCar(data).then((res) => {
 
+		});
+	}
+  _saveSight() {
     ContentAPI.saveProductSight(data).then((res) => {
-      debugger;
+
     });
   }
 
@@ -472,6 +492,27 @@ class Type extends Component {
       });
     }
 
+	  let sightTypeDom = null;
+	  if (GlobalConfig.SIGHTTYPE.length > 0) {
+		  sightTypeDom = GlobalConfig.SIGHTTYPE.map((item, index) => {
+			  return <option value={item.key}>{item.value}</option>;
+		  })
+	  }
+
+	  let carsHiresTypeDom = null;
+	  if (GlobalConfig.CARSHIRESTYPE.length > 0) {
+		  carsHiresTypeDom = GlobalConfig.CARSHIRESTYPE.map((item, index) => {
+			  return <option value={item.key}>{item.value}</option>;
+		  })
+	  }
+
+	  let carsTypeDom = null;
+	  if (GlobalConfig.CARSTYPE.length > 0) {
+		  carsTypeDom = GlobalConfig.CARSTYPE.map((item, index) => {
+			  return <option value={item.key}>{item.value}</option>;
+		  })
+	  }
+
     return (
       <div>
         <div className="row">
@@ -499,7 +540,6 @@ class Type extends Component {
             </li>
             <li><a href="#travel" data-toggle="tab">旅游线路</a></li>
             <li><a href="#hotel" data-toggle="tab">酒店</a></li>
-            <li><a href="#sight" data-toggle="tab">门票</a></li>
             <li><a href="#car" data-toggle="tab">租车</a></li>
           </ul>
           <div id="myTabContent" className="tab-content">
@@ -929,7 +969,7 @@ class Type extends Component {
                   <label for="" className="col-sm-3 control-label">景点类别</label>
                   <div className="col-sm-9">
                     <select className="form-control">
-                      <option value="-1">---请选择---</option>
+	                    {sightTypeDom}
                     </select>
                   </div>
                 </div>
@@ -951,16 +991,16 @@ class Type extends Component {
                 <div className="form-group">
                   <label for="" className="col-sm-3 control-label">租车类别</label>
                   <div className="col-sm-9">
-                    <select className="form-control">
-                      <option value="-1">---请选择---</option>
+                    <select className="form-control" id="Cars_HiresType">
+	                    {carsHiresTypeDom}
                     </select>
                   </div>
                 </div>
                 <div className="form-group">
                   <label for="" className="col-sm-3 control-label">车辆类别</label>
                   <div className="col-sm-9">
-                    <select className="form-control">
-                      <option value="-1">---请选择---</option>
+                    <select className="form-control" id="Cars_Type">
+	                    {carsTypeDom}
                     </select>
                   </div>
                 </div>
@@ -968,19 +1008,19 @@ class Type extends Component {
                   <label className="col-sm-3 control-label">车载人数</label>
                   <div className="col-sm-9">
                     <input type="text" className="form-control"
-                           placeholder="请输入车载人数"/>
+                           placeholder="请输入车载人数" id="Cars_PersonNum"/>
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="col-sm-3 control-label">车载配置</label>
                   <div className="col-sm-9">
                     <input type="text" className="form-control"
-                           placeholder="请输入车载配置"/>
+                           placeholder="请输入车载配置" id="Cars_Config"/>
                   </div>
                 </div>
                 <div className="form-group">
                   <div className="col-sm-offset-2 col-sm-9">
-                    <a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}}>保存</a>
+                    <a type="submit" className="btn btn-primary" style={{ marginRight:"10px"}} onClick={this._saveCar.bind(this)}>保存</a>
                     <a className="btn btn-default">取消</a>
                   </div>
                 </div>

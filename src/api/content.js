@@ -155,6 +155,21 @@ export function saveProductSight(data) {
     });
 }
 
+export function saveProductCar(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Car_Save;
+	return promiseAjax({
+		url: url,
+		type: 'POST',
+		data: data
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return "";
+		});
+}
+
 export function getPriceByProductID(data) {
 	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Price_GET;
 	return promiseAjax({

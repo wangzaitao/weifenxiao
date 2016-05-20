@@ -11,6 +11,7 @@ export const API = {
 	Product_Trip_Save: 'api/ppdtinfo/trip/update',
 	Product_Hotel_Save: 'api/ppdtinfo/hotel/update',
 	Product_Sight_Save: 'api/ppdtinfo/sight/update',
+	Product_Car_Save: 'api/ppdtinfo/car/update',
 	PProduct_GET: 'api/pproduct/getbyid?id={%pid%}',
 	PProductInfo_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
 	Product_Price_GET: 'api/pprice/getbypdtid',
@@ -29,6 +30,26 @@ export const TRAVELTYPE = [
 	{key: 2, value: "豪华大巴"},
 	{key: 3, value: "轮船"},
 	{key: 4, value: "飞机"}
+];
+
+export const SIGHTTYPE = [
+	{key: 1, value: "跟团游"},
+	{key: 2, value: "自驾游"},
+	{key: 3, value: "自助游"}
+];
+
+export const CARSHIRESTYPE = [
+	{key: 1, value: "旅游包车"},
+	{key: 2, value: "商务/会议用车"},
+	{key: 3, value: "机场接送"},
+	{key: 4, value: "包车"}
+];
+
+export const CARSTYPE = [
+	{key: 1, value: "客车"},
+	{key: 2, value: "面包车"},
+	{key: 3, value: "小轿车"},
+	{key: 4, value: "SUV"}
 ];
 
 export const ERROR_CODES = {
