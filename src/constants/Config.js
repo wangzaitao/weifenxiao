@@ -16,7 +16,8 @@ export const API = {
 	PProductInfo_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
 	Product_Price_GET: 'api/pprice/getbypdtid',
 	Product_PPDTINFO_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
-	Product_PROUTE_GET: 'api/proute/getbypdtid?pdtID={%pid%}'
+	Product_PROUTE_GET: 'api/proute/getbypdtid?pdtID={%pid%}',
+	Product_List_GET: 'api/pproduct/getall'
 };
 
 export const JOINTYPE = [

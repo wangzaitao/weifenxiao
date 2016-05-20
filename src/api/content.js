@@ -12,6 +12,19 @@ $.ajaxSettings = $.extend($.ajaxSettings, {
 	timeout: GlobalConfig.API.DEFAULT_TIMEOUT
 });
 
+export function getProductList() {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_List_GET;
+	return promiseAjax({
+		url: url
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
 export function getProductType() {
 	var url = GlobalConfig.API.HOST + GlobalConfig.API.Product_Type_LIST;
 	return promiseAjax({
