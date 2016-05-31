@@ -42,8 +42,7 @@ export const SIGHTTYPE = [
 export const CARSHIRESTYPE = [
 	{key: 1, value: "旅游包车"},
 	{key: 2, value: "商务/会议用车"},
-	{key: 3, value: "机场接送"},
-	{key: 4, value: "包车"}
+	{key: 3, value: "机场接送"}
 ];
 
 export const CARSTYPE = [

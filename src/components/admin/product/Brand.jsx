@@ -21,6 +21,10 @@ class Brand extends Component {
 			tbody: result
 		});
 	}
+
+	componentDidMount(){
+		$(".btn").hide();
+	}
 	
 	render() {
 		var tbdoyDom;

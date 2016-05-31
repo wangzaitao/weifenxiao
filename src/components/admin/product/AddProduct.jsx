@@ -41,7 +41,6 @@ class Type extends Component {
 			});
 		});
 		ContentAPI.getRoute(this.state.pid).then((res)=> {
-			debugger;
 			this.setState({
 				pRoute: res
 			});
@@ -61,12 +60,10 @@ class Type extends Component {
 			msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
 		});
 		$("#input-default").on("fileuploaded", function (event, data, previewid, index) {
-			alert(data.response.msg);
 			this.setState({
 				pdtImgUrl: data.response.msg
 			});
 		}.bind(this));
-		debugger;
 		var pid = this.state.pid;
 		ContentAPI.getProduct(pid).then((res) => {
 			if (res.PdtImgUrl) {
@@ -85,6 +82,25 @@ class Type extends Component {
 				});
 			});
 			$("#CategoryID").val(res.CategoryID);
+			var categoryName = $("#CategoryID").find("option:selected").text();
+			if (categoryName == "周边游" || categoryName == "国内游" || categoryName == "出境游") {
+				$("#li_price").show();
+				$("#li_travel").show();
+				$("#li_hotel").hide();
+				$("#li_car").hide();
+			}
+			else if (categoryName == "酒店") {
+				$("#li_price").show();
+				$("#li_travel").hide();
+				$("#li_hotel").show();
+				$("#li_car").hide();
+			}
+			else if (categoryName == "租车") {
+				$("#li_price").show();
+				$("#li_travel").hide();
+				$("#li_hotel").hide();
+				$("#li_car").show();
+			}
 			$("#PdtBrief").val(res.PdtBrief);
 			$("#PdtDetail").val(res.PdtDetail);
 			$("#RetailPrice").val(res.RetailPrice);
@@ -121,10 +137,12 @@ class Type extends Component {
 			$("#Trip_ReturnTrafficType").val(res.Trip_ReturnTrafficType);
 			$("#Hotel_Level").val(res.Hotel_Level);
 			this.state.pdtID = res.ID;
-			$("#Hotel_Services").find("input:eq(0)").prop("checked", JSON.parse(res.Hotel_Services)["wify"]);
-			$("#Hotel_Services").find("input:eq(1)").prop("checked", JSON.parse(res.Hotel_Services)["免费停车"]);
-			$("#Hotel_Services").find("input:eq(2)").prop("checked", JSON.parse(res.Hotel_Services)["早餐供应"]);
-			$("#Hotel_Services").find("input:eq(3)").prop("checked", JSON.parse(res.Hotel_Services)["棋牌室"]);
+			if (res.Hotel_Services) {
+				$("#Hotel_Services").find("input:eq(0)").prop("checked", JSON.parse(res.Hotel_Services)["wify"]);
+				$("#Hotel_Services").find("input:eq(1)").prop("checked", JSON.parse(res.Hotel_Services)["免费停车"]);
+				$("#Hotel_Services").find("input:eq(2)").prop("checked", JSON.parse(res.Hotel_Services)["早餐供应"]);
+				$("#Hotel_Services").find("input:eq(3)").prop("checked", JSON.parse(res.Hotel_Services)["棋牌室"]);
+			}
 			$("#Cars_HiresType").val(res.Cars_HiresType);
 			$("#Cars_Type").val(res.Cars_Type);
 			$("#Cars_PersonNum").val(res.Cars_PersonNum);
@@ -274,7 +292,7 @@ class Type extends Component {
 			};
 			ContentAPI.saveProductBasic(data).then((res) => {
 				if (res == true) {
-					alert("新增成功");
+					alert("保存成功");
 					browserHistory.push({pathname: '/product'})
 				}
 			});
@@ -303,7 +321,7 @@ class Type extends Component {
 		}
 		if (flag) {
 			ContentAPI.saveProductPrice(JSON.stringify(arr)).then((res) => {
-				debugger;
+				alert("保存成功");
 			});
 		}
 		else {
@@ -333,52 +351,82 @@ class Type extends Component {
 	}
 
 	_saveTrip() {
-		var arr = [];
-		for (var i = 0; i < $("#tbl_Trip tbody").find("tr").length; i++) {
-			var obj = {
-				//"ID": 1,
-				"PdtID": this.state.pid,
-				"RouteType": $("#Trip_Type").val(),
-				"DayTitle": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(1)").find("input").val(),
-				"DayContent": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(2)").find("input").val(),
-				"DayEat": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(3)").find("input").val(),
-				"DayHotel": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(4)").find("input").val(),
-				"DayOrderBy": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(0)").text(),
-				//"ShowDetailContent": "sample string 7",
-				"IsShow": 1
-				//"OrderBy": 64,
-				//"Flag": 64,
-				//"Remark": "sample string 8",
-				//"IsDelete": 64,
-				//"CreatTime": "2016-05-17T23:31:09.8968562+08:00",
-				//"CreatUser": 1,
-				//"ModifyTime": "2016-05-17T23:31:09.8968562+08:00",
-				//"ModifyUser": 1
-			};
-			arr.push(obj);
+		if ($.trim($("#Trip_Type").val()) == "") {
+			alert('线路类型不能为空');
+			return false;
 		}
+		else if ($.trim($("#Trip_JoinType").val()) == "") {
+			alert('参团性质不能为空');
+			return false;
+		}
+		else if ($.trim($("#Trip_Days").val()) == "") {
+			alert('行程天数不能为空');
+			return false;
+		}
+		else if ($.trim($("#Trip_TrafficType").val()) == "") {
+			alert('交通方式不能为空');
+			return false;
+		}
+		else if ($.trim($("#Trip_StartType").val()) == "") {
+			alert('发团方式不能为空');
+			return false;
+		}
+		else if ($.trim($("#Trip_GoTrafficType").val()) == "") {
+			alert('去时交通不能为空');
+			return false;
+		}
+		else if ($.trim($("#Trip_ReturnTrafficType").val()) == "") {
+			alert('回来交通不能为空');
+			return false;
+		}
+		else {
+			var arr = [];
+			for (var i = 0; i < $("#tbl_Trip tbody").find("tr").length; i++) {
+				var obj = {
+					//"ID": 1,
+					"PdtID": this.state.pid,
+					"RouteType": $("#Trip_Type").val(),
+					"DayTitle": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(1)").find("input").val(),
+					"DayContent": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(2)").find("input").val(),
+					"DayEat": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(3)").find("input").val(),
+					"DayHotel": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(4)").find("input").val(),
+					"DayOrderBy": $("#tbl_Trip tbody").find("tr:eq(" + i + ")").children("td:eq(0)").text(),
+					//"ShowDetailContent": "sample string 7",
+					"IsShow": 1
+					//"OrderBy": 64,
+					//"Flag": 64,
+					//"Remark": "sample string 8",
+					//"IsDelete": 64,
+					//"CreatTime": "2016-05-17T23:31:09.8968562+08:00",
+					//"CreatUser": 1,
+					//"ModifyTime": "2016-05-17T23:31:09.8968562+08:00",
+					//"ModifyUser": 1
+				};
+				arr.push(obj);
+			}
 
-		var data = {
-			"routeList": arr,
-			"PdtID": this.state.pid,
-			"PdtType": 1,
-			"Trip_Type": $("#Trip_Type").val(),
-			"Trip_JoinType": $("#Trip_JoinType").val(),
-			"Trip_SignUpAheadDays": $("#Trip_SignUpAheadDays").val(),
-			"Trip_Days": $("#Trip_Days").val(),
-			"Trip_RouteType": $("#Trip_Type").val(),
-			"Trip_StartCity": "武汉",
-			"Trip_StartDate": $("#Trip_StartDate").val(),
-			"Trip_StartType": $("#Trip_StartType").val(),
-			"Trip_GoTrafficType": $("#Trip_GoTrafficType").val(),
-			"Trip_ReturnTrafficType": $("#Trip_ReturnTrafficType").val(),
-			"Trip_TrafficType": $("#Trip_TrafficType").val(),
-			"Trip_TrafficContent": $("#Trip_TrafficContent").val()
-		};
+			var data = {
+				"routeList": arr,
+				"PdtID": this.state.pid,
+				"PdtType": 1,
+				"Trip_Type": $("#Trip_Type").val(),
+				"Trip_JoinType": $("#Trip_JoinType").val(),
+				"Trip_SignUpAheadDays": $("#Trip_SignUpAheadDays").val(),
+				"Trip_Days": $("#Trip_Days").val(),
+				"Trip_RouteType": $("#Trip_Type").val(),
+				"Trip_StartCity": "武汉",
+				"Trip_StartDate": $("#Trip_StartDate").val(),
+				"Trip_StartType": $("#Trip_StartType").val(),
+				"Trip_GoTrafficType": $("#Trip_GoTrafficType").val(),
+				"Trip_ReturnTrafficType": $("#Trip_ReturnTrafficType").val(),
+				"Trip_TrafficType": $("#Trip_TrafficType").val(),
+				"Trip_TrafficContent": $("#Trip_TrafficContent").val()
+			};
 
-		ContentAPI.saveProductTrip(data).then((res) => {
-			debugger;
-		});
+			ContentAPI.saveProductTrip(data).then((res) => {
+				alert("保存成功");
+			});
+		}
 	}
 
 	_saveHotel() {
@@ -397,12 +445,11 @@ class Type extends Component {
 			"Hotel_Services": JSON.stringify(Hotel_ServicesObj)
 		}
 		ContentAPI.saveProductHotel(data).then((res) => {
-			debugger;
+			alert("保存成功");
 		});
 	}
 
 	_saveCar() {
-		debugger;
 		var data = {
 			"ID": this.state.pdtID,
 			"PdtID": this.state.pid,
@@ -413,7 +460,7 @@ class Type extends Component {
 			"Cars_Config": $("#Cars_Config").val()
 		}
 		ContentAPI.saveProductCar(data).then((res) => {
-
+			alert("保存成功");
 		});
 	}
 
@@ -591,14 +638,14 @@ class Type extends Component {
 								基本信息
 							</a>
 						</li>
-						<li>
+						<li id="li_price" style={{display:"none"}}>
 							<a href="#price" data-toggle="tab">
 								产品价格
 							</a>
 						</li>
-						<li><a href="#travel" data-toggle="tab">旅游线路</a></li>
-						<li><a href="#hotel" data-toggle="tab">酒店</a></li>
-						<li><a href="#car" data-toggle="tab">租车</a></li>
+						<li id="li_travel" style={{display:"none"}}><a href="#travel" data-toggle="tab">旅游线路</a></li>
+						<li id="li_hotel" style={{display:"none"}}><a href="#hotel" data-toggle="tab">酒店</a></li>
+						<li id="li_car" style={{display:"none"}}><a href="#car" data-toggle="tab">租车</a></li>
 					</ul>
 					<div id="myTabContent" className="tab-content">
 						<div className="tab-pane fade in active" id="basic">
@@ -875,7 +922,8 @@ class Type extends Component {
 						<div className="tab-pane fade" id="travel">
 							<div className="form-horizontal clearfix" role="form" id="trip">
 								<div className="form-group">
-									<label for="" className="col-sm-3 control-label">线路类型</label>
+									<label for="" className="col-sm-3 control-label">
+										<font className="required">*</font>线路类型</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="Trip_Type">
 											<option value="1">按天编辑</option>
@@ -883,7 +931,7 @@ class Type extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<label for="" className="col-sm-3 control-label">参团性质</label>
+									<label for="" className="col-sm-3 control-label"><font className="required">*</font>参团性质</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="Trip_JoinType">
 											{joinTypeDom}
@@ -898,7 +946,7 @@ class Type extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">行程天数</label>
+									<label className="col-sm-3 control-label"><font className="required">*</font>行程天数</label>
 									<div className="col-sm-9">
 										<input style={{width:"50%"}} type="text" className="form-control" id="Trip_Days"
 										       placeholder="请输入行程天数" onBlur={this._signUpAheadDaysBlur.bind(this)}/>
@@ -916,7 +964,7 @@ class Type extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">交通方式</label>
+									<label className="col-sm-3 control-label"><font className="required">*</font>交通方式</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="Trip_TrafficType">
 											<option value="1">驾车</option>
@@ -931,7 +979,7 @@ class Type extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">发团方式</label>
+									<label className="col-sm-3 control-label"><font className="required">*</font>发团方式</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="Trip_StartType">
 											<option value="0">天天发团</option>
@@ -951,7 +999,7 @@ class Type extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">去时交通</label>
+									<label className="col-sm-3 control-label"><font className="required">*</font>去时交通</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="Trip_GoTrafficType">
 											{travelTypeDom}
@@ -959,7 +1007,7 @@ class Type extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<label className="col-sm-3 control-label">回来交通</label>
+									<label className="col-sm-3 control-label"><font className="required">*</font>回来交通</label>
 									<div className="col-sm-9">
 										<select className="form-control" id="Trip_ReturnTrafficType">
 											{travelTypeDom}

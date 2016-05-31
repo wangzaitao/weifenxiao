@@ -25,6 +25,10 @@ class Category extends Component {
 			});
 		});
 	}
+
+	componentDidMount(){
+		$(".btn").hide();
+	}
 	
 	render() {
 		var typeDom;

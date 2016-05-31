@@ -14,7 +14,6 @@ class Table extends React.Component {
 		$(document).on("click", ".table-click tr", function () {
 			$(".table-click tr").removeClass("current");
 			$(this).addClass("current");
-			alert($(this).find("td:first").text());
 			that.setState({
 				id: $(this).find("td:first").text()
 			});

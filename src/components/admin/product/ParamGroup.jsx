@@ -21,7 +21,11 @@ class ParamGroup extends Component {
 			tbody: result
 		});
 	}
-	
+
+	componentDidMount(){
+		$(".btn").hide();
+	}
+
 	render() {
 		var tbdoyDom;
 		tbdoyDom = this.state.tbody.map((item, index) => {

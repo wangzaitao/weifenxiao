@@ -19,6 +19,9 @@ class Type extends Component {
 			});
 		});
 	}
+	componentDidMount(){
+		$(".btn").hide();
+	}
 
 	render() {
 		var tbdoyDom;
