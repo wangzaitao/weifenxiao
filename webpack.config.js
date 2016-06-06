@@ -12,7 +12,7 @@ const PATHS = {
   app: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
 };
-const ENTRIES = ['admin'];
+const ENTRIES = ['index'];
 
 process.env.BABEL_ENV = TARGET;
 
@@ -52,7 +52,7 @@ var common = {
         include: PATHS.app,
         exclude: /node_modules/
       },
-	    {test: /\.(png|jpg|gif)$/,loader: 'file?name=[name].[ext]?[hash]'},
+	    /*{test: /\.(png|jpg|gif)$/,loader: 'file?name=[name].[ext]?[hash]'},*/
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         loader: 'url?limit=5120&name=img/[hash:8].[name].[ext]',  // return Data URL if smaller than 5k, otherwise use file-loader
@@ -92,7 +92,7 @@ var commonPlugins = [
 // dev
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
-    entry: path.join(PATHS.app, 'admin.jsx'),
+    entry: path.join(PATHS.app, 'all.jsx'),
     output: {
       path: PATHS.build,
       publicPath: '/',
@@ -119,7 +119,7 @@ if (TARGET === 'start' || !TARGET) {
         inject: 'body',
         filename: 'index.html',
         favicon: path.join(__dirname, '/src/img/favicon.ico'),
-        template: path.join(__dirname, '/src/base2.html')
+        template: path.join(__dirname, '/src/base.html')
       }),
       new ExtractTextPlugin('css/[hash:8].[name].css', {
         allChunks: true
@@ -152,13 +152,13 @@ if(TARGET === 'build' || TARGET === 'build_dev' || TARGET === 'stats' || TARGET 
       filename: entry + '.html',
       chunks: [entry, 'common'],
       favicon: path.join(__dirname, '/src/img/favicon.ico'),
-      template: path.join(__dirname, '/src/base2.html')
+      template: path.join(__dirname, '/src/base.html')
     }));
   }
 
   module.exports = merge(common, {
     entry: {
-      admin: path.join(PATHS.app, 'admin.jsx')
+      index: path.join(PATHS.app, 'index.jsx')
     },
     output: {
       path: PATHS.build,

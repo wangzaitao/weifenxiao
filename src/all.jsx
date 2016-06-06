@@ -5,7 +5,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import App from './components/App.jsx';
 import Home from './components/common/Home.jsx';
-import TravelListPosition from './components/travel/TravelListPosition.jsx';
+import TravelList from './components/travel/TravelList.jsx';
+import Travel from './components/travel/Travel.jsx';
+import Target from './components/travel/Target.jsx';
+import HotelList from './components/hotel/HotelList.jsx';
 
 injectTapEventPlugin();
 
@@ -15,8 +18,14 @@ ReactDOM.render(
       <IndexRoute component={Home}/>
     </Route>
 
-	  <Route path="list">
-		  <Route path="travel_list_position" component={TravelListPosition}/>
+	  <Route path="travel">
+		  <Route path="list" component={TravelList}/>
+		  <Route path="show/:id" component={Travel}/>
+		  <Route path="target" component={Target}/>
+	  </Route>
+
+	  <Route path="hotel">
+		  <Route path="list" component={HotelList}/>
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")

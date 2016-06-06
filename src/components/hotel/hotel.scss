@@ -1,0 +1,99 @@
+.hotel-list {
+  background-color: #fff;
+}
+.hotel-info {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  -webkit-border-image: url(data:image/gif;base64,R0lGODlhBQAFAIABAN3d3f///yH5BAEAAAEALAAAAAAFAAUAAAIHhB9pGatnCgA7) 2 stretch;
+  border-image: url(data:image/gif;base64,R0lGODlhBQAFAIABAN3d3f///yH5BAEAAAEALAAAAAAFAAUAAAIHhB9pGatnCgA7) 2 stretch;
+  box-sizing: border-box;
+  height: 109px;
+}
+.clearfix {
+  zoom: 1;
+}
+.hotel-info .img {
+  float: left;
+  height: 108px;
+}
+.hotel-info .img img {
+  width: 108px;
+  height: 108px;
+}
+.hotel-info .info {
+  margin-left: 118px;
+  height: 85px;
+  font-size: 0.857em;
+  color: #999;
+  padding: 11px 10px 11px 0;
+  position: relative;
+}
+.hotel-info .info .price {
+  color: #ff7c70;
+}
+.hotel-info .info .price, .hotel-info .info .no-price {
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
+  color: #999;
+  font-size: 12px;
+}
+.hotel-info .info .price .digit {
+  font-size: 20px;
+}
+
+.hotel-info .info .price .text {
+  font-size: 13px;
+  color: #999;
+}
+.hotel-info .info .name {
+  color: #222;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 20px;
+}
+.hotel-info .info .score-service-price {
+  height: 30px;
+  line-height: 30px;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.hotel-info .info .score-service-price .score {
+  float: left;
+  margin-right: 2px;
+  color: #FE7C32;
+  line-height: 30px;
+  font-size: 14px;
+}
+.score-service-price .hotel-type {
+  float: left;
+  line-height: 30px;
+  margin-left: 4px;
+}
+.score-service-price .service {
+  float: left;
+  overflow: hidden;
+  line-height: 33px;
+  margin-left: 4px;
+}
+.hotel-info .info .type-benifit {
+  margin-bottom: 5px;
+  height: 20px;
+}
+.hotel-info .info .addr-howfar {
+  height: 20px;
+}
+.hotel-info .info .addr-howfar .howfar {
+  float: left;
+  text-align: left;
+}
+.hotel-info .info .addr-howfar .addr {
+  float: left;
+  text-align: right;
+}
+.hotel-info .info .price {
+  color: #ff7c70;
+}

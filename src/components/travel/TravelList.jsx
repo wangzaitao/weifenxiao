@@ -1,34 +1,9 @@
 import React from 'react';
+import TravelNav from './TravelNav';
 
-require('./travelListPosition.scss');
-class TavelNav extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+require('./travel.scss');
 
-	render() {
-		return (
-			<div className="m-header clearfix">
-				<div className="child flex1">
-					<a className="city"></a>
-				</div>
-				<div className="child title">
-					武汉周边游
-				</div>
-				<div className="child m-user">
-					<a href="#" className="tool">
-						<i></i>
-						<i></i>
-						<i></i>
-					</a>
-				</div>
-			</div>
-		);
-	}
-}
-
-
-class TravelListPosition extends React.Component {
+class TravelList extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -38,7 +13,7 @@ class TravelListPosition extends React.Component {
 
 		return (
 			<div className="tlp">
-				<TavelNav />
+				<TravelNav name="武汉周边游" />
 
 				<div className="price">
 					<ul>
@@ -195,7 +170,7 @@ class TravelListPosition extends React.Component {
 	}
 }
 
-export default TravelListPosition;
+export default TravelList;
 
 
 

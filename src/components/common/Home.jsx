@@ -17,18 +17,18 @@ class Home extends React.Component {
 				<section className="travel_type">
 					<ul className="clearfix">
 						<li>
-							<a href="http://m.tuniu.com/wh/abroad" name="出境游">
+							<a href="#" name="出境游">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EFbaR4SIRJh3AAAeDXASbNsAACfSAOvR94AAB4l91_w350_h0_c0_t0.jpeg"/>
 							</a>
 						</li>
 						<li>
-							<a href="http://m.tuniu.com/wh/domestic" name="国内游"> <img
+							<a href="#" name="国内游"> <img
 								src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EFbaR4iIKbptAAAgHchF8X0AACfSAO8qaMAACA160_w350_h0_c0_t0.jpeg"/>
 							</a>
 						</li>
 						<li>
-							<a href="http://m.tuniu.com/wh/around" name="周边游"> <img
+							<a href="#" name="周边游"> <img
 								src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EVbaR4yIfwunAAAe7eNZOWgAACfSAO8ydgAAB8F50_w350_h0_c0_t0.jpeg"/>
 							</a>
 						</li>
