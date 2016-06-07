@@ -9,6 +9,7 @@ import TravelList from './components/travel/TravelList.jsx';
 import Travel from './components/travel/Travel.jsx';
 import Target from './components/travel/Target.jsx';
 import HotelList from './components/hotel/HotelList.jsx';
+import SightList from './components/sight/SightList.jsx';
 
 injectTapEventPlugin();
 
@@ -26,6 +27,10 @@ ReactDOM.render(
 
 	  <Route path="hotel">
 		  <Route path="list" component={HotelList}/>
+	  </Route>
+
+	  <Route path="sight">
+		  <Route path="list" component={SightList}/>
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")
