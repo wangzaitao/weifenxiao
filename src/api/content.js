@@ -1168,6 +1168,20 @@ export function getScrolling(scene_id) {
 		});
 }
 
+/*商城*/
+export function getAllRoute() {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_ROUTE_GETALL;
+	return promiseAjax({
+		url: url
+	})
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
 
 
 

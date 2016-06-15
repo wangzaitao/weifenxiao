@@ -2,22 +2,23 @@ import * as I18N from '../utils/i18n';
 
 export const API = {
 	DEFAULT_TIMEOUT: 8000,
-	HOST: process.env.NODE_ENV == 'production' ? 'http://139.196.39.83:8848/' : 'http://139.196.39.83:8848/',
-	Product_Type_LIST: 'api/ptype/getall',
-	Product_Category_LIST: 'api/pcategory/getall',
-	Product_Category_ByTypeID: 'api/pcategory/getbytypeid',
-	Product_Basic_Save: 'api/pproduct/edit',
-	Product_Price_Save: 'api/pprice/edit',
-	Product_Trip_Save: 'api/ppdtinfo/trip/update',
-	Product_Hotel_Save: 'api/ppdtinfo/hotel/update',
-	Product_Sight_Save: 'api/ppdtinfo/sight/update',
-	Product_Car_Save: 'api/ppdtinfo/car/update',
-	PProduct_GET: 'api/pproduct/getbyid?id={%pid%}',
-	PProductInfo_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
-	Product_Price_GET: 'api/pprice/getbypdtid',
-	Product_PPDTINFO_GET: 'api/ppdtinfo/getbypdtid?pdtID={%pid%}',
-	Product_PROUTE_GET: 'api/proute/getbypdtid?pdtID={%pid%}',
-	Product_List_GET: 'api/pproduct/getall'
+	HOST: process.env.NODE_ENV == 'production' ? 'http://139.196.39.83:8848' : 'http://139.196.39.83:8848',
+	Product_Type_LIST: '/api/ptype/getall',
+	Product_Category_LIST: '/api/pcategory/getall',
+	Product_Category_ByTypeID: '/api/pcategory/getbytypeid',
+	Product_Basic_Save: '/api/pproduct/edit',
+	Product_Price_Save: '/api/pprice/edit',
+	Product_Trip_Save: '/api/ppdtinfo/trip/update',
+	Product_Hotel_Save: '/api/ppdtinfo/hotel/update',
+	Product_Sight_Save: '/api/ppdtinfo/sight/update',
+	Product_Car_Save: '/api/ppdtinfo/car/update',
+	PProduct_GET: '/api/pproduct/getbyid?id={%pid%}',
+	PProductInfo_GET: '/api/ppdtinfo/getbypdtid?pdtID={%pid%}',
+	Product_Price_GET: '/api/pprice/getbypdtid',
+	Product_PPDTINFO_GET: '/api/ppdtinfo/getbypdtid?pdtID={%pid%}',
+	Product_PROUTE_GET: '/api/proute/getbypdtid?pdtID={%pid%}',
+	Product_List_GET: '/api/pproduct/getall',
+	SC_ROUTE_GETALL: '/api/trips/getall'
 };
 
 export const JOINTYPE = [
