@@ -1182,6 +1182,95 @@ export function getAllRoute() {
 		});
 }
 
+export function getAllRouteTj(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_ROUTE_GETALL_TJ;
+	return promiseAjax({
+		url: url,
+		data: data,
+		type: 'POST'
+	})
+		.then((res) => {
+			return res.Result.data;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getRouteById(id) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_ROUTE_GETBYID.replace('{%id%}', id);
+	return promiseAjax({
+		url: url,
+		type: 'GET',
+		async: false
+	})
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return {};
+		});
+}
+
+export function getAllHotelTj(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_HOTEL_GETALL_TJ;
+	return promiseAjax({
+		url: url,
+		data: data,
+		type: 'POST'
+	})
+		.then((res) => {
+			return res.Result.data;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getHotelById(id) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_HOTEL_GETBYID.replace('{%id%}', id);
+	return promiseAjax({
+		url: url,
+		type: 'GET',
+		async: false
+	})
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return {};
+		});
+}
+
+export function getAllSightTj(data) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_SIGHT_GETALL_TJ;
+	return promiseAjax({
+		url: url,
+		data: data,
+		type: 'POST'
+	})
+		.then((res) => {
+			return res.Result.data;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getSightById(id) {
+	var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_SIGHT_GETBYID.replace('{%id%}', id);
+	return promiseAjax({
+		url: url,
+		type: 'GET',
+		async: false
+	})
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return {};
+		});
+}
 
 
 

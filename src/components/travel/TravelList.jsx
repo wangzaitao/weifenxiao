@@ -1,6 +1,7 @@
 import React from 'react';
 import TravelNav from './TravelNav';
 import * as ContentAPI from './../../api/content';
+import CustomLink from './../common/CustomLink.jsx';
 
 require('./travel.scss');
 
@@ -8,12 +9,37 @@ class TravelList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			routeList:[]
+			routeList: []
 		};
 	}
 
 	componentWillMount() {
-		ContentAPI.getAllRoute().then((res) => {
+		var data = {
+			isDesc: true
+		};
+		ContentAPI.getAllRouteTj(data).then((res) => {
+			this.setState({
+				routeList: res
+			});
+		});
+	}
+
+	_lowToHigh() {
+		var data = {
+			orderprice: "desc"
+		};
+		ContentAPI.getAllRouteTj(data).then((res) => {
+			this.setState({
+				routeList: res
+			});
+		});
+	}
+
+	_highToLow() {
+		var data = {
+			orderprice: ""
+		};
+		ContentAPI.getAllRouteTj(data).then((res) => {
 			this.setState({
 				routeList: res
 			});
@@ -27,33 +53,29 @@ class TravelList extends React.Component {
 		routeListDom = this.state.routeList.map((item, index) => {
 			return (
 				<li>
-					<a href="#">
+					<CustomLink to={"/travel/show/"+item.id}>
 						<div className="contentPic">
-							<img src={"http://www.668lyzx.com"+item.litpic} />
+							<img src={"http://www.668lyzx.com"+item.litpic}/>
 						</div>
 						<div className="contentText">
 							<p>{item.title}</p>
-							<div className="contZl">
-								<em>跟团游</em> <em>本地游</em>
-							</div>
-							<span className="contZl">{item.lineday}天{item.linenight}晚</span>
-							<span className="contZl" style={{paddingLeft:"1em",paddingRight:"1em"}}> | </span>
-							<span className="contZl">往返：{item.transport}</span>
+							<span className="contZl">{item.lineday}日游</span>
+							<span className="contZl" style={{paddingLeft:"1em",paddingRight:"1em"}}></span>
 							<div className="contentPrice"> ￥<font>{item.storeprice}</font>起</div>
 						</div>
-					</a>
+					</CustomLink>
 				</li>
 			);
 		});
 
 		return (
 			<div className="tlp">
-				<TravelNav name="武汉周边游" />
+				<TravelNav name="武汉周边游"/>
 
 				<div className="price">
 					<ul>
-						<li><a>价格从低到高</a></li>
-						<li><a>价格从高到低</a></li>
+						<li><a onClick={this._lowToHigh.bind(this)}>价格从低到高</a></li>
+						<li><a onClick={this._highToLow.bind(this)}>价格从高到低</a></li>
 					</ul>
 				</div>
 

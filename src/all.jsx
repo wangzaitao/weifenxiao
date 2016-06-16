@@ -8,6 +8,7 @@ import Home from './components/common/Home.jsx';
 import TravelList from './components/travel/TravelList.jsx';
 import Travel from './components/travel/Travel.jsx';
 import Target from './components/travel/Target.jsx';
+import TravelContentList from './components/travel/TravelContentList.jsx';
 import HotelList from './components/hotel/HotelList.jsx';
 import Hotel from './components/hotel/Hotel.jsx';
 import SightList from './components/sight/SightList.jsx';
@@ -24,6 +25,7 @@ ReactDOM.render(
 	  <Route path="travel">
 		  <Route path="list" component={TravelList}/>
 		  <Route path="show/:id" component={Travel}/>
+		  <Route path="show/:id/content_list" component={TravelContentList}/>
 		  <Route path="target" component={Target}/>
 	  </Route>
 

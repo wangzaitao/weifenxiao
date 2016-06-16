@@ -18,7 +18,13 @@ export const API = {
 	Product_PPDTINFO_GET: '/api/ppdtinfo/getbypdtid?pdtID={%pid%}',
 	Product_PROUTE_GET: '/api/proute/getbypdtid?pdtID={%pid%}',
 	Product_List_GET: '/api/pproduct/getall',
-	SC_ROUTE_GETALL: '/api/trips/getall'
+	SC_ROUTE_GETALL: '/api/trips/getall',
+	SC_ROUTE_GETALL_TJ: '/api/trips/postpage',
+	SC_ROUTE_GETBYID: '/api/trips/getbyid/{%id%}',
+	SC_HOTEL_GETALL_TJ: '/api/hotel/postpage',
+	SC_HOTEL_GETBYID: '/api/hotel/getbyid/{%id%}',
+	SC_SIGHT_GETALL_TJ: '/api/sight/postpage',
+	SC_SIGHT_GETBYID: '/api/sight/getbyid/{%id%}',
 };
 
 export const JOINTYPE = [

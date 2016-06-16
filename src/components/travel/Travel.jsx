@@ -1,11 +1,26 @@
 import React from 'react';
 import TravelNav from './TravelNav';
+import * as ContentAPI from './../../api/content';
+import CustomLink from './../common/CustomLink.jsx';
 
 require('./travel.scss');
 
 class Travel extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			id : this.props.params.id,
+			obj: {}
+		};
+	}
+
+	componentWillMount() {
+		var id = this.props.params.id;
+		ContentAPI.getRouteById(id).then((res) => {
+			this.setState({
+				obj: res
+			});
+		});
 	}
 	
 	render() {
@@ -18,12 +33,12 @@ class Travel extends React.Component {
 					<a>
 						<img src="http://c.cncnimg.cn/039/602/adda_m.jpg"/>
 					</a>
-					<p>武汉市内精华一日游</p>
+					<p>{this.state.obj.Info ? this.state.obj.Info.title : ""}</p>
 				</div>
 				
 				<div className="lineTopTxt bBor">
-					<money className="corRed">￥<span>176</span><em className="cor666">起</em></money>
-					<not className="ml15">￥200</not>
+					<money className="corRed">￥<span>{this.state.obj.Info ? this.state.obj.Info.storeprice : ""}</span><em
+						className="cor666">起</em></money>
 					<span className="btn_a1">起价说明</span>
 					<p className="cor666">
 						<i className="iconGPS"></i>
@@ -75,13 +90,15 @@ class Travel extends React.Component {
 				</div>
 				<ul className="twoCorList min bBor">
 					<li><label>行程天数:</label>
-						<div className="r">1天</div>
+						<div className="r">{this.state.obj.ContentList ? this.state.obj.ContentList.length : "xx"}天</div>
 					</li>
 				</ul>
-				<a className="moreRight bBor j_conlist_an pl17">
+				<CustomLink state={{"ContentList": this.state.obj.ContentList ? this.state.obj.ContentList:{}}}
+				            to={"/travel/show/"+ this.state.id +"/content_list"}
+				            className="moreRight bBor j_conlist_an pl17">
 					查看行程详情
 					<i className="iconRight2 fr mr10"></i>
-				</a>
+				</CustomLink>
 				<div className="titGreen btBor mt10">
 					<i className="ml"></i>
 					预订须知
@@ -101,11 +118,11 @@ class Travel extends React.Component {
 					<div className="showMore j_showMore"><span>查看更多</span> <i className="iconDown"></i></div>
 				</div>
 			</div>
-	);
+		);
 	}
-	}
+}
 
-	export default Travel;
+export default Travel;
 
 
 

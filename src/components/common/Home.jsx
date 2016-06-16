@@ -14,7 +14,10 @@ class Home extends React.Component {
 	}
 
 	componentWillMount() {
-		ContentAPI.getAllRoute().then((res) => {
+		var data = {
+			isDesc: true
+		};
+		ContentAPI.getAllRouteTj(data).then((res) => {
 			this.setState({
 				routeList: res
 			});
@@ -38,12 +41,8 @@ class Home extends React.Component {
 						</div>
 						<div className="contentText">
 							<p>{item.title}</p>
-							<div className="contZl">
-								<em>跟团游</em> <em>本地游</em>
-							</div>
-							<span className="contZl">{item.lineday}天{item.linenight}晚</span>
-							<span className="contZl" style={{paddingLeft:"1em",paddingRight:"1em"}}> | </span>
-							<span className="contZl">往返：{item.transport}</span>
+							<span className="contZl">{item.lineday}日游</span>
+							<span className="contZl" style={{paddingLeft:"1em",paddingRight:"1em"}}></span>
 							<div className="contentPrice"> ￥<font>{item.storeprice}</font>起</div>
 						</div>
 					</a>
