@@ -14,6 +14,8 @@ import Hotel from './components/hotel/Hotel.jsx';
 import SightList from './components/sight/SightList.jsx';
 import Sight from './components/sight/Sight.jsx';
 
+import User from './components/user/User.jsx';
+
 injectTapEventPlugin();
 
 ReactDOM.render(
@@ -37,6 +39,10 @@ ReactDOM.render(
 	  <Route path="sight">
 		  <Route path="list" component={SightList}/>
 			<Route path="show/:id" component={Sight}/>
+	  </Route>
+
+	  <Route path="user">
+		  <IndexRoute component={User}/>
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")
