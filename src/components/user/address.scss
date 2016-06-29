@@ -4,222 +4,294 @@ ul, li {
   list-style: none
 }
 
-.g-purchase-title {
-  h3 {
-    height: 56px;
-    line-height: 56px;
-  }
-  span {
-    font-size: 18px;
-    margin-left: 30px;
-  }
+.my-address {
+  background-color: #f8f8f8;
 }
 
-.win-Account-wrapper {
-  width: 938px;
-  min-height: 734px;
-  border: 1px solid $borderColor;
+.my-address .content {
+  border: none !important;
 }
 
-.add-wrap {
-  min-height: 80px;
-  .empty {
-    text-align: center;
-    margin: 50px auto;
-    div {
-      color: #999;
-      padding-top: 4px;
-    }
-  }
-
-  .u-name {
-    width: 114px;
-  }
-
-  .u-tel {
-    width: 152px;
-  }
-
-  .u-address {
-    width: 320px;
-    padding-right: 18px;
-  }
-
-  .u-code {
-    width: 80px;
-  }
-
-  .u-option {
-    width: 72px;
-    text-align: center;
-  }
-
-  .u-set {
-    width: 142px;
-  }
-
-  .new-add-btn {
-    display: block;
-    width: 126px;
-    height: 31px;
-    background-color: $red;
-    color: #fff;
-    margin: 30px 0 0 28px;
-    line-height: 31px;
-    text-align: center;
-    border-radius: 2px;
-    font-size: 14px;
-  }
-
+.my-address .content .head {
+  display: flex;
+  background-color: #FFF;
 }
 
-.data-menu {
-  height: 33px;
-  line-height: 33px;
+.my-address .content .head div {
+  flex: 1;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 15px;
+  color: #999;
+  text-align: center;
+}
+
+.my-address .content .head div.sel {
+  color: #ff302d;
+  border-bottom: 1px solid #ff302d;
+}
+
+.my-address .content .body .item {
+  background-color: #fff;
+  margin-bottom: 6px;
+}
+
+.my-address .content .body .item .addr {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 22px 13px;
+}
+
+.my-address .img-arrow {
+  background-image: url(./../../img/users/ic_arrow.png);
+  display: inline-block;
+  width: 7px;
+  height: 12px;
+  background-size: 7px 12px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .img-default-addr {
+  background-image: url(./../../img/users/ic_checkbox_selected.png);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .img-uncheck-addr {
+  background-image: url(./../../img/users/uncheck.png);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .img-edit {
+  background-image: url(./../../img/users/ic_edit.png);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .img-delete {
+  background-image: url(./../../img/users/ic_delete.png);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .empty {
+  padding-top: 10.000em;
+  text-align: center;
+  background-color: #fff;
+}
+
+.my-address .empty img {
+  text-align: center;
+  margin: 0 auto;
+  width: 3.571em;
+  height: 4.429em;
+}
+
+.my-address .empty .info {
+  color: #999;
+  font-size: 1.071em;
+  text-align: center;
+  margin-top: 1.072em;
+  margin-bottom: 1.428em;
+}
+
+.my-address .empty a.award {
+  text-align: center;
+  display: inline-block;
+  border-radius: 6px;
+  background: #ff302d;
+  font-size: 1.214em;
+  color: #fff !important;
+  padding: 0.571em 1.571em;
+}
+
+.my-address .img-dialog-receipt {
+  background-image: url(./../../img/users/ic_address.png);
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .img-dialog-telephone {
+  background-image: url(./../../img/users/ic_phone.png);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .img-dialog-qq {
+  background-image: url(./../../img/users/ic_qq.png);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.my-address .dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  -webkit-transform: translate3d(0, 0, 1px);
+  -moz-transform: translate3d(0, 0, 1px);
+  -ms-transform: translate3d(0, 0, 1px);
+  -o-transform: translate3d(0, 0, 1px);
+  transform: translate3d(0, 0, 1px);
+}
+
+.my-address .dialog-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.my-address .dialog-content p {
+  width: 10.714em;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1.071em;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+.my-address-add {
+  color: #999;
+  background-color: #fff !important;
+}
+
+.my-address-add .text {
+  padding: 1.429em 1.143em;
+  line-height: 1.429em;
+  color: #333;
+}
+
+.address-red {
+  color: #ff302d;
+}
+
+.my-address-add .row {
+  background-color: #fff;
+  padding: 1.143em;
+  border-top: 1px solid #e5e5e5;
+}
+
+.my-address .btn {
+  width: 90%;
+  padding-top: 0.714em;
+  padding-bottom: 0.714em;
+  line-height: 24px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3px;
+  background: #ff402d;
+  font-size: 1em;
+  color: #fff !important;
+}
+
+.my-address-add .head {
+  background-color: #fff;
+  color: #333;
+  padding: 1.429em !important;
+  position: relative;
+  text-align: right;
+}
+
+.my-address .dialog-body {
+  background-color: #fff;
+  color: #333;
+  padding: 1em 1em 4em 1em;
+}
+
+.my-address .dialog-body select {
+  margin-right: 1em;
+}
+
+.my-address .close-btn {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 3.2em;
+  height: 3.2em;
+  /*background: url(../../img/discovery/dailyturntable/btn_rule_close.png) no-repeat center center;*/
+  -webkit-background-size: 25px auto;
+  -moz-background-size: 25px auto;
+  background-size: 25px auto;
+}
+
+.my-address .link-info {
+  color: #999;
+  margin-right: 1em;
+}
+
+.my-address .tbl_addr {
+  color: #fff;
+  border-left: 1px solid #fff;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.my-address .tbl_addr td, .my-address .tbl_addr th {
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  font-size: 1em;
+  text-align: center;
+  padding: 0.429em;
+}
+
+.my-address .tbl_addr th {
   background-color: #f2f2f2;
   color: #bbb;
-  font-size: 12px;
-  padding-left: 20px;
-  border-top: 1px solid $borderColor;
-  border-bottom: 1px solid #eee;
-  span {
-    display: block;
-    float: left;
-    height: 33px;
-  }
+  font-weight: normal;
 }
 
-.add-list li {
-  padding-left: 20px;
-  height: 42px;
-  line-height: 42px;
-  border-bottom: 1px solid #f0f0f0;
-  color: #666;
-  font-size: 14px;
-  span {
-    display: block;
-    float: left;
-    height: 42px;
-    word-break: break-all;
-    position: relative;
-    overflow: hidden;
-    b {
-      padding: 0 15px;
-      height: 22px;
-      line-height: 22px;
-      font-size: 12px;
-      margin-top: 10px;
-      float: right;
-      cursor: pointer;
-      border-radius: 16px;
-      font-weight: normal;
-    }
-  }
-  .op-tail {
-    color: #2af;
-    padding-left: 5px;
-  }
-  .is-normal {
-    color: #69c736;
-    background-color: #e2ffc4;
-    cursor: default;
-  }
-  .set-normal {
-    color: #ff9d5c;
-    background-color: #ffebc1;
-    _display: inline;
-  }
+.my-address .tbl_addr td {
+  color:#666;
+  background-color: #fff;
 }
 
-.new-add-wrap {
-  width: 870px;
-  margin: 20px auto 0;
-  background-color: #fcfcfc;
-  border: 1px solid #f0f0f0;
-  padding: 16px 14px;
-  .btn {
-    font-size: 14px;
-    color: #fff;
-    background-color: #22aaff;
-    display: inline-block;
-    padding: 5px 44px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  .btn_cancel {
-    font-size: 14px;
-    border: 1px solid $borderColor;
-    color: #999;
-    display: inline-block;
-    padding: 5px 44px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  h3 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0 0 16px 4px;
-  }
-  .error {
-    padding-left: 18px;
-    background: none !important;
-    font-size: 14px;
-    margin-top: 5px;
-    color: $red;
-  }
-  .required {
-    color: $red;
-  }
-  .form-row {
-    margin-top: 10px;
-  }
-  .form-label {
-    float: left;
-    width: 74px;
-    height: 30px;
-    font-size: 14px;
-    color: #999;
-    text-align: right;
-    span:first-child {
-      float: left;
-      margin-left: 3px;
-    }
-    span:nth-child(2) {
-      float: left;
-      margin-left: 8px;
-    }
-    span:nth-child(3) {
-      float: right;
-    }
-  }
-  .form-text {
-    float: left;
-    margin-left: 12px;
-    color: #999;
-  }
-  select {
-    width: 130px;
-    height: 30px;
-    margin-right: 10px;
-    font-size: 14px;
-    border: 1px solid $borderColor;
-  }
-  input {
-    height: 30px;
-    width: 152px;
-    margin-right: 10px;
-    font-size: 14px;
-    padding: 0 8px;
-    border: 1px solid $borderColor;
-  }
-  input[type='checkbox'] {
-    vertical-align: middle;
-    margin-right: 4px;
-    width: 13px;
-  }
-  span.info {
-    font-size: 14px;
-    color: #999;
-    margin-left: 6px;
-  }
+.my-address .tbl_addr a.red {
+  width: 60px;
+  height: 26px;
+  line-height: 24px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3px;
+  background: #ff402d;
+  font-size: 1em;
+  color: #fff !important;
 }

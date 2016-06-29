@@ -1272,5 +1272,157 @@ export function getSightById(id) {
 		});
 }
 
+export function getProvince(data) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET'
+	};
+	ajaxData.url = GlobalConfig.API.HOST + GlobalConfig.API.GET_PROVINCE;
+	ajaxData.data = data;
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getCity(provid) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET'
+	};
+	ajaxData.url = GlobalConfig.API.HOST + GlobalConfig.API.GET_CITY.replace('{%provid%}', provid);
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getCounty(cityid) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET'
+	};
+	ajaxData.url = GlobalConfig.API.HOST + GlobalConfig.API.GET_COUNTY.replace('{%cityid%}', cityid);
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function addReceipts(data) {
+	var cpromise;
+	var ajaxData = {
+		type: 'POST',
+		url: GlobalConfig.API.HOST + GlobalConfig.API.Add_Receipt,
+		headers: {
+			'X-AUTH-USER': Auth.getUserID(),
+			'X-AUTH-TOKEN': Auth.getToken()
+		}
+	};
+	ajaxData.data = data;
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.status === 0 ? {id: res.data.id} : {id: -1};
+		})
+		.catch(() => {
+			return {id: -1};
+		});
+}
+
+export function modifyReceipts(addressId, data) {
+	var modifyReceiptsURL = (GlobalConfig.API.HOST + GlobalConfig.API.MODIFY_RECEIPT).replace('{%address_id%}', addressId);
+	var cpromise;
+	var ajaxData = {
+		type: 'POST',
+		url: modifyReceiptsURL+ "?rd="+Math.random(),
+		data: data,
+		headers: {
+			'X-AUTH-USER': Auth.getUserID(),
+			'X-AUTH-TOKEN': Auth.getToken()
+		}
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.status === 0 ? res.data : {};
+		})
+		.catch(() => {
+			return {};
+		});
+}
+
+export function deleteReceipts(addressId) {
+	var deleteReceiptsURL = (GlobalConfig.API.HOST + GlobalConfig.API.DELETE_RECEIPT).replace('{%address_id%}', addressId);
+	var cpromise;
+	var ajaxData = {
+		type: 'POST',
+		url: deleteReceiptsURL+ "?rd="+Math.random(),
+		headers: {
+			'X-AUTH-USER': Auth.getUserID(),
+			'X-AUTH-TOKEN': Auth.getToken()
+		}
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.status === 0 ? res.data : {};
+		})
+		.catch(() => {
+			return {};
+		});
+}
 
 
+export function getReceipts(data) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET',
+		url: GlobalConfig.API.HOST + GlobalConfig.API.GET_RECEIPT+ "?rd="+Math.random(),
+		data: data,
+	/*	headers: {
+			'X-AUTH-USER': Auth.getUserID(),
+			'X-AUTH-TOKEN': Auth.getToken()
+		}*/
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return [];
+		});
+}
+
+export function getFenxiao(mid,thirdfrom) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET',
+		url: (GlobalConfig.API.HOST + GlobalConfig.API.GET_FENXIAO).replace('{%mid%}', mid).replace('{%thirdfrom%}', thirdfrom),
+		/*	headers: {
+		 'X-AUTH-USER': Auth.getUserID(),
+		 'X-AUTH-TOKEN': Auth.getToken()
+		 }*/
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return {};
+		});
+}

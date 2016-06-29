@@ -16,6 +16,8 @@ import Sight from './components/sight/Sight.jsx';
 
 import User from './components/user/User.jsx';
 import Address from './components/user/Address.jsx';
+import AddAddress from './components/user/AddAddress.jsx';
+import Fenxiao from './components/user/Fenxiao.jsx';
 
 injectTapEventPlugin();
 
@@ -45,6 +47,8 @@ ReactDOM.render(
 	  <Route path="user">
 		  <IndexRoute component={User}/>
 		  <Route path="address" component={Address}/>
+			<Route path="add_address" component={AddAddress} />
+			<Route path="fenxiao" component={Fenxiao} />
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")
