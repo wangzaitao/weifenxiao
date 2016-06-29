@@ -15,6 +15,7 @@ import SightList from './components/sight/SightList.jsx';
 import Sight from './components/sight/Sight.jsx';
 
 import User from './components/user/User.jsx';
+import Address from './components/user/Address.jsx';
 
 injectTapEventPlugin();
 
@@ -43,6 +44,7 @@ ReactDOM.render(
 
 	  <Route path="user">
 		  <IndexRoute component={User}/>
+		  <Route path="address" component={Address}/>
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")

@@ -1,0 +1,35 @@
+@import "../../scss/variables";
+
+.dialog-head{
+  height: 20px;
+  color: #666;
+}
+.dialog-body{
+  padding: 5px 70px 25px 70px;
+  font-size: $normalSize;
+  color: $darkGray;
+}
+.dialog-foot{
+  text-align: center;
+  .btn{
+    height: 33px;
+    line-height: 33px;
+    padding: 0 27px;
+    font-size: $normalSize;
+    border-radius: 2px;
+    margin: 8px;
+    &:focus{
+      outline: 0;
+    }
+  }
+}
+.default-dialog-cancel{
+  border: 1px solid $borderColor;
+  color: $lightGray;
+  background: $white;
+}
+.default-dialog-ok{
+  border: 1px solid $red;
+  background: $red;
+  color: $white;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Toast from '../components/base/Toast';
+import Toast from '../components/common/Toast';
 
 export function toast(msg, type, timeout, callback) {
 	let data = {msg: msg, type: type};
@@ -15,4 +15,5 @@ export function toast(msg, type, timeout, callback) {
 	if (callback && $.isFunction(callback)) data['callback'] = callback;
 	ReactDOM.render(<Toast {...data} />, document.getElementById('toast-wrapper'));
 } 
+
 

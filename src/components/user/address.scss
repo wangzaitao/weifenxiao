@@ -1,0 +1,225 @@
+@import "../../scss/variables";
+
+ul, li {
+  list-style: none
+}
+
+.g-purchase-title {
+  h3 {
+    height: 56px;
+    line-height: 56px;
+  }
+  span {
+    font-size: 18px;
+    margin-left: 30px;
+  }
+}
+
+.win-Account-wrapper {
+  width: 938px;
+  min-height: 734px;
+  border: 1px solid $borderColor;
+}
+
+.add-wrap {
+  min-height: 80px;
+  .empty {
+    text-align: center;
+    margin: 50px auto;
+    div {
+      color: #999;
+      padding-top: 4px;
+    }
+  }
+
+  .u-name {
+    width: 114px;
+  }
+
+  .u-tel {
+    width: 152px;
+  }
+
+  .u-address {
+    width: 320px;
+    padding-right: 18px;
+  }
+
+  .u-code {
+    width: 80px;
+  }
+
+  .u-option {
+    width: 72px;
+    text-align: center;
+  }
+
+  .u-set {
+    width: 142px;
+  }
+
+  .new-add-btn {
+    display: block;
+    width: 126px;
+    height: 31px;
+    background-color: $red;
+    color: #fff;
+    margin: 30px 0 0 28px;
+    line-height: 31px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 14px;
+  }
+
+}
+
+.data-menu {
+  height: 33px;
+  line-height: 33px;
+  background-color: #f2f2f2;
+  color: #bbb;
+  font-size: 12px;
+  padding-left: 20px;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid #eee;
+  span {
+    display: block;
+    float: left;
+    height: 33px;
+  }
+}
+
+.add-list li {
+  padding-left: 20px;
+  height: 42px;
+  line-height: 42px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+  font-size: 14px;
+  span {
+    display: block;
+    float: left;
+    height: 42px;
+    word-break: break-all;
+    position: relative;
+    overflow: hidden;
+    b {
+      padding: 0 15px;
+      height: 22px;
+      line-height: 22px;
+      font-size: 12px;
+      margin-top: 10px;
+      float: right;
+      cursor: pointer;
+      border-radius: 16px;
+      font-weight: normal;
+    }
+  }
+  .op-tail {
+    color: #2af;
+    padding-left: 5px;
+  }
+  .is-normal {
+    color: #69c736;
+    background-color: #e2ffc4;
+    cursor: default;
+  }
+  .set-normal {
+    color: #ff9d5c;
+    background-color: #ffebc1;
+    _display: inline;
+  }
+}
+
+.new-add-wrap {
+  width: 870px;
+  margin: 20px auto 0;
+  background-color: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  padding: 16px 14px;
+  .btn {
+    font-size: 14px;
+    color: #fff;
+    background-color: #22aaff;
+    display: inline-block;
+    padding: 5px 44px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  .btn_cancel {
+    font-size: 14px;
+    border: 1px solid $borderColor;
+    color: #999;
+    display: inline-block;
+    padding: 5px 44px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 16px 4px;
+  }
+  .error {
+    padding-left: 18px;
+    background: none !important;
+    font-size: 14px;
+    margin-top: 5px;
+    color: $red;
+  }
+  .required {
+    color: $red;
+  }
+  .form-row {
+    margin-top: 10px;
+  }
+  .form-label {
+    float: left;
+    width: 74px;
+    height: 30px;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    span:first-child {
+      float: left;
+      margin-left: 3px;
+    }
+    span:nth-child(2) {
+      float: left;
+      margin-left: 8px;
+    }
+    span:nth-child(3) {
+      float: right;
+    }
+  }
+  .form-text {
+    float: left;
+    margin-left: 12px;
+    color: #999;
+  }
+  select {
+    width: 130px;
+    height: 30px;
+    margin-right: 10px;
+    font-size: 14px;
+    border: 1px solid $borderColor;
+  }
+  input {
+    height: 30px;
+    width: 152px;
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 0 8px;
+    border: 1px solid $borderColor;
+  }
+  input[type='checkbox'] {
+    vertical-align: middle;
+    margin-right: 4px;
+    width: 13px;
+  }
+  span.info {
+    font-size: 14px;
+    color: #999;
+    margin-left: 6px;
+  }
+}

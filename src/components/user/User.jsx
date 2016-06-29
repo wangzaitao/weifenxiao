@@ -50,9 +50,10 @@ class User extends React.Component {
     var avatarStyles = {width: '3.75em', borderRadius: '50%', display: 'inline-block', float: 'left'},
         links = [
           {url: 'empty_driver'},
-          {url: '/user/my_activity_record', icon: 'buy_history', title: '夺宝记录'},
-          {url: '/user/my_charge_record', icon: 'recharge_record', title: '充值记录'},
-          {url: 'empty_driver'}
+          {url: '/user/fenxiao', icon: 'recharge_record', title: '我的分销'},
+	        {url: '/user/address', icon: 'buy_history', title: '地址管理'},
+	        {url: '/user/address', icon: 'buy_history', title: '个人信息'},
+	        {url: 'empty_driver'}
         ];
     var linkItems = links.map(function (item, index) {
       return <UserLinkItem {...item} key={index}/>
@@ -67,14 +68,14 @@ class User extends React.Component {
               <p>{'ID：' + this.state.userId}</p>
             </div>
             <div className="fr inline-block mt16" style={{position: 'absolute', right: '0.8em'}}>
-              <i className="ico ico-user_qrcode mr5"/>
+              <i className="ico ico-user_qrcode" style={{marginRight:"1em"}}></i>
               <i className="ico ico-icon_arrow_white_right"/>
             </div>
           </div>
         </CustomLink>
         <div className="user-amount">
-          <p className="inline-block">余额： <span style={{color: '#fbd41f'}}>{ this.state.balance || 0 }</span> 夺宝币</p>
-          <CustomLink to="/user/charge" className="fr charge-btn"><div>充值</div></CustomLink>
+          <p className="inline-block">余额： <span style={{color: '#fbd41f'}}>{ this.state.balance || 0 }</span> 元</p>
+          <CustomLink to="/user/charge" className="fr charge-btn"><div>充值(暂不开放)</div></CustomLink>
         </div>
         <ul>{linkItems}</ul>
       </div>
