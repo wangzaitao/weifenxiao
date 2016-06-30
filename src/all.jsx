@@ -18,6 +18,7 @@ import User from './components/user/User.jsx';
 import Address from './components/user/Address.jsx';
 import AddAddress from './components/user/AddAddress.jsx';
 import Fenxiao from './components/user/Fenxiao.jsx';
+import Profile from './components/user/Profile.jsx';
 
 injectTapEventPlugin();
 
@@ -49,6 +50,7 @@ ReactDOM.render(
 		  <Route path="address" component={Address}/>
 			<Route path="add_address" component={AddAddress} />
 			<Route path="fenxiao" component={Fenxiao} />
+			<Route path="profile" component={Profile} />
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")

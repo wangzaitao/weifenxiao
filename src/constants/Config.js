@@ -25,15 +25,16 @@ export const API = {
 	SC_HOTEL_GETBYID: '/api/hotel/getbyid/{%id%}',
 	SC_SIGHT_GETALL_TJ: '/api/sight/postpage',
 	SC_SIGHT_GETBYID: '/api/sight/getbyid/{%id%}',
-	GET_PROVINCE: 'api/region/getprovince',
-	GET_CITY: 'api/region/getcitybyprovid?provid={%provid%}',
-	GET_COUNTY: 'api/region/getcountybycity?cityid={%cityid%}',
+	GET_PROVINCE: '/api/region/getprovince',
+	GET_CITY: '/api/region/getcitybyprovid?provid={%provid%}',
+	GET_COUNTY: '/api/region/getcountybycity?cityid={%cityid%}',
 	GET_Regions: 'v1/regions/',
 	Add_Receipt: 'v1/receipts/add/',
 	MODIFY_RECEIPT: 'v1/receipts/{%address_id%}/modify/',
 	DELETE_RECEIPT: 'v1/receipts/{%address_id%}/remove/',
-	GET_RECEIPT: 'api/useraddress/get',
-	GET_FENXIAO: 'api/user/getfenxiaousers?mid={%mid%}&thirdfrom={%thirdfrom%}'
+	GET_RECEIPT: '/api/useraddress/get',
+	GET_FENXIAO: '/api/user/getfenxiaousers?mid={%mid%}&thirdfrom={%thirdfrom%}',
+	GET_USERINFO: '/api/user/getuserinfo?mid={%mid%}&thirdfrom={%thirdfrom%}&openid={%openid%}'
 };
 
 export const JOINTYPE = [

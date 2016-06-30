@@ -14,7 +14,7 @@ class Fenxiao extends Component {
   }
 
   componentWillMount() {
-    ContentAPI.getFenxiao({mid: 1, thirdfrom:""}).then((res) => {
+    ContentAPI.getFenxiao(1,"").then((res) => {
       this.setState({
         JuniorUsers: res.JuniorUsers,
         SuperiorUsers: res.SuperiorUsers

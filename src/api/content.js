@@ -1407,11 +1407,31 @@ export function getReceipts(data) {
 		});
 }
 
-export function getFenxiao(mid,thirdfrom) {
+	export function getFenxiao(mid,thirdfrom) {
 	var cpromise;
 	var ajaxData = {
 		type: 'GET',
 		url: (GlobalConfig.API.HOST + GlobalConfig.API.GET_FENXIAO).replace('{%mid%}', mid).replace('{%thirdfrom%}', thirdfrom),
+		/*	headers: {
+		 'X-AUTH-USER': Auth.getUserID(),
+		 'X-AUTH-TOKEN': Auth.getToken()
+		 }*/
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res.Result;
+		})
+		.catch(() => {
+			return {};
+		});
+}
+
+export function getUserInfo(mid,thirdfrom,openid) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET',
+		url: (GlobalConfig.API.HOST + GlobalConfig.API.GET_USERINFO).replace('{%mid%}', mid).replace('{%thirdfrom%}', thirdfrom).replace('{%openid%}', openid),
 		/*	headers: {
 		 'X-AUTH-USER': Auth.getUserID(),
 		 'X-AUTH-TOKEN': Auth.getToken()
