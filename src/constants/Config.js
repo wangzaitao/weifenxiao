@@ -34,7 +34,9 @@ export const API = {
 	DELETE_RECEIPT: 'v1/receipts/{%address_id%}/remove/',
 	GET_RECEIPT: '/api/useraddress/get',
 	GET_FENXIAO: '/api/user/getfenxiaousers?mid={%mid%}&thirdfrom={%thirdfrom%}',
-	GET_USERINFO: '/api/user/getuserinfo?mid={%mid%}&thirdfrom={%thirdfrom%}&openid={%openid%}'
+	GET_USERINFO: '/api/user/getuserinfo?mid={%mid%}&thirdfrom={%thirdfrom%}&openid={%openid%}',
+	APP_ID: "wxe78f5a68907f5e22",
+	APP_SECRET: "c796c961e8cebd21d02bc50addb8aaeb"
 };
 
 export const JOINTYPE = [

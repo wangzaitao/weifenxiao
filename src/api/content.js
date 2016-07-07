@@ -1446,3 +1446,21 @@ export function getUserInfo(mid,thirdfrom,openid) {
 			return {};
 		});
 }
+
+export function getTokenAndOpenid(code) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET',
+		url: "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+ GlobalConfig.API.APP_ID+"&secret="+ GlobalConfig.API.APP_SECRET+"&code="+code+"&grant_type=authorization_code"
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return {};
+		});
+}
+
+
