@@ -12,7 +12,7 @@ class Header extends Component {
 					<span>目的地/景点门票/酒店</span>
 				</div>
 				<div className="child m-user">
-					<a><img src={require("./../../img/litterPerson.png")} style={{ width:"20px",height:"20px"}}/></a>
+					<CustomLink to="/user"><img src={require("./../../img/litterPerson.png")} style={{ width:"20px",height:"20px"}}/></CustomLink>
 				</div>
 			</header>
 		);

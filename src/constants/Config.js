@@ -2,7 +2,7 @@ import * as I18N from '../utils/i18n';
 
 export const API = {
 	DEFAULT_TIMEOUT: 8000,
-	HOST: process.env.NODE_ENV == 'production' ? 'http://139.196.39.83:8848' : 'http://139.196.39.83:8848',
+	HOST: process.env.NODE_ENV == 'production' ? 'http://139.196.39.83' : 'http://139.196.39.83',
 	Product_Type_LIST: '/api/ptype/getall',
 	Product_Category_LIST: '/api/pcategory/getall',
 	Product_Category_ByTypeID: '/api/pcategory/getbytypeid',
@@ -36,7 +36,8 @@ export const API = {
 	GET_FENXIAO: '/api/user/getfenxiaousers?mid={%mid%}&thirdfrom={%thirdfrom%}',
 	GET_USERINFO: '/api/user/getuserinfo?mid={%mid%}&thirdfrom={%thirdfrom%}&openid={%openid%}',
 	APP_ID: "wxe78f5a68907f5e22",
-	APP_SECRET: "c796c961e8cebd21d02bc50addb8aaeb"
+	APP_SECRET: "c796c961e8cebd21d02bc50addb8aaeb",
+	AUTH_USER: "/api/weixin/auth/getuserinfo?appid={%appid%}&appsecret={%appsecret%}&code={%code%}"
 };
 
 export const JOINTYPE = [

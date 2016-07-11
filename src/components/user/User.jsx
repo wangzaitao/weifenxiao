@@ -4,6 +4,7 @@ import TravelNav from './../../components/travel/TravelNav.jsx';
 import Auth from '../../api/auth';
 import * as ContentAPI from '../../api/content';
 import {UserAvatar} from '../base/FallbackImage.jsx';
+import LocalStorage from '../../utils/localStorage';
 
 require("./user.scss")
 require("./../../scss/icons.scss")
@@ -40,9 +41,9 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: 0,
-      avatar: "",
-      nickname: "18672766095"
+      userId: LocalStorage.getItem("openid") || "",
+      avatar: LocalStorage.getItem("headimgurl") || "",
+      nickname: LocalStorage.getItem("nickname") || ""
     };
   }
 

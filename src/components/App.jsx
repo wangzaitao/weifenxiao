@@ -12,12 +12,20 @@ class App extends React.Component {
 	}
 
 	componentWillMount() {
-		debugger;
 		var code = this.props.location.query.code;
 		LocalStorage.setItem("code",code);
-		alert(code);
-		ContentAPI.getTokenAndOpenid(code).then((res) => {
-			alert(JSON.stringify(res));
+		ContentAPI.getAuthUser(code).then((res) => {
+			var obj = eval("("+ res +")");
+			LocalStorage.setItem("openid",obj.openid);
+			LocalStorage.setItem("nickname",obj.nickname);
+			LocalStorage.setItem("sex",obj.sex);
+			LocalStorage.setItem("language",obj.language);
+			LocalStorage.setItem("city",obj.city);
+			LocalStorage.setItem("province",obj.province);
+			LocalStorage.setItem("country",obj.country);
+			LocalStorage.setItem("headimgurl",obj.headimgurl);
+			LocalStorage.setItem("privilege",obj.privilege);
+
 		});
 	}
 

@@ -1463,4 +1463,20 @@ export function getTokenAndOpenid(code) {
 		});
 }
 
+export function getAuthUser(code) {
+	var cpromise;
+	var ajaxData = {
+		type: 'GET',
+		url: (GlobalConfig.API.HOST+GlobalConfig.API.AUTH_USER).replace('{%appid%}', GlobalConfig.API.APP_ID).replace('{%appsecret%}', GlobalConfig.API.APP_SECRET).replace('{%code%}', code)
+	};
+	cpromise = promiseAjax(ajaxData);
+	return cpromise
+		.then((res) => {
+			return res;
+		})
+		.catch(() => {
+			return {};
+		});
+}
+
 
