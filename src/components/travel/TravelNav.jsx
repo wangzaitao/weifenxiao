@@ -11,7 +11,7 @@ class TravelNav extends React.Component {
 		return (
 			<div className="m-header clearfix">
 				<div className="child flex1">
-					<a className="city"></a>
+					<a href="javascript:window.history.go(-1);" className="city"></a>
 				</div>
 				<div className="child title">
 					{props.name}

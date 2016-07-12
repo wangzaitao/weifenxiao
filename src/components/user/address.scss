@@ -4,6 +4,10 @@ ul, li {
   list-style: none
 }
 
+.black {
+  color: #181818;
+}
+
 .my-address {
   background-color: #f8f8f8;
 }
@@ -280,7 +284,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .my-address .tbl_addr td {
-  color:#666;
+  color: #666;
   background-color: #fff;
 }
 
