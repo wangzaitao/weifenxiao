@@ -76,7 +76,7 @@ var common = {
 var commonPlugins = [
   //shim
   new webpack.ProvidePlugin({
-    $: 'jquery',
+    $: 'cmd-zepto',
     jQuery: 'jquery',
     BC: 'src/utils/broadcast'
   }),

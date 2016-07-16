@@ -1,8 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import {browserHistory} from 'react-router';
 import TravelNav from './../../components/travel/TravelNav.jsx';
-import CustomLink from '../base/CustomLink.jsx';
+import CustomLink from '../common/CustomLink.jsx';
+import DefaultDialog from '../common/DefaultDialog';
 import * as ContentAPI from '../../api/content';
+import LocalStorage from '../../utils/localStorage';
 
 require("./address.scss")
 
@@ -10,16 +12,15 @@ class Address extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      mid: LocalStorage.getItem("mid") || 1,
       showDialog: false,
       showTapIndex: "0",
-      receiptList: [],
-      telephoneList: [],
-      qqList: []
+      receiptList: []
     };
   }
 
   componentWillMount() {
-    this._getReceipts(1);
+    this._getReceipts(this.state.mid);
   }
 
   _getReceipts(mid) {
@@ -29,9 +30,40 @@ class Address extends Component {
   }
 
   componentDidMount() {
-    $("#content-container").addClass("bgc-white");
-    $("#content-container").find(".user-info-container").removeClass("bgc-white");
-    $("#content-container").css("height", "100%");
+  }
+
+
+  _confirmDelete(e) {
+    this.state.selectID = $(e.target).closest(".item").find("input[name='receipts_id']").val();
+    this.refs.delete.show();
+  }
+
+  _deleteReceipt(e) {
+    var id = this.state.selectID;
+    ContentAPI
+      .deleteReceipts(id)
+      .then(() => {
+        this._getReceipts(this.state.mid);
+      });
+  }
+
+  _setDefault(e) {
+    var item = $(e.target).closest(".item");
+    var _default = item.find("input[name='receipts_default']").val();
+    if (_default != "1") {
+      var _id = item.find("input[name='receipts_id']").val();
+      var _name = item.find("span[name='receipts_name']").text();
+      var _phone = item.find("span[name='receipts_phone']").text();
+      var _address = item.find("input[name='receipts_address']").val();
+      var _addrCode = item.find("input[name='receipts_addrCode']").val();
+      ContentAPI.postReceipts(JSON.stringify({
+          id: _id,
+          default: 1
+        }))
+        .then((res) => {
+          this._getReceipts(this.state.mid);
+        });
+    }
   }
 
   render() {
@@ -41,25 +73,31 @@ class Address extends Component {
       receiptsDom = receipts.map((item, index) => {
         return (
           <div className="item">
+            <input name="receipts_id" type="hidden" value={item.id}/>
+            <input name="receipts_address" type="hidden" value={item.addresshome}/>
+            <input name="receipts_addrCode" type="hidden" value={item.flag}/>
+            <input name="receipts_default" type="hidden" value={item.default}/>
             <div className="addr">
               <div>
-                <span>{item.name}</span>
-                <span className="fr">{item.phone}</span>
+                <span name="receipts_name">{item.name}</span>
+                <span name="receipts_phone" className="fr">{item.mobile}</span>
               </div>
               <div style={{marginTop:"4px"}}><span
-                style={{color:"#ff302d"}}>{item.default == 1 ? "[默认]" : ""}</span>{item.address}
+                style={{color:"#ff302d"}}>{item.default == 1 ? "[默认]" : ""}</span>{ssqz}{item.addresshome}
               </div>
             </div>
             <div style={{ padding: "13px 13px" }}>
-              <a className={item.default==1?"address-red":""}>
+              <a className={item.default==1?"address-red":""} onTouchTap={this._setDefault.bind(this)}>
                 <i className={item.default==1?"img-default-addr":"img-uncheck-addr"}></i>
                 <span>{item.default == 1 ? "默认地址" : "设为默认"}</span>
               </a>
-              <a className="fr"><i className="img-delete"></i><span>删除</span></a>
-              <a className="fr mr16"><i className="img-edit"></i><span>编辑</span></a>
+              <a className="fr" onClick={this._confirmDelete.bind(this)}><i
+                className="img-delete"></i><span>删除</span></a>
+              <CustomLink to="/user/add_address" state={item} className="fr mr16"><i
+                className="img-edit"></i><span>编辑</span></CustomLink>
             </div>
             <div style={{position: "fixed", bottom: "0px", width: "100%"}}>
-              <a className="btn" style={{ width:"100%"}}>添加新地址</a>
+              <CustomLink to="/user/add_address" className="btn" style={{ width:"100%"}}>添加新地址</CustomLink>
             </div>
           </div>
         );
@@ -81,6 +119,7 @@ class Address extends Component {
 
     return (
       <div className="my-address">
+        <DefaultDialog ref="delete" body="您确认要删除吗？" onOk={this._deleteReceipt.bind(this)}/>
         <div className="tlp">
           <TravelNav name="收货地址管理"/>
           <div className="content">

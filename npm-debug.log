@@ -1,10 +1,10 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
-1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'run-script',
 1 verbose cli   'start' ]
-2 info using npm@2.15.0
-3 info using node@v4.4.2
+2 info using npm@2.14.20
+3 info using node@v4.4.1
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info prestart weifenxiao@1.0.0
 6 info start weifenxiao@1.0.0
@@ -12,20 +12,20 @@
 8 info weifenxiao@1.0.0 Failed to exec start script
 9 verbose stack Error: weifenxiao@1.0.0 start: `webpack-dev-server`
 9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:217:16)
+9 verbose stack     at EventEmitter.<anonymous> (D:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
 9 verbose stack     at emitTwo (events.js:87:13)
 9 verbose stack     at EventEmitter.emit (events.js:172:7)
-9 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+9 verbose stack     at ChildProcess.<anonymous> (D:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
 9 verbose stack     at emitTwo (events.js:87:13)
 9 verbose stack     at ChildProcess.emit (events.js:172:7)
 9 verbose stack     at maybeClose (internal/child_process.js:827:16)
 9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 10 verbose pkgid weifenxiao@1.0.0
-11 verbose cwd D:\fenxiao\WeiFenXiaoWeb\weifenxiao
-12 error Windows_NT 6.3.9600
-13 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run-script" "start"
-14 error node v4.4.2
-15 error npm  v2.15.0
+11 verbose cwd E:\a\weifenxiao
+12 error Windows_NT 10.0.10586
+13 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run-script" "start"
+14 error node v4.4.1
+15 error npm  v2.14.20
 16 error code ELIFECYCLE
 17 error weifenxiao@1.0.0 start: `webpack-dev-server`
 17 error Exit status 1

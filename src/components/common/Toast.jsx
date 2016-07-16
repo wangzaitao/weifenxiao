@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Mask } from 'react-ui-components';
 
 require('./toast.scss');
 
-export default class Toast extends Component {
+export default class Toast extends Component{
   render() {
     return (
-      <div className="toast-wrap">
-        <Mask/>
-        <div  className="toast fadein ">
-          <i className={"ico ico-popup_" + (this.props.type == 'error' ? 'no' : 'yes')}/>
-          {this.props.msg}
-        </div>
+      <div id="toast-wrap" className={"toast fadein " + this.props.type} >
+        {this.props.msg}
       </div>
     );
   }
@@ -23,13 +18,11 @@ export default class Toast extends Component {
     this._setTimeout();
   }
 
-  _timeoutId = null;
   _setTimeout() {
     if (this._timeoutId) clearTimeout(this._timeoutId);
 
     this._timeoutId = setTimeout(function(){
       ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
-      this.props.callback && this.props.callback();
     }.bind(this), this.props.timeout);
   }
 };
