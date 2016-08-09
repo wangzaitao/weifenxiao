@@ -36,6 +36,11 @@ ReactDOM.render(
 			<Route path="list" component={SightList}/>
 			<Route path="show/:id" component={Sight}/>
 		</Route>
+
+		<Route path="article">
+			<Route path="list" component={ArticleList}/>
+			<Route path="show/:id" component={Article}/>
+		</Route>
 	</Router>,
 	document.getElementById("body-wrapper")
 );
