@@ -12,6 +12,8 @@ import HotelList from './components/hotel/HotelList.jsx';
 import Hotel from './components/hotel/Hotel.jsx';
 import SightList from './components/sight/SightList.jsx';
 import Sight from './components/sight/Sight.jsx';
+import ArticleList from './components/article/ArticleList.jsx';
+import Article from './components/article/Article.jsx';
 
 injectTapEventPlugin();
 

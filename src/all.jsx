@@ -13,6 +13,8 @@ import HotelList from './components/hotel/HotelList.jsx';
 import Hotel from './components/hotel/Hotel.jsx';
 import SightList from './components/sight/SightList.jsx';
 import Sight from './components/sight/Sight.jsx';
+import ArticleList from './components/article/ArticleList.jsx';
+import Article from './components/article/Article.jsx';
 
 import User from './components/user/User.jsx';
 import Address from './components/user/Address.jsx';
@@ -44,6 +46,11 @@ ReactDOM.render(
 		  <Route path="list" component={SightList}/>
 			<Route path="show/:id" component={Sight}/>
 	  </Route>
+
+		<Route path="article">
+			<Route path="list" component={ArticleList}/>
+			<Route path="show/:id" component={Article}/>
+		</Route>
 
 	  <Route path="user">
 		  <IndexRoute component={User}/>
