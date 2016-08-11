@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner.jsx';
 import * as GlobalConfig from '../../constants/Config';
 import * as ContentAPI from './../../api/content';
+import CustomLink from '../common/CustomLink.jsx';
 
 require('./home.scss');
 
@@ -56,10 +57,10 @@ class Home extends React.Component {
 				<section className="travel_type">
 					<ul className="clearfix">
 						<li>
-							<a href="#" name="出境游">
+							<CustomLink to="/travel/list?kindlist=1" name="出境游">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EFbaR4SIRJh3AAAeDXASbNsAACfSAOvR94AAB4l91_w350_h0_c0_t0.jpeg"/>
-							</a>
+							</CustomLink>
 						</li>
 						<li>
 							<a href="#" name="国内游"> <img

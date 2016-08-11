@@ -9,12 +9,14 @@ class TravelList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			routeList: []
+			routeList: [],
+			kindlist: this.props.location.query.kindlist || ""
 		};
 	}
 
 	componentWillMount() {
 		var data = {
+			kindlist: this.state.kindlist,
 			isDesc: true
 		};
 		ContentAPI.getAllRouteTj(data).then((res) => {
