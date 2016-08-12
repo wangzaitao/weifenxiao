@@ -29,6 +29,10 @@ class App extends React.Component {
         ContentAPI.getUserInfo("", "", obj.openid).then((res) => {
           LocalStorage.setItem("mid", res.mid);
         });
+
+        ContentAPI.getErWeiMa(obj.openid).then((res) => {
+
+        });
       }
     });
   }

@@ -1272,6 +1272,66 @@ export function getSightById(id) {
     });
 }
 
+export function getAllArticleTj(data) {
+  var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_ARTICLE_GETALL_TJ;
+  return promiseAjax({
+    url: url,
+    data: data,
+    type: 'POST'
+  })
+    .then((res) => {
+      return res.Result.data;
+    })
+    .catch(() => {
+      return [];
+    });
+}
+
+export function getArticleById(id) {
+  var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_ARTICLE_GETBYID.replace('{%id%}', id);
+  return promiseAjax({
+    url: url,
+    type: 'GET',
+    async: false
+  })
+    .then((res) => {
+      return res.Result;
+    })
+    .catch(() => {
+      return {};
+    });
+}
+
+export function getAllNotesTj(data) {
+  var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_NOTES_GETALL_TJ;
+  return promiseAjax({
+    url: url,
+    data: data,
+    type: 'POST'
+  })
+    .then((res) => {
+      return res.Result.data;
+    })
+    .catch(() => {
+      return [];
+    });
+}
+
+export function getNotesById(id) {
+  var url = GlobalConfig.API.HOST + GlobalConfig.API.SC_NOTES_GETBYID.replace('{%id%}', id);
+  return promiseAjax({
+    url: url,
+    type: 'GET',
+    async: false
+  })
+    .then((res) => {
+      return res.Result;
+    })
+    .catch(() => {
+      return {};
+    });
+}
+
 export function getProvince() {
   var cpromise;
   var ajaxData = {
@@ -1433,6 +1493,22 @@ export function getAuthUser(code) {
   var ajaxData = {
     type: 'GET',
     url: (GlobalConfig.API.HOST + GlobalConfig.API.AUTH_USER).replace('{%appid%}', GlobalConfig.API.APP_ID).replace('{%appsecret%}', GlobalConfig.API.APP_SECRET).replace('{%code%}', code)
+  };
+  cpromise = promiseAjax(ajaxData);
+  return cpromise
+    .then((res) => {
+      return res;
+    })
+    .catch(() => {
+      return {};
+    });
+}
+
+export function getErWeiMa(openid) {
+  var cpromise;
+  var ajaxData = {
+    type: 'GET',
+    url: (GlobalConfig.API.HOST + GlobalConfig.API.GET_ERWEIMA).replace('{%openid%}', openid)
   };
   cpromise = promiseAjax(ajaxData);
   return cpromise

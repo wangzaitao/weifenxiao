@@ -25,6 +25,10 @@ export const API = {
 	SC_HOTEL_GETBYID: '/api/hotel/getbyid/{%id%}',
 	SC_SIGHT_GETALL_TJ: '/api/sight/postpage',
 	SC_SIGHT_GETBYID: '/api/sight/getbyid/{%id%}',
+	SC_ARTICLE_GETALL_TJ: '/api/article/postpage',
+	SC_ARTICLE_GETBYID: '/api/article/getbyid/{%id%}',
+	SC_NOTES_GETALL_TJ: '/api/notes/postpage',
+	SC_NOTES_GETBYID: '/api/notes/getbyid/{%id%}',
 	GET_PROVINCE: '/api/region/getprovince',
 	GET_CITY: '/api/region/getcitybyprovid?provid={%provid%}',
 	GET_COUNTY: '/api/region/getcountybycity?cityid={%cityid%}',
@@ -34,9 +38,10 @@ export const API = {
 	GET_RECEIPT: '/api/useraddress/get',
 	GET_FENXIAO: '/api/user/getfenxiaousers?mid={%mid%}&thirdfrom={%thirdfrom%}',
 	GET_USERINFO: '/api/user/getuserinfo?mid={%mid%}&thirdfrom={%thirdfrom%}&openid={%openid%}',
-	APP_ID: "wxe78f5a68907f5e22",
-	APP_SECRET: "c796c961e8cebd21d02bc50addb8aaeb",
-	AUTH_USER: "/api/weixin/auth/getuserinfo?appid={%appid%}&appsecret={%appsecret%}&code={%code%}"
+	APP_ID: "wxc6733cba33b4fa22",
+	APP_SECRET: "b7a9689a9ffbdcc71c5d1a14df5ffdd3",
+	AUTH_USER: "/api/weixin/auth/getuserinfo?appid={%appid%}&appsecret={%appsecret%}&code={%code%}",
+	GET_ERWEIMA:"api/user/geterweima?mid=0&openid={%openid%}"
 };
 
 export const JOINTYPE = [
