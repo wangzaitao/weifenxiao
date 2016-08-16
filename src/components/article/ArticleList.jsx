@@ -30,8 +30,8 @@ class ArticleList extends React.Component {
 		var listDom;
 		listDom = this.state.list.map((item, index) => {
 			return (
-				<CustomLink to={"/article/show/"+item.id} className="hotel_item" style={{display:"block",position:"relative",marginLeft:"1em",lineHeight:"2em"}}>
-					{index}. {item.title}
+				<CustomLink to={"/article/show/"+item.id} className="hotel_item" style={{display:"block",position:"relative",marginLeft:"1em",lineHeight:"3em"}}>
+					{index+1}. {item.title}
 				</CustomLink>
 			);
 		});
