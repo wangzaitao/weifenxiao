@@ -57,10 +57,10 @@ class Home extends React.Component {
 				<section className="travel_type">
 					<ul className="clearfix">
 						<li>
-							<CustomLink to="/travel/list?kindlist=1" name="出境游">
+							<a href="/travel/list?kindlist=1" name="出境游">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EFbaR4SIRJh3AAAeDXASbNsAACfSAOvR94AAB4l91_w350_h0_c0_t0.jpeg"/>
-							</CustomLink>
+							</a>
 						</li>
 						<li>
 							<a href="#" name="国内游"> <img
@@ -77,22 +77,6 @@ class Home extends React.Component {
 				<section className="product_type clearfix">
 					<ul className="clearfix">
 						<li>
-							<a href="#" name="跟团游">
-							<span className="btn_icon">
-								<img
-									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/5D/Cii9EVb4i4OIc4ReAAATHBnf8NgAACzTwP_6xcAABM0977_w120_h120_c1_t0.png"/></span>
-								<span className="word">跟团游</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" name="自助游">
-							<span className="btn_icon">
-								<img
-									src="http://m.tuniucdn.com/fb2/t1/G1/M00/3E/AA/Cii9EVb4i6-ISeVPAAAQYfJZ3UIAACv0gP_74AAABCA655_w120_h120_c1_t0.png"/></span>
-								<span className="word">自助游</span>
-							</a>
-						</li>
-						<li>
 							<a href="#" name="自驾游">
 							<span className="btn_icon">
 								<img
@@ -101,15 +85,15 @@ class Home extends React.Component {
 							</a>
 						</li>
 						<li>
-							<a href="#" name="自由行">
+							<a href="#" name="跟团游">
 							<span className="btn_icon">
 								<img
-									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/6F/Cii9EFb4i7uIfDE6AAAUTqIQr0oAACzVQP_3HsAABRm404_w120_h120_c1_t0.png"/></span>
-								<span className="word">自由行</span>
+									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/5D/Cii9EVb4i4OIc4ReAAATHBnf8NgAACzTwP_6xcAABM0977_w120_h120_c1_t0.png"/></span>
+								<span className="word">跟团游</span>
 							</a>
 						</li>
 						<li>
-							<a href="#" name="目的地">
+							<a href="/travel/target" name="目的地">
 							<span className="btn_icon">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/75/Cii9EFb4jOKIAMDsAAARy0GDPtYAACzWAP_7TkAABLH009_w120_h120_c1_t0.png"/></span>
@@ -117,43 +101,35 @@ class Home extends React.Component {
 							</a>
 						</li>
 						<li>
-							<a href="#" name="农博会">
+							<a href="/sight/list" name="门票">
+							<span className="btn_icon">
+								<img
+									src="http://m.tuniucdn.com/fb2/t1/G1/M00/3E/AA/Cii9EVb4i6-ISeVPAAAQYfJZ3UIAACv0gP_74AAABCA655_w120_h120_c1_t0.png"/></span>
+								<span className="word">门票</span>
+							</a>
+						</li>
+						<li>
+							<a href="/hotel/list" name="酒店">
+							<span className="btn_icon">
+								<img
+									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/6F/Cii9EFb4i7uIfDE6AAAUTqIQr0oAACzVQP_3HsAABRm404_w120_h120_c1_t0.png"/></span>
+								<span className="word">酒店</span>
+							</a>
+						</li>
+						<li>
+							<a href="/article/list" name="文章">
 							<span className="btn_icon">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/7B/Cii9EFb4jb6IcMqOAAATr4ca2MwAACzWgBQsKIAABPH611_w120_h120_c1_t0.png"/></span>
-								<span className="word">农博会</span>
+								<span className="word">文章</span>
 							</a>
 						</li>
 						<li>
-							<a href="#" name="全球购">
+							<a href="/notes/list" name="游记">
 							<span className="btn_icon">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/73/Cii9EVb4i9-IBq1DAAAWxQ3NML0AACzVwP_lAYAABbd572_w120_h120_c1_t0.png"/></span>
-								<span className="word">全球购</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" name="女人帮">
-							<span className="btn_icon">
-								<img
-									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/79/Cii9EVb4jXKIdChyAAAR7gLVExwAACzWQNlJs0AABIG172_w120_h120_c1_t0.png"/></span>
-								<span className="word">女人帮</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" name="养生苑">
-							<span className="btn_icon">
-								<img
-									src="http://m.tuniucdn.com/fb2/t1/G1/M00/68/2F/Cii9EFcLBy2ID6WtAAAaDbJZBSsAADFTwCJVdMAABol383_w120_h120_c1_t0.png"/></span>
-								<span className="word">养生苑</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" name="微户外">
-							<span className="btn_icon">
-								<img
-									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/79/Cii9EVb4jMqILL1MAAAVhNiEmF0AACzWQB4vGIAABWc662_w120_h120_c1_t0.png"/></span>
-								<span className="word">微户外</span>
+								<span className="word">游记</span>
 							</a>
 						</li>
 					</ul>

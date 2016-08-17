@@ -15,12 +15,15 @@ import SightList from './components/sight/SightList.jsx';
 import Sight from './components/sight/Sight.jsx';
 import ArticleList from './components/article/ArticleList.jsx';
 import Article from './components/article/Article.jsx';
+import NotesList from './components/notes/NotesList.jsx';
+import Notes from './components/notes/Notes.jsx';
 
 import User from './components/user/User.jsx';
 import Address from './components/user/Address.jsx';
 import AddAddress from './components/user/AddAddress.jsx';
 import Fenxiao from './components/user/Fenxiao.jsx';
 import Profile from './components/user/Profile.jsx';
+import Erweima from './components/user/Erweima.jsx';
 
 injectTapEventPlugin();
 
@@ -52,12 +55,18 @@ ReactDOM.render(
 			<Route path="show/:id" component={Article}/>
 		</Route>
 
+		<Route path="notes">
+			<Route path="list" component={NotesList}/>
+			<Route path="show/:id" component={Notes}/>
+		</Route>
+
 	  <Route path="user">
 		  <IndexRoute component={User}/>
 		  <Route path="address" component={Address}/>
 			<Route path="add_address" component={AddAddress} />
 			<Route path="fenxiao" component={Fenxiao} />
 			<Route path="profile" component={Profile} />
+			<Route path="erweima" component={Erweima} />
 	  </Route>
   </Router>,
   document.getElementById("body-wrapper")

@@ -54,6 +54,7 @@ class User extends React.Component {
         {url: '/user/fenxiao', icon: 'recharge_record', title: '我的分销'},
         {url: '/user/address', icon: 'buy_history', title: '地址管理'},
         {url: '/user/profile', icon: 'buy_history', title: '个人信息'},
+        {url: '/user/erweima', icon: 'friend_back', title: '我的二维码'},
         {url: 'empty_driver'}
       ];
     var linkItems = links.map(function (item, index) {

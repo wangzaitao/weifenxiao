@@ -30,7 +30,7 @@ class HotelList extends React.Component {
 		var listDom;
 		listDom = this.state.hotelList.map((item, index) => {
 			return (
-				<a className="hotel_item" style={{display:"block",position:"relative"}}>
+				<a href={"/hotel/show/"+item.id} className="hotel_item" style={{display:"block",position:"relative"}}>
 					<section className="hotel-info clearfix">
 						<div className="img">
 							<img src={"http://www.668lyzx.com"+item.litpic} />

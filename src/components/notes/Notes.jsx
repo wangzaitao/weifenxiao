@@ -4,9 +4,9 @@ import * as ContentAPI from './../../api/content';
 import LocalStorage from '../../utils/localStorage';
 
 require('./../travel/travel.scss');
-require('./article.scss');
+require('./notes.scss');
 
-class Article extends React.Component {
+class Notes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,8 @@ class Article extends React.Component {
 
   componentWillMount() {
     var id = this.props.params.id;
-    ContentAPI.getArticleById(id).then((res) => {
+    ContentAPI.getNotesById(id).then((res) => {
+      debugger;
       this.setState({
         obj: res
       });
@@ -42,7 +43,7 @@ class Article extends React.Component {
 
     return (
       <div className="tlp">
-        <TravelNav name="文章详情"/>
+        <TravelNav name="游记详情"/>
         <div style={{padding:"1em"}}>
           <div className="txt_center">
             {item.title}
@@ -61,7 +62,7 @@ class Article extends React.Component {
   }
 }
 
-export default Article;
+export default Notes;
 
 
 

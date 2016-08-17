@@ -31,7 +31,7 @@ class App extends React.Component {
         });
 
         ContentAPI.getErWeiMa(obj.openid).then((res) => {
-
+          LocalStorage.setItem("erweima", res);
         });
       }
     });

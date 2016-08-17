@@ -1,7 +1,7 @@
 import React from 'react';
 import TravelNav from './../travel/TravelNav';
 import * as ContentAPI from './../../api/content';
-import CustomLink from './../common/CustomLink.jsx';
+import LocalStorage from '../../utils/localStorage';
 
 require('./../travel/travel.scss');
 require('./hotel.scss');
@@ -11,7 +11,8 @@ class Hotel extends React.Component {
     super(props);
 	  this.state = {
 		  id : this.props.params.id,
-		  obj: {}
+		  obj: {},
+      erweima: LocalStorage.setItem("erweima") || ""
 	  };
   }
 
@@ -85,6 +86,14 @@ class Hotel extends React.Component {
 		      </div>
 		      <div className="showMore j_showMore"><span>查看更多</span> <i className="iconDown"></i></div>
 	      </div>
+
+        <div className="titGreen btBor mt10">
+          <i className="ml"></i>
+          分享二维码
+        </div>
+        <div className="topIconTxt bBor">
+          <img src={this.state.erweima} />
+        </div>
       </div>
     );
   }
