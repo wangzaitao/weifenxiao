@@ -2,6 +2,7 @@ import React from 'react';
 import TravelNav from './TravelNav';
 import * as ContentAPI from './../../api/content';
 import CustomLink from './../common/CustomLink.jsx';
+import {KINDLISTNAME,ATTRIDNAME} from '../../constants/Config';
 
 require('./travel.scss');
 
@@ -10,15 +11,21 @@ class TravelList extends React.Component {
 		super(props);
 		this.state = {
 			routeList: [],
-			kindlist: this.props.location.query.kindlist || ""
+			kindlist: this.props.location.query.kindlist || "",
+			attrid: this.props.location.query.attrid || ""
 		};
 	}
 
 	componentWillMount() {
 		var data = {
-			kindlist: this.state.kindlist,
 			isDesc: true
 		};
+		if (this.state.kindlist != "") {
+			data.kindlist = this.state.kindlist
+		}
+		if (this.state.attrid != "") {
+			data.attrid = this.state.attrid
+		}
 		ContentAPI.getAllRouteTj(data).then((res) => {
 			this.setState({
 				routeList: res
@@ -72,7 +79,14 @@ class TravelList extends React.Component {
 
 		return (
 			<div className="tlp">
-				<TravelNav name="武汉周边游"/>
+				{
+					this.state.kindlist
+						?
+						<TravelNav name={"武汉"+KINDLISTNAME[this.state.kindlist]}/>
+						:
+						<TravelNav name={"武汉"+ATTRIDNAME[this.state.attrid]}/>
+				}
+
 
 				<div className="price">
 					<ul>

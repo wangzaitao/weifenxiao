@@ -1,8 +1,3 @@
-/**
- * server api functions.
- *
- * Created by xianglong on 12/10/15.
- */
 import * as GlobalConfig from '../constants/Config';
 import Auth from './auth';
 import promiseAjax from '../utils/promise/ajax';

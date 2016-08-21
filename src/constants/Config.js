@@ -76,6 +76,18 @@ export const CARSTYPE = [
 	{key: 4, value: "SUV"}
 ];
 
+export const KINDLISTNAME = {
+	1: "出镜游",
+	2: "国内游",
+	3: "周边游"
+};
+
+export const ATTRIDNAME = {
+	1: "跟团游",
+	144: "自驾游"
+};
+
+
 export const ERROR_CODES = {
 	1: '网络异常，请稍后再试',
 	2: '参数错误',

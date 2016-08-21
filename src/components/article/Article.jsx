@@ -2,6 +2,7 @@ import React from 'react';
 import TravelNav from './../travel/TravelNav';
 import * as ContentAPI from './../../api/content';
 import LocalStorage from '../../utils/localStorage';
+import {KINDLISTNAME} from '../../constants/Config';
 
 require('./../travel/travel.scss');
 require('./article.scss');
@@ -50,7 +51,7 @@ class Article extends React.Component {
           <div className="fr">
             {this._formatDate(new Date(item.modtime))}
           </div>
-          <div>kindlist：{item.kindlist}</div>
+          <div>类别：{KINDLISTNAME[item.kindlist]}</div>
           <div>
             <img src={this.state.erweima} />
           </div>

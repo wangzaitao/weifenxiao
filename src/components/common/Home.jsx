@@ -36,7 +36,7 @@ class Home extends React.Component {
 		routeListDom = this.state.routeList.map((item, index) => {
 			return (
 				<li>
-					<a href="#">
+					<CustomLink to={"/travel/show/"+item.id}>
 						<div className="contentPic">
 							<img src={"http://www.668lyzx.com"+item.litpic} />
 						</div>
@@ -46,7 +46,7 @@ class Home extends React.Component {
 							<span className="contZl" style={{paddingLeft:"1em",paddingRight:"1em"}}></span>
 							<div className="contentPrice"> ￥<font>{item.storeprice}</font>起</div>
 						</div>
-					</a>
+					</CustomLink>
 				</li>
 			);
 		});
@@ -63,12 +63,12 @@ class Home extends React.Component {
 							</a>
 						</li>
 						<li>
-							<a href="#" name="国内游"> <img
+							<a href="/travel/list?kindlist=2" name="国内游"> <img
 								src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EFbaR4iIKbptAAAgHchF8X0AACfSAO8qaMAACA160_w350_h0_c0_t0.jpeg"/>
 							</a>
 						</li>
 						<li>
-							<a href="#" name="周边游"> <img
+							<a href="/travel/list?kindlist=3" name="周边游"> <img
 								src="http://m.tuniucdn.com/fb2/t1/G1/M00/1A/07/Cii9EVbaR4yIfwunAAAe7eNZOWgAACfSAO8ydgAAB8F50_w350_h0_c0_t0.jpeg"/>
 							</a>
 						</li>
@@ -77,7 +77,7 @@ class Home extends React.Component {
 				<section className="product_type clearfix">
 					<ul className="clearfix">
 						<li>
-							<a href="#" name="自驾游">
+							<a href="/travel/list?attrid=144" name="自驾游">
 							<span className="btn_icon">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/47/D8/Cii9EVb4i8qIEZzGAAAR6CBHCXEAACzIgP_7U8AABKx362_w120_h120_c1_t0.png"/></span>
@@ -85,7 +85,7 @@ class Home extends React.Component {
 							</a>
 						</li>
 						<li>
-							<a href="#" name="跟团游">
+							<a href="/travel/list?attrid=1" name="跟团游">
 							<span className="btn_icon">
 								<img
 									src="http://m.tuniucdn.com/fb2/t1/G1/M00/48/5D/Cii9EVb4i4OIc4ReAAATHBnf8NgAACzTwP_6xcAABM0977_w120_h120_c1_t0.png"/></span>
