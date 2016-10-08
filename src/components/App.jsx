@@ -17,6 +17,7 @@ class App extends React.Component {
     ContentAPI.getAuthUser(code).then((res) => {
       var obj = eval("(" + res + ")");
       LocalStorage.setItem("openid", obj.openid);
+	    document.getElementById("test").value = obj.openid;
       LocalStorage.setItem("nickname", obj.nickname);
       LocalStorage.setItem("sex", obj.sex);
       LocalStorage.setItem("language", obj.language);
@@ -25,16 +26,18 @@ class App extends React.Component {
       LocalStorage.setItem("country", obj.country);
       LocalStorage.setItem("headimgurl", obj.headimgurl);
       LocalStorage.setItem("privilege", obj.privilege);
+	    var openid = obj.openid;
       if (obj.openid) {
-        ContentAPI.getUserInfo("", "", obj.openid).then((res) => {
+        ContentAPI.getUserInfo(0, "wx", openid).then((res) => {
           LocalStorage.setItem("mid", res.mid);
         });
 
-        ContentAPI.getErWeiMa(obj.openid).then((res) => {
-          LocalStorage.setItem("erweima", res);
+        ContentAPI.getErWeiMa(openid).then((res) => {
+          LocalStorage.setItem("erweima", res.Result);
         });
       }
     });
+
   }
 
   render() {
@@ -44,6 +47,7 @@ class App extends React.Component {
         <div>
           {this.props.children}
         </div>
+	      <input type="text" id="test"/>
         <Footer />
       </div>
     );

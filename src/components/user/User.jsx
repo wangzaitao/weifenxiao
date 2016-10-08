@@ -41,7 +41,7 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: LocalStorage.getItem("openid") || "",
+      userId: LocalStorage.getItem("mid") || "",
       avatar: LocalStorage.getItem("headimgurl") || "",
       nickname: LocalStorage.getItem("nickname") || ""
     };

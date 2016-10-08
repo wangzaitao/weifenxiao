@@ -7,7 +7,7 @@ class Erweima extends Component {
     super(props);
     this.state = {
       userInfo: {},
-      erweima: LocalStorage.setItem("erweima") || ""
+      erweima: LocalStorage.getItem("erweima") || ""
     };
   }
 
@@ -23,7 +23,7 @@ class Erweima extends Component {
         <div className="tlp">
           <TravelNav name="我的二维码"/>
           <div>
-            <img src={this.state.erweima} />
+            <img src={LocalStorage.getItem("erweima")} style={{width:"50%"}} />
           </div>
         </div>
       </div>

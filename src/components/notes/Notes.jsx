@@ -12,7 +12,7 @@ class Notes extends React.Component {
     this.state = {
       id: this.props.params.id,
       obj: {},
-      erweima: LocalStorage.setItem("erweima") || ""
+      erweima: LocalStorage.getItem("erweima") || ""
     };
   }
 
@@ -53,7 +53,7 @@ class Notes extends React.Component {
           </div>
           <div>kindlist：{item.kindlist}</div>
           <div>
-            <img src={this.state.erweima} />
+            <img src={this.state.erweima} style={{width:"50%"}}/>
           </div>
           <div dangerouslySetInnerHTML={{__html: item.content}}></div>
         </div>

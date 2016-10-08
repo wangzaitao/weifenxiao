@@ -41,7 +41,7 @@ export const API = {
 	APP_ID: "wxc6733cba33b4fa22",
 	APP_SECRET: "b7a9689a9ffbdcc71c5d1a14df5ffdd3",
 	AUTH_USER: "/api/weixin/auth/getuserinfo?appid={%appid%}&appsecret={%appsecret%}&code={%code%}",
-	GET_ERWEIMA:"api/user/geterweima?mid=0&openid={%openid%}"
+	GET_ERWEIMA:"/api/user/geterweima?mid=0&openid={%openid%}"
 };
 
 export const JOINTYPE = [
