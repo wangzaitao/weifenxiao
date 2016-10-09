@@ -64,7 +64,7 @@ class TravelList extends React.Component {
 				<li>
 					<CustomLink to={"/travel/show/"+item.id}>
 						<div className="contentPic">
-							<img src={"http://www.668lyzx.com"+item.litpic}/>
+							<img src={"http://www.668hw.com:8088"+item.litpic}/>
 						</div>
 						<div className="contentText">
 							<p>{item.title}</p>

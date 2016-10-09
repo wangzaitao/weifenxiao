@@ -33,7 +33,7 @@ class SightList extends React.Component {
 				<CustomLink to={"/sight/show/"+item.id} className="hotel_item" style={{display:"block",position:"relative"}}>
 					<section className="sight-info clearfix">
 						<div className="img">
-							<img src={"http://www.668lyzx.com"+item.litpic} style={{height:"100%"}} />
+							<img src={"http://www.668hw.com:8088"+item.litpic} style={{height:"100%"}} />
 						</div>
 						<div className="info">
 							<div className="price">

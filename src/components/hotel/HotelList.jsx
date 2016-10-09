@@ -33,7 +33,7 @@ class HotelList extends React.Component {
 				<a href={"/hotel/show/"+item.id} className="hotel_item" style={{display:"block",position:"relative"}}>
 					<section className="hotel-info clearfix">
 						<div className="img">
-							<img src={"http://www.668lyzx.com"+item.litpic} />
+							<img src={"http://www.668hw.com:8088"+item.litpic} />
 						</div>
 						<div className="info">
 							<div className="price">

@@ -34,7 +34,7 @@ class Hotel extends React.Component {
         <TravelNav name="酒店详情"/>
         <div className="lineTopImg">
           <a>
-	          <img src={"http://www.668lyzx.com"+item.litpic} style={{height:"250px"}}/>
+	          <img src={"http://www.668hw.com:8088"+item.litpic} style={{height:"250px"}}/>
           </a>
           <p>{item.title}</p>
         </div>

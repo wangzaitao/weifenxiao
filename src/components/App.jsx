@@ -17,7 +17,6 @@ class App extends React.Component {
     ContentAPI.getAuthUser(code).then((res) => {
       var obj = eval("(" + res + ")");
       LocalStorage.setItem("openid", obj.openid);
-	    document.getElementById("test").value = obj.openid;
       LocalStorage.setItem("nickname", obj.nickname);
       LocalStorage.setItem("sex", obj.sex);
       LocalStorage.setItem("language", obj.language);
@@ -47,7 +46,6 @@ class App extends React.Component {
         <div>
           {this.props.children}
         </div>
-	      <input type="text" id="test"/>
         <Footer />
       </div>
     );
